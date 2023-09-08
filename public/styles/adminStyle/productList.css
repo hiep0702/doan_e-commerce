@@ -1,0 +1,71 @@
+body {
+    margin-bottom: 70px;
+}
+
+.container {
+    text-align: center;
+}
+h1{
+    margin-top: 50px;
+}
+table a {
+    color: black;
+}
+
+table {
+    background-color: white;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 30px;
+}
+
+table tr th,
+table tr td {
+    border: 1px solid rgb(184, 182, 182);
+    padding: 20px;
+    width: fit-content;
+    height: 30px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+table tr th {
+    background-color: rgb(44, 44, 44);
+    color: white;
+}
+
+.btn {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.read-more {
+    text-decoration: underline;
+    text-underline-offset: 10wpx;
+}
+
+.container button {
+    background-color: black;
+    color: white;
+    width: 60px;
+    height: 40px;
+    margin: 10px;
+}
+
+.container button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}

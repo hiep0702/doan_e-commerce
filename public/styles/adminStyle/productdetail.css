@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container__leftside,
+.container__rightside {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    width: 300px;
+    margin-top: 30px;
+}
+
+label {
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+small{
+    color: red;
+}

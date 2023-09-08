@@ -1,0 +1,16 @@
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-add-product{
+    padding: 10px 15px;
+}
+
+.input-search{
+    width: 260px;
+    height: 42px;
+    border-radius: 5px;
+    outline: none;
+}

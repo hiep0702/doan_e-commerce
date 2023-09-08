@@ -1,0 +1,40 @@
+.container {
+    text-align: center;
+}
+
+table {
+    background-color: white;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 30px;
+}
+
+table tr th,
+table tr td {
+    border: 1px solid black;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+}
+
+table tr th {
+    color: tomato;
+}
+
+.container button {
+    background-color: black;
+    color: white;
+    width: 60px;
+    height: 40px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}

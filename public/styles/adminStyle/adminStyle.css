@@ -1,0 +1,116 @@
+* {
+    margin: 0px;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    color: white;
+}
+
+ion-icon {
+    font-size: 23px;
+    line-height: 20px;
+}
+
+* a:hover {
+    /* color: rgb(245, 164, 14); */
+    color: rgb(214, 59, 7);
+    transition: 0.3s;
+}
+
+/* ----------------------------------------------------------------------HEADER-------------------------------- */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    line-height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.header_content {
+    display: flex;
+}
+
+.header_content .link_web_sales {
+    margin-left: 30px;
+    line-height: 80px;
+}
+
+
+input {
+    width: 300px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+::placeholder {
+    /* color: rgb(255, 197, 88); */
+}
+
+input:focus {
+    /* border-bottom: 1px solid rgb(255, 197, 88); */
+}
+
+
+/* ----------------------------------------------------------------------HEADER-------------------------------- */
+
+
+/* ----------------------------------------------------------------------SIDEBAR-------------------------------- */
+
+.sidebar {
+    width: 22%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: left;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+
+
+.sidebar li {
+    margin-top: 60px;
+    margin-left: 100px;
+    font-size: 16px;
+}
+
+
+/* ----------------------------------------------------------------------SIDEBAR-------------------------------- */
+
+/* ----------------------------------------------------------------------Footer-------------------------------- */
+
+
+.footer {
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    background-color: gray;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer h2 {
+    color: white;
+}
+
+/* ----------------------------------------------------------------------Footer-------------------------------- */

@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+form {
+    width: 100%;
+    position: relative;
+    color: black;
+}
+
+.header {
+    width: 100%;
+    height: 112px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1111111;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.header__side-category {
+    position: absolute;
+    background-color: white;
+    font-size: 20px;
+    box-shadow: rgba(7, 7, 10, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    top: 182px;
+    left: 400px;
+    width: 300px;
+    height: 200px;
+    transition: 0.5s ease-in-out;
+    z-index: 111;
+    transform: translate(-250%, 0);
+}
+
+.header__side-brand{
+    position: absolute;
+    background-color: white;
+    font-size: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    top: 302px;
+    left: 400px;
+    width: 300px;
+    height: 200px;
+    transition: 0.5s ease-in-out;
+    z-index: 111;
+    transform: translate(-250%,0);
+}
+
+.header__side-brand>div{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.header__side-brand>div>a{
+    align-self: center;
+    margin-left: 20px;
+    color: black;
+    height: 100%;
+    width: 100%;
+    line-height: 45px;
+}
+
+.header__side-collection{
+    position: absolute;
+    background-color: white;
+    font-size: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    top: 242px;
+    left: 400px;
+    width: 300px;
+    height: 150px;
+    transition: 0.5s ease-in-out;
+    z-index: 111;
+    transform: translate(-250%,0);
+}
+
+.header__side-collection>div{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.header__side-collection>div>a{
+    align-self: center;
+    margin-left: 20px;
+    color: black;
+    height: 100%;
+    width: 100%;
+    line-height: 45px;
+}
+
+.header__side-collection>div:hover {
+    background-color: rgb(255, 242, 242);
+}
+
+.header__side-collection-active>.header__side-collection {
+    transform: translate(0,0);
+}
+
+.header__side-category-active>.header__side-category {
+    transform: translate(0,0);
+}
+
+.header__side-brand-active>.header__side-brand {
+    transform: translate(0,0);
+}
+
+
+.header__side-category>div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.header__side-category>div>a {
+    align-self: center;
+    margin-left: 20px;
+    color: black;
+    height: 100%;
+    width: 100%;
+    line-height: 45px;
+}
+
+.header__side-category>div:hover {
+    background-color: rgb(255, 242, 242);
+}
+
+.header__side-brand>div:hover {
+    background-color: rgb(255, 242, 242);
+}
+
+.header__sideBar {
+    position: absolute;
+    top: 34px;
+    background-color: white;
+    z-index: 1111;
+    width: 400px;
+    height: 525px;
+    font-size: 25px;
+    transform: translate(-100%, 0);
+    transition: 0.65s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.activeMenu>.header__sideBar {
+    transform: translate(0, 0);
+}
+
+.header__sideBar-cate .header__sideBar-cate-menu div a,
+p {
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+.header__sideBar-button {
+    width: 100%;
+    height: 78px;
+    
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.header__sideBar-button button {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.header__sideBar-button>button>ion-icon,
+p {
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.header__sideBar-cate {
+    width: 100%;
+}
+
+.header__sideBar-cate .header__sideBar-cate-menu div {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    height: 60px;
+}
+
+.header__sideBar-cate .header__sideBar-cate-menu div:hover {
+    background-color: rgb(255, 242, 242);
+}
+.header__sideBar-cate .header__sideBar-cate-menu #dropdown1:hover>ion-icon{
+    opacity: 1;
+}.header__sideBar-cate .header__sideBar-cate-menu #dropdown2:hover>ion-icon{
+    opacity: 1;
+}.header__sideBar-cate .header__sideBar-cate-menu #dropdown3:hover>ion-icon{
+    opacity: 1;
+}
+
+.header__sideBar-cate .header__sideBar-cate-menu div a {
+    color: black;
+    margin-left: 20px;
+    align-self: center;
+}
+
+#dropdown1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#dropdown1>.dropdown1__name {
+    font-size: 25px;
+    margin-left: 20px;
+    line-height: 60px;
+    align-self: center;
+
+}
+
+#dropdown1>ion-icon {
+    align-self: center;
+    opacity: 0;
+}
+
+.icon1>ion-icon{
+    transform: rotate(180deg);
+    transition: 0.5s ease-in-out;
+}
+
+#dropdown2>.dropdown2__name {
+    font-size: 25px;
+    margin-left: 20px;
+    line-height: 60px;
+    align-self: center;
+
+}
+
+#dropdown2>ion-icon {
+    align-self: center;
+    opacity: 0;
+}
+.icon2>ion-icon{
+    transform: rotate(180deg);
+    transition: 1s ease-in-out;
+}
+
+#dropdown3>.dropdown3__name {
+    font-size: 25px;
+    margin-left: 20px;
+    line-height: 60px;
+    align-self: center;
+
+}
+
+#dropdown3>ion-icon {
+    align-self: center;
+    opacity: 0;
+}
+.icon3>ion-icon{
+    transform: rotate(180deg);
+    transition: 1s ease-in-out;
+}
+
+.header__update {
+    width: 100%;
+    height: 34px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 32px;
+
+}
+
+.header__update-all {
+    width: 100%;
+    height: calc(100% * 3);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.header__update-1 {
+    width: 100%;
+    height: 34px;
+}
+
+.header__update-1:hover {
+    cursor: pointer;
+}
+
+.header__update-1:nth-child(1) {
+    animation: effectUpdate 4s ease-in-out infinite alternate;
+}
+
+.header__update-1:nth-child(2) {
+    animation: effectUpdate 4s ease-in-out infinite alternate;
+}
+
+.header__update-1:nth-child(3) {
+    animation: effectUpdate 4s ease-in-out infinite alternate;
+}
+
+@keyframes effectUpdate {
+    0% {
+        transform: translate(0, 0);
+
+    }
+
+    50% {
+        transform: translate(0, -34px);
+
+    }
+
+    100% {
+        transform: translate(0, -68px);
+    }
+}
+
+
+.header__nav {
+    width: 100%;
+    height: 78px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 30px;
+    z-index: 10;
+    background-color: white;
+}
+
+.header__nav-menu {
+    width: calc(100% / 3);
+    align-self: center;
+}
+
+.header__nav-menu>button {
+    display: flex;
+    flex-direction: row;
+}
+
+.header__nav-menu>button>p,
+ion-icon {
+    margin-left: 10px;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.header__nav-logo {
+    width: calc(100% / 3);
+    text-align: center;
+    font-size: 45px;
+    line-height: 75px;
+}
+
+.header__nav-right {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-self: center;
+}
+
+.header__nav-right ion-icon {
+    margin: 10px;
+    font-size: 30px;
+}
+
+
+

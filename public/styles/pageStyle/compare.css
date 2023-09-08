@@ -1,0 +1,82 @@
+.maintable{
+    margin: 0 auto;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    width: 80%;
+}
+table{
+    border-collapse: collapse;
+    height: 1000px;
+    padding: 100px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+}
+
+table td{
+    border: 10px solid white;
+    border-radius: 15px;
+}
+
+table tr{
+    border: 10px solid white;
+    height: 100px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+table tr:nth-child(2n){
+    background-color: #f8f8f8;
+    border-radius: 15px;
+}
+
+#img {
+    height: 300px;
+    width: 400px;
+    background-position: 50% 50%;
+    background-size: cover;
+    /* object-fit: cover; */
+    background-color: transparent;
+}
+
+table tr th{
+    width: 200px;
+    border-radius: 8px;
+
+}
+
+table tr td{
+    width: 400px;
+    background-color: transparent;
+
+}
+
+.color{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+#nameProduct{
+    text-transform: uppercase;
+}
+
+table tr td a{
+    color: black;
+}
+
+table tr td a ion-icon{
+    border: 2px solid transparent;
+    font-size: 30px;
+    border-radius: 7px;
+    /* box-shadow: transparent 0px 3px 8px; */
+}
+table tr td a ion-icon:hover{
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+    transition: 0.3s ease-in-out;
+    border: 2px solid rgb(197, 197, 197);
+}

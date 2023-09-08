@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.frm {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    color: black;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container {
+    width: 60%;
+    background-color: white;
+    width: 450px;
+    height: 650px;
+    position: relative;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20%;
+    margin-left: 17%;
+    margin-top: 10%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.input-group {
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.input-group small{
+    color: red;
+    font-size: 12px;
+}
+
+.input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 0.5rem;
+    background: none;
+    padding: 0.8rem;
+    padding-right: 6rem;
+    font-size: 1rem;
+    color: #000000;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.inputDate{
+    border: solid 1.5px #9e9e9e;
+    border-radius: 0.5rem;
+    background: none;
+    padding: 0.75rem;
+    padding-right: 10rem;
+    font-size: 1rem;
+    color: #000000;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.inputDate:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid #000000;
+}.inputDate:focus~label,
+input:valid~label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #ffffff;
+    padding: 0.2em;
+    opacity: 1;
+    color: #000000;
+}.user-labelDate {
+    position: absolute;
+    left: 15px;
+    color: #000000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-label {
+    position: absolute;
+    left: 15px;
+    color: #000000;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.input:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid #000000;
+}
+
+.input:focus~label,
+input:valid~label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #ffffff;
+    padding: 0.2em;
+    color: #000000;
+}
+
+.container__signIn-tittle {
+
+    width: 90%;
+    font-size: 30px;
+    font-weight: bold;
+    /* text-align: center; */
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.container__signIn-text{
+
+    width: 90%;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.container__signIn-input {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container__signIn-button {
+    width: 75%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.container__signIn-button button {
+    width: 93%;
+    height: 40px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container__signIn-button button:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+.container__signIn-change {
+    width: 100%;
+    bottom: 15px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container__signIn-change a {
+    width: 25%;
+    height: 35px;
+    box-shadow: 3px 3px transparent;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: rgb(78, 78, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    /* align-self: center; */
+
+}
+
+.container__signIn-change a:hover {
+    text-decoration: underline;
+
+}
+
+.container__signIn-forget{
+    width: 93%;
+    margin: 0 auto;
+    margin-top: 10px;
+}.container__signIn-forget a{
+    color: rgb(78, 78, 255);
+}.container__signIn-forget a:hover{
+    text-decoration: underline rgb(78, 78, 255);
+}
+
+.container__signIn{
+    position: absolute;
+    height: 100%;
+    transform: translate(150%,0);
+    transition: 0.7s ease-in-out;
+    /* animation: nonActive 0.85s ease-in-out 1 forwards; */
+    /* display: none; */
+}
+
+.container__signIn.active{
+    position: absolute;
+    transform: translate(0,0);
+    transition: 0.7s ease-in-out;
+    /* animation: activeForm 0.85s ease-in-out 1 forwards; */
+
+}
+
+.container__signOut{
+    position: absolute;
+    height: 100%;
+    transform: translate(-150%,0);
+    transition: 0.7s ease-in-out;
+    /* animation: nonActive 0.85s ease-in-out 1 forwards; */
+    /* display: none; */
+}
+
+.container__signOut.active{
+    position: absolute;
+    transform: translate(0,0);
+    transition: 0.7s ease-in-out;
+    /* animation: activeForm 0.85s ease-in-out 1 forwards; */
+
+}
+
+/* @keyframes activeForm {
+    from{
+        opacity: 0;
+        transform: translate(-150%,0);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes nonActive {
+    from{
+        opacity: 1;
+        transform: translate(0,0);
+    }to{
+        opacity: 0;
+        transform: translate(150%,0);
+    }
+} */
+
+.slideShow{
+    height: 100%;
+    right: 0;
+    width: 40%;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.slideShow-image{
+    overflow: hidden;
+    object-fit: fill;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: showImageCol 0.7s ease-in-out 1 forwards;
+}
+@keyframes showImageCol{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+

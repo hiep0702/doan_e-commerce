@@ -1,0 +1,1 @@
+var btnDeleteProduct = document.querySelector('.btn-delete-product');

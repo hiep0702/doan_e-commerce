@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Abril Fatface", cursive;
+    font-family: "Noto Serif JP", serif;
+    font-family: "Work Sans", sans-serif;
+}
+
+a {
+    color: black;
+}
+
+small {
+    font-size: 14px;
+}
+
+.container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+}
+
+.sign-in {
+    width: 50%;
+    border-right: 1px solid #ccc;
+}
+
+.create-account {
+    width: 50%;
+}
+
+.wrapper {
+    width: 414px;
+    margin: 0 auto;
+}
+
+.wrapper h1 {
+    font-weight: 400;
+    font-size: 38px;
+}
+
+.wrapper .form {
+    position: relative;
+}
+
+.form-password-sign-in {
+    position: relative;
+}
+
+.show-password {
+    position: absolute;
+    top: 16px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    right: 14px;
+    font-size: 12px;
+}
+
+.wrapper .form > span {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 18px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.wrapper .form > input {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    line-height: 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.wrapper input:focus {
+    border: 1px solid black;
+}
+
+.form-input:not(:placeholder-shown) + .form-label,
+.form-input:focus + .form-label {
+    top: -11px;
+    padding: 4px;
+    background-image: linear-gradient(to top, #fff, #faf6f6);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.wrapper .option {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-left: 30px;
+}
+
+.wrapper .option input {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.wrapper .option button {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.numberphone-form {
+    position: relative;
+}
+
+.numberphone-form .icon-number {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.numberphone-form .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    height: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    right: 42px;
+    font-size: 13px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.numberphone-form .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+.numberphone-form .icon-number {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.numberphone-form:hover .tooltiptext {
+    visibility: visible;
+}
+
+.condition {
+    margin: 10px 0 20px 0;
+}
+
+.condition .condition-check-password {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+.sign-in .sign-in-btn,
+.create-account .create-account-btn {
+    margin-top: 26px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #101820;
+    color: #fff;
+}
+
+.sign-in .sign-in-btn:hover,
+.create-account .create-account-btn:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+    border: 1px solid black;
+}
+
+.policy {
+    margin: 20px 0;
+    position: relative;
+    padding-left: 42px;
+}
+
+.policy input {
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+}
+
+.policy p {
+    font-size: 15px;
+}
+
+.create-account .terms-privacy {
+    font-size: 12px;
+    margin: 20px 0;
+    color: #4a4a4a;
+}
+
+.create-account .terms-privacy a {
+    color: #4a4a4a;
+}
+
+.condition-succes {
+    background: #008827;
+}
+
+.error {
+    color: red;
+    /* display: none; */
+}

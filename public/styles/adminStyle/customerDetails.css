@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.container {
+    margin-left: 1000px;
+}
+
+.container label {
+    width: 250px;
+    display: inline-block;
+}
+
+.container input {
+    margin-top: 30px;
+}

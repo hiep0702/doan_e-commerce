@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    height: fit-content;
+    position: relative;
+}
+
+.sidebar {
+    background-color: white;
+    width: 18%;
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.sidebar ul {
+    width: 100%;
+    margin: 15px auto;
+    margin-top: 30px;
+}
+
+.sidebar ul h3 {
+    width: 50%;
+    margin-left: 30px;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin-top: 5px;
+    height: 60px;
+    display: flex;
+}
+
+.sidebar ul li:hover {
+    background-color: rgb(255, 229, 229);
+}
+
+.sidebar ul li a {
+    align-self: center;
+    padding-right: 100px;
+    padding-left: 40px;
+}
+
+.mainContent {
+    width: 82%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.mainContent_service {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.mainContent_service-storeLocation {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.mainContent_service-storeLocation-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mainContent_service-storeLocation-map {
+    width: 50%;
+    height: auto;
+
+}.mainContent_service-storeLocation-map-item{
+    width: 600px;
+    height: 450px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+iframe {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+iframe:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.mainContent_service-storeLocation-location {
+    margin-left: 100px;
+    width: calc(50% - 100px);
+}
+
+.mainContent_service-storeLocation-location p {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+}
+
+h2 {
+    margin: 30px;
+}
+
+.mainContent-return {
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.mainContent-return-info {
+    width: 92%;
+    margin: 0 auto;
+
+}
+
+.mainContent-return-info p {
+    font-size: 20px;
+}
+
+.mainContent-itemCareWarranty {
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.mainContent-itemCare,
+.mainContent-warranty {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.mainContent-itemCare p {
+    font-size: 20px;
+}
+
+.mainContent-warranty p {
+    font-size: 20px;
+}
+
+.mainContent-payment {
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.mainContent-payment-info {
+    width: 92%;
+    margin: 0 auto;
+
+}
+
+.mainContent-payment-info p {
+    font-size: 20px;
+}
+
+.mainContent-aboutUs {
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 40px;
+
+}
+
+.mainContent-aboutUs-info {
+    width: 92%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.mainContent-aboutUs-info p {
+    font-size: 20px;
+}
+

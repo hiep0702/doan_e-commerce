@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+table {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+table tr th,
+table tr td {
+    border: 1px solid black;
+}

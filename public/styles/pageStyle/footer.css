@@ -1,0 +1,138 @@
+.footer {
+    color: white;
+    width: 100%;
+    height: 340px;
+    background-color: #292929;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer__main {
+    width: 100%;
+    height: calc(100% - 46px);
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__copyrights {
+    width: 100%;
+    height: 46px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    z-index: 1;
+}
+
+.footer__main-service {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer__main-service ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer__main-service ul li:nth-child(1) {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.footer__main-service ul li:hover {
+    color: rgb(255, 230, 230);
+}
+
+.footer__main-service ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+
+}.footer__main-service ul p{
+    height: 65px;
+}
+
+.footer__main-service ul li a {
+    color: white;
+    align-self: start;
+}
+
+.footer__main-service ul li a:hover {
+    color: rgb(255, 230, 230);
+}
+
+
+.footer__main-socialMedia {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.footer__main-service ul p{
+    color: white;
+}.footer__main-service ul p:hover{
+    color: rgb(255, 230, 230);
+}
+.footer__main-socialMedia p{
+    color: white;
+}.footer__main-socialMedia p:hover{
+    color: rgb(255, 230, 230);
+}
+.footer__main-socialMedia p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer__main-socialMedia ul:nth-child(1) {
+    font-size: 30px;
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.footer__main-socialMedia ul:nth-child(2) {
+    font-size: 18px;
+
+}
+
+
+.footer__main-socialMedia ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+
+}
+
+.footer__main-socialMedia ul:hover {
+    color: rgb(255, 230, 230);
+}
+
+.footer__main-socialMedia ul li {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__main-socialMedia ul li a {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer__main-socialMedia ul li a img{
+    align-self: center;
+}
+.footer__main-socialMedia ul li a:hover {
+    color: rgb(255, 230, 230);
+}

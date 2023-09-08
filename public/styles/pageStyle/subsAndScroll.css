@@ -1,0 +1,158 @@
+/* subcribes */
+
+.subscribeUs {
+    width: 100%;
+    height: 462px;
+    background-color: #FFF4F4;
+    text-align: center;
+    display: inline-block;
+}
+
+.subscribeUs__text {
+    width: 734px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.subscribeUs__text-firstText {
+    font-size: 40px;
+    color: #151875;
+    font-weight: bold;
+}
+
+.subscribeUs__text-secondText {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.subscribeUs__text-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribeUs__text-input>input {
+    min-height: 48px;
+    max-width: 150px;
+    padding: 0 1rem;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    border: 1px solid #5e4dcd;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+
+.subscribeUs__text-input>input:focus,
+.subscribeUs__text-input>input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}
+
+.subscribeUs__text-input>button {
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #5e4dcd;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.subscribeUs__text-input>button:hover {
+    background-color: transparent;
+    border: 1px solid #5e4dcd;
+    color: black;
+}
+
+
+/* Scroll back to top */
+
+.scrollBackToTop {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 99999999;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.scrollBackToTop button {
+    border: 1px solid black;
+    background-color: rgb(236, 236, 236);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.scrollBackToTop button ion-icon {
+    align-self: center;
+    align-content: center;
+    margin-right: 9px;
+    margin-top: 4px;
+}
+
+.scrollBackToTop button:hover {
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* compare */
+
+.compareProducts{
+    position: fixed;
+    bottom: 70px;
+    left: 30px;
+    z-index: 99999999;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgb(197, 197, 197);
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.compareProducts:hover{
+    background-color: transparent;
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+.compareProducts__quantity{
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    color: white;
+    width: 25px;
+    text-align: center;
+    /* margin-bottom: 10px; */
+    line-height: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(255, 61, 61);
+}
+
+.compareProducts a{
+    color: black;
+    font-size: 50px;
+    width: 60px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.compareProducts a ion-icon{
+    margin-left: 17px;
+    margin-bottom: 3px;
+
+}
