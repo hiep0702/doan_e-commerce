@@ -13,14 +13,13 @@
                     @if ($user[0]->Avatar !== null)
                         <div class="container__info-top-avatar-img"
                             style="background-image: url('{{ asset('images/avatar/' . $user[0]->Avatar) }}')">
-                            {{-- <img class="uploaded_image" src="{{ asset('images/avatar/' . $user[0]->Avatar) }}" alt=""> --}}
                         @else
                             <div class="container__info-top-avatar-img"
                                 style="background-image: url('{{ asset('images/avatar/GOp5a-421-4212341_default-avatar-svg-h.jpg') }}')">
                     @endif
                     <div class="container__info-top-avatar-img-change">
                         <button type="button" id="changeAvatar">
-                            Change
+                            Thay ảnh
                         </button>
                     </div>
                 </div>
@@ -36,18 +35,18 @@
                 </button>
             </div>
             <div id="menu" class="container__info-top-menu ">
-                <button id="edit">Edit Profile</button>
-                <button id="change">Change Password</button>
+                <button id="edit">Sửa thông tin</button>
+                <button id="change">Đổi mật khẩu</button>
             </div>
             <form method="post" id="upload_form" class="formAvatar" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="formAvatar__change">
                     <ion-icon name="image-outline" id="imageChange"></ion-icon>
-                    <div class="textChoose">Choose File</div>
+                    <div class="textChoose">Chọn ảnh</div>
                     <input type="file" name="select_file" id="select_file">
                 </div>
 
-                <button type="submit" id="upload" name="upload" value="submit">Confirm</button>
+                <button type="submit" id="upload" name="upload" value="submit">Xác nhận</button>
                 <div class="alert" id="message" style="display: none"></div>
             </form>
         </div>
@@ -55,15 +54,15 @@
             <table>
                 @if (!empty($user->Rank))
                     <tr>
-                        <th>Member</th>
+                        <th>Thành viên</th>
                         <td>{{ $user->Rank }}</td>
                     </tr>
                     <tr>
-                        <th>First Name:</th>
+                        <th>Họ:</th>
                         <td>{{ $user->First_Name }}</td>
                     </tr>
                     <tr>
-                        <th>Last Name:</th>
+                        <th>Tên:</th>
                         <td>{{ $user->Last_Name }}</td>
                     </tr>
                     <tr>
@@ -71,24 +70,24 @@
                         <td>{{ $user->Email }}</td>
                     </tr>
                     <tr>
-                        <th>Phone:</th>
+                        <th>Số điện thoại:</th>
                         <td>{{ $user->Number_Phone }}</td>
                     </tr>
                     <tr>
-                        <th>DOB:</th>
+                        <th>Ngày sinh:</th>
                         <td>{{ $user->Dob }}</td>
                     </tr>
                 @else
                     <tr>
-                        <th>Member</th>
+                        <th>Thành viên</th>
                         <td>{{ $user[0]->Rank }}</td>
                     </tr>
                     <tr>
-                        <th>First Name:</th>
+                        <th>Họ:</th>
                         <td>{{ $user[0]->First_Name }}</td>
                     </tr>
                     <tr>
-                        <th>Last Name:</th>
+                        <th>Tên:</th>
                         <td>{{ $user[0]->Last_Name }}</td>
                     </tr>
                     <tr>
@@ -96,11 +95,11 @@
                         <td>{{ $user[0]->Email }}</td>
                     </tr>
                     <tr>
-                        <th>Phone:</th>
+                        <th>Số điện thoại:</th>
                         <td>{{ $user[0]->Number_Phone }}</td>
                     </tr>
                     <tr>
-                        <th>DoB:</th>
+                        <th>Ngày sinh:</th>
                         <td>{{ $user[0]->Dob }}</td>
                     </tr>
                 @endif
@@ -109,7 +108,7 @@
     </div>
     <div class="container__history">
         <div class="container__history-title">
-            <p>Shopping History</p>
+            <p>Lịch sử mua hàng</p>
         </div>
         <div class="container__history-list">
             @if (!empty($user[0]->Order_Code))
@@ -136,11 +135,11 @@
                             </div>
                             <div class="container__history-list-item-content-details">
                                 <div class="container__history-list-item-content-details-quantity">
-                                    <div>Total quantity</div>
+                                    <div>Tổng số lượng</div>
                                     <div>{{ $user->Total_Quantity }}</div>
                                 </div>
                                 <div class="container__history-list-item-content-details-totalPrice">
-                                    <div>Total price</div>
+                                    <div>Tổng tiền</div>
                                     <div>${{ $user->Total_Price }}</div>
                                 </div>
                             </div>
@@ -153,27 +152,27 @@
     </div>
     <form id="showEdit" class="container__edit ">
         <div class="editProfile">
-            <div class="editProfile__title">Edit Profile</div>
+            <div class="editProfile__title">Sửa thông tin</div>
             <div class="profile editProfile__content">
                 {{ csrf_field() }}
                 <div class="alert alert-danger print-error-msg" style="display:none">
                     <ul></ul>
                 </div>
                 @if (!empty($user->First_Name))
-                    <input id="firstname" type="text" value="{{ $user->First_Name }}" placeholder="  Firstname">
-                    <input id="lastname" type="text" value="{{ $user->Last_Name }}" placeholder="  Lastname">
+                    <input id="firstname" type="text" value="{{ $user->First_Name }}" placeholder="  Nhập họ">
+                    <input id="lastname" type="text" value="{{ $user->Last_Name }}" placeholder="  Nhập tên">
                     <input id="email" type="text" value="{{ $user->Email }}" placeholder="  Email">
                     <input id="dob" type="date" value="{{ $user->Dob }}" placeholder="  DOB">
-                    <input id="phone_number" type="text" value="{{ $user->Number_Phone }}" placeholder="  Phone Number">
+                    <input id="phone_number" type="text" value="{{ $user->Number_Phone }}" placeholder="  Nhập số điện thoại">
                 @else
-                    <input id="firstname" type="text" value="{{ $user[0]->First_Name }}" placeholder="  Firstname">
-                    <input id="lastname" type="text" value="{{ $user[0]->Last_Name }}" placeholder="  Lastname">
+                    <input id="firstname" type="text" value="{{ $user[0]->First_Name }}" placeholder="  Nhập họ">
+                    <input id="lastname" type="text" value="{{ $user[0]->Last_Name }}" placeholder="  Nhập tên">
                     <input id="email" type="text" value="{{ $user[0]->Email }}" placeholder="  Email">
                     <input id="dob" type="date" value="{{ $user[0]->Dob }}" placeholder="  DOB">
                     <input id="phone_number" type="text" value="{{ $user[0]->Number_Phone }}"
-                        placeholder="  Phone Number">
+                        placeholder="  Nhập số điện thoại">
                 @endif
-                <button id="btn" type="button">Submit</button>
+                <button id="btn" type="button">Lưu</button>
 
             </div>
             <button id="offEdit">
@@ -185,32 +184,32 @@
         @csrf
         {{-- <div class=" "> --}}
         <div class="editProfile">
-            <div class="editProfile__title">Change Password</div>
+            <div class="editProfile__title">Đổi mật khẩu</div>
             <div class="profile editProfile__content">
                 <div class="alert alert-danger print-error-msg" style="display:none">
                     <ul></ul>
                 </div>
-                <input id="" type="password" value="" placeholder="  Current Password"
+                <input id="" type="password" value="" placeholder="  Nhập mật khẩu hiện tại"
                     name="current_pass">
                 <small>
                     @error('current_pass')
                         {{ $message }}
                     @enderror
                 </small>
-                <input id="" type="password" value="" placeholder="  New Password" name="new_pass">
+                <input id="" type="password" value="" placeholder="  Nhập mật khẩu mới" name="new_pass">
                 <small>
                     @error('new_pass')
                         {{ $message }}
                     @enderror
                 </small>
-                <input id="" type="password" value="" placeholder="  Confirm New Password"
+                <input id="" type="password" value="" placeholder="  Nhập lại mật khẩu"
                     name="Cnew_pass">
                 <small>
                     @error('Cnew_pass')
                         {{ $message }}
                     @enderror
                 </small>
-                <button id="" type="submit">Submit</button>
+                <button id="" type="submit">Lưu</button>
             </div>
             <button id="offChange" type="">
                 <ion-icon name="close-outline"></ion-icon>

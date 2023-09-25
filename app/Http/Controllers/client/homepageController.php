@@ -38,19 +38,19 @@ class homepageController extends Controller
             
         $p = $products->take(4);
 
-        $dior = DB::table('brand_collections')
+        $adidas = DB::table('brand_collections')
             ->where('Brand_ID', 2)
             ->get();
 
-        $chanel = DB::table('brand_collections')
+        $nike = DB::table('brand_collections')
             ->where('Brand_ID', 1)
             ->get();
 
-        $Gucci = DB::table('brand_collections')
+        $newBalance = DB::table('brand_collections')
             ->where('Brand_ID', 3)
             ->get();
 
-        $LV = DB::table('brand_collections')
+        $puma = DB::table('brand_collections')
             ->where('Brand_ID', 4)
             ->get();
 
@@ -85,7 +85,7 @@ class homepageController extends Controller
             ->shuffle();
 
         return view('clientsPage.homePage', [
-            'middle_slides_img' => $middle_slides_img, 'top_slides_img' => $top_slides_img, 'randomPro' => $p, 'dior' => $dior, 'channel' => $chanel, 'LV' => $LV, 'gucci' => $Gucci, 'trending' => $tren, 'cart_quantity' => $cart_quantity
+            'middle_slides_img' => $middle_slides_img, 'top_slides_img' => $top_slides_img, 'randomPro' => $p, 'adidas' => $adidas, 'nike' => $nike, 'puma' => $puma, 'newBalance' => $newBalance, 'trending' => $tren, 'cart_quantity' => $cart_quantity
         ]);
     }
 

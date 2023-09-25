@@ -28,7 +28,7 @@
                 </div>
                 <div class="container__sideBar-box-cate">
                     <input type="checkbox" name="" id="filter" value="filter">
-                    <div class="container__sideBar-box-cate-name">Chain and Strap Wallet</div>
+                    <div class="container__sideBar-box-cate-name">Giày thể thao</div>
                 </div>
             </div>
             <div class="container__sideBar-box">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="container__sideBar-filter">
-                <button>Filter</button>
+                <button>Lọc</button>
             </div>
 
         </div>
@@ -138,7 +138,7 @@
 <hr class="main1">
 </div>
 <div class="container__featured">
-    <div class="container__featured-tittle">You May Also Like</div>
+    <div class="container__featured-tittle">Gợi ý sản phẩm</div>
     <div class="container__featured-products">
         <div class="container__featured-products-items">
             <div style="background-image: url(./8858227441694-removebg-preview.png)"

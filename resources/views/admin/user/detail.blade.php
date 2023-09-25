@@ -28,14 +28,14 @@ User {{$user->username}}
                 <thead>
                     <tr align="center">
                         <th>Code User</th>
-                        <th>User Name</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Tên đăng nhập</th>
+                        <th>Họ</th>
+                        <th>Tên</th>
                         <th>DOB</th>
                         <th>Email</th>
-                        <th>Number Phone</th>
+                        <th>Số điện thoại</th>
                         <th>Rank</th>
-                        <th>Total Spending (Doned Order)</th>
+                        <th>Tổng chi tiêu (Đơn hàng đã hoàn thành)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,11 +57,11 @@ User {{$user->username}}
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Order Code</th>
-                        <th>Total Quantity</th>
-                        <th>Total Price</th>
-                        <th>Status</th>
-                        <th>Location</th>
+                        <th>Mã đặt hàng</th>
+                        <th>Tổng số lượng</th>
+                        <th>Tổng giá</th>
+                        <th>Trạng thái</th>
+                        <th>Vị trí</th>
                         <th>Payment</th>
                         <th>Date</th>
                         <th>Detail</th>

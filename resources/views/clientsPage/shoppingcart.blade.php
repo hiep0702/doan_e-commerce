@@ -5,17 +5,17 @@
 @stop
 @section('content')
     <div class="main">
-        <div class="main__title">Shopping Cart</div>
+        <div class="main__title">Giỏ hàng</div>
         <form action="Cart" method="POST" class="ajaxform">
             @csrf
             <div class="container">
                 <div class="container__product">
                     <div class="container__product-big">
                         <div class="container__product-categories">
-                            <div class="container__product-categories-product">Product</div>
-                            <div class="container__product-categories-price">Price</div>
-                            <div class="container__product-categories-quantity">Quantity</div>
-                            <div class="container__product-categories-total">Total</div>
+                            <div class="container__product-categories-product">Sản phẩm</div>
+                            <div class="container__product-categories-price">Giá</div>
+                            <div class="container__product-categories-quantity">Số lượng</div>
+                            <div class="container__product-categories-total">Tổng tiền</div>
                             <div class="container__product-categories-button"></div>
                         </div>
                         <div class="container__product-list">
@@ -68,63 +68,56 @@
                 <div class="container__cartTotal">
                     <div class="container__cartTotal-big">
                         <div class="container__cartTotal-big2">
-                            <div class="container__cartTotal-big2-tittle">Cart Totals</div>
+                            <div class="container__cartTotal-big2-tittle">Tổng hàng</div>
                             <hr class="hr1">
                             <div class="container__cartTotal-big2-info">
                                 <div class="container__cartTotal-big2-info-sub">
-                                    <div class="container__cartTotal-big2-info-sub-left">Subtotals</div>
+                                    <div class="container__cartTotal-big2-info-sub-left">Phụ phí</div>
                                     <div class="subtotals container__cartTotal-big2-info-sub-right">${{ $subtotals }}
                                     </div>
                                 </div>
                                 <div class="container__cartTotal-big2-info-ship">
-                                    <div class="container__cartTotal-big2-info-left">Shipping</div>
+                                    <div class="container__cartTotal-big2-info-left">Phí ship</div>
                                     <div class="ship-money container__cartTotal-big2-info-right">$5</div>
                                 </div>
                                 <div class="container__cartTotal-big2-info-deli">
                                     {{-- <input type="text" list="ship" id="ship" placeholder="Delivery Option" /> --}}
                                     <select name="ship" id="ship">
-                                        <option value="5">Standard - $5</option>
-                                        <option value="8">Fast - $8</option>
-                                        <option value="12">Priority - $12</option>
+                                        <option value="5">Bình thường - $5</option>
+                                        <option value="8">Nhanh - $8</option>
+                                        <option value="12">Hỏa tốc - $12</option>
                                     </select>
                                 </div>
-                                {{-- <div class="container__cartTotal-big2-info-address">
-                                    <div class="container__cartTotal-big2-info-address-name">Address:</div>
-                                    <p>Address:</p>
-                                    <input type="text" Name="Adress">
-                                </div> --}}
                                 <div class="container__cartTotal-big2-info-give">
-                                    <div class="container__cartTotal-big2-info-give-left">Address</div>
+                                    <div class="container__cartTotal-big2-info-give-left">Địa chỉ</div>
                                 </div>
                                 <div id="aF" class="container__cartTotal-big2-info-addr">
-                                    <input type="text" placeholder="   Enter Your Address" name="Adress">
+                                    <input type="text" placeholder="   Nhập địa chỉ ..." name="Adress">
                                     @error('Adress')
                                         <small>{{ $message }}</small>
                                     @enderror
-                                    {{-- <div ></div> --}}
                                 </div>
                                 <div class="container__cartTotal-big2-info-give">
-                                    <div class="container__cartTotal-big2-info-give-left">Give Code</div>
+                                    <div class="container__cartTotal-big2-info-give-left">Mã giảm giá</div>
                                     <div class="container__cartTotal-big2-info-give-right" id="discount"></div>
                                 </div>
                                 <div class="container__cartTotal-big2-info-code">
-                                    <input id="discount-code" type="text" placeholder="   Enter Your Code"
+                                    <input id="discount-code" type="text" placeholder="   Nhập mã giảm giá ..."
                                         name="discount">
                                     <button type="button" id="discount-code_btn">
                                         <ion-icon alt="Enter Your Code" name="arrow-forward-outline"></ion-icon>
                                     </button>
-                                    {{-- <div ></div> --}}
                                 </div>
 
                             </div>
                             <hr class="hr1">
                             <div class="container__cartTotal-big2-totalPrice">
-                                <div class="container__cartTotal-big2-totalPrice-left">Total Price</div>
+                                <div class="container__cartTotal-big2-totalPrice-left">Tổng tiền</div>
                                 <div class="total-price container__cartTotal-big2-totalPrice-right" name="total_price">
                                 </div>
                             </div>
                             <div class="container__cartTotal-big2-button">
-                                <button type="submit">Check Out</button>
+                                <button type="submit">Thanh toán</button>
                             </div>
                         </div>
                     </div>
@@ -137,7 +130,7 @@
     </div>
     </div>
     <div class="container__featured">
-        <div class="container__featured-tittle">You May Also Like</div>
+        <div class="container__featured-tittle">Gợi ý sản phẩm</div>
         <div class="container__featured-products">
             <div class="container__featured-products">
                 @foreach ($ran_pro as $item)
@@ -149,9 +142,6 @@
                             <a href="{{ url('/client/wishlist/addtowishlist', $item->ID) }}" class="iconProduct">
                                 <ion-icon name="heart-outline"></ion-icon>
                             </a>
-                            {{-- <a href="" class="iconProduct">
-                    <ion-icon name="git-compare-outline"></ion-icon>
-                </a> --}}
                         </div>
                         <a href="{{ url('/client/products/specificProduct', $item->Slug) }}"
                             style="background-image: url({{ $item->Main_IMG }})"
@@ -167,20 +157,14 @@
     </div>
     <div class="subscribeUs">
         <div class="subscribeUs__text">
-            <div class="subscribeUs__text-firstText">Subscribe To Our Newsletter</div>
-            <div class="subscribeUs__text-secondText">Keep your finger on the pulse of fashion with weekly round-ups
-                of
-                our
-                latest arrivals, upcoming launches, special promotions and trend-focused editorials.
+            <div class="subscribeUs__text-firstText">Theo dõi chúng tôi</div>
+            <div class="subscribeUs__text-secondText">Luôn theo dõi nhịp đập của thời trang hàng tuần.
+                Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu hướng.
             </div>
             <input type="text" placeholder="Enter your email address"><button>SUBSCRIBE</button>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-
-
-
 
     <script>
         var result = document.querySelectorAll("div .result");
