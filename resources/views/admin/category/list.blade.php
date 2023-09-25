@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-List Categories
+Danh sách thể loại
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@ List Categories
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Categories
-                        <small>List</small>
+                    <h1 class="page-header">Thể loại
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.category.search')}}" method="post">
                         @csrf
-                        <input name="search" class="input-search" placeholder="Search Code / Name Category">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input name="search" class="input-search" placeholder="Tìm kiếm thể loại theo mã hoặc tên">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('error'))
@@ -46,10 +46,10 @@ List Categories
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Code</th>
-                        <th>Name</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
+                        <th>Mã</th>
+                        <th>Tên</th>
+                        <th>Xóa</th>
+                        <th>Sửa</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,9 +58,9 @@ List Categories
                         <td>{{$index + 1}}</td>
                         <td>{{$category->Code}}</td>
                         <td>{{$category->Name}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.category.delete', $category->ID)}}"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.category.edit', $category->ID)}}">Edit</a></td>
-                    </tr>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.category.delete', $category->ID)}}"> Xóa</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.category.edit', $category->ID)}}">Sửa</a></td>
+                    </tr>   
                     @endforeach
                 </tbody>
             </table>

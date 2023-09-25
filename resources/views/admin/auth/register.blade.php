@@ -7,7 +7,7 @@
     <meta name="description" content="Khóa Học Lập Trình Laravel Framework 7.x">
     <meta name="author" content="">
 
-    <title>Register</title>
+    <title>Đăng ký</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('admin/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,7 +30,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign Up</h3>
+                        <h3 class="panel-title">Đăng ký</h3>
                     </div>
                     @if (session('success'))
                         <div class="alert alert-success">
@@ -42,7 +42,7 @@
                             @csrf    
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Name" name="name" autofocus>
+                                    <input class="form-control" placeholder="Họ tên" name="name" autofocus>
                                     @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -54,19 +54,19 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password">
+                                    <input class="form-control" placeholder="Mật khẩu" name="password" type="password">
                                     @error('password')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Confirm Password" name="confirm_password" type="password">
+                                    <input class="form-control" placeholder="Nhập lại mật khẩu" name="confirm_password" type="password">
                                     @error('confirm_password')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-lg btn-success btn-block">Register</button>
-                                <a href="{{route('admin.auth.login')}}" class="btn btn-lg btn-warning btn-block">Login</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Đăng ký</button>
+                                <a href="{{route('admin.auth.login')}}" class="btn btn-lg btn-warning btn-block">Đăng nhập</a>
                             </fieldset>
                         </form>
                     </div>

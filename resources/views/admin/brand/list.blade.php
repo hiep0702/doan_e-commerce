@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-List Brands
+Danh sách thương hiệu
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@ List Brands
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Brands
-                        <small>List</small>
+                    <h1 class="page-header">Thương hiệu
+                        <small>Danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.brand.search')}}" method="post">
                         @csrf
-                        <input  name="search" class="input-search" placeholder="Search Code / Name ">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input  name="search" class="input-search" placeholder="Tìm kiếm theo mã hoặc tên ">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('error'))
@@ -47,12 +47,12 @@ List Brands
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Code</th>
-                        <th>Name</th>
+                        <th>Mã</th>
+                        <th>Tên</th>
                         <th>Logo</th>
-                        <th>Information</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
+                        <th>Thông tin</th>
+                        <th>Xóa</th>
+                        <th>Sửa</th>
                     </tr>
                 </thead>
                 <tbody id="table-body-side"></tbody>
@@ -64,8 +64,8 @@ List Brands
                         <td>{{$brand->Name}}</td>
                         <td><img width="100" src="{{$brand->Logo}}" alt=""></td>
                         <td>{{$brand->Information}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.brand.delete', $brand->ID)}}"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.brand.edit', $brand->ID)}}">Edit</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.brand.delete', $brand->ID)}}"> Xóa</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.brand.edit', $brand->ID)}}">Sửa</a></td>
                     </tr>
                     @endforeach
                 </tbody>
