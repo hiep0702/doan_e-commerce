@@ -308,7 +308,7 @@ class shoppingcartController extends Controller
         ];
 
         $messages = [
-            'required' => 'You Must Provide Your Address'
+            'required' => 'Bạn chưa nhập địa chỉ'
         ];
 
         $req->validate($rules, $messages);
@@ -435,10 +435,10 @@ class shoppingcartController extends Controller
                     ->where('Customer_ID', $customer_ID)
                     ->delete();
             }
-            Alert::success('Order Successfully!')->autoclose(1500);   
+            Alert::success('Đặt hàng thành công!')->autoclose(1500);   
             return redirect()->back();
         } else {
-            Alert::error('There Is No Items In Cart')->autoclose(1500);
+            Alert::error('Không có mặt hàng nào trong giỏ hàng')->autoclose(1500);
             return redirect()->back();
         }
     }

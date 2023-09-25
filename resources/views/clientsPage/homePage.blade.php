@@ -10,9 +10,9 @@
                 @foreach ($top_slides_img as $top)
                     <div style="background-image: url({{ $top->IMG }})" class="container__slideCol-item">
                         <div class="container__slideCol-item-content">
-                            <p class="container__left-frame-text-p1">Best Fashion For You..</p>
-                            <p class="container__left-frame-text-p2">New Fashion Collection Trends in 2023</p>
-                            <a href="">Shop Now</a>
+                            <p class="container__left-frame-text-p1">Sản phẩm tốt nhất cho bạn..</p>
+                            <p class="container__left-frame-text-p2">Xu hướng mới năm 2023</p>
+                            <a href="">Mua ngay</a>
                         </div>
                     </div>
                 @endforeach
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="container__featured">
-            <div class="container__featured-tittle">Featured Products</div>
+            <div class="container__featured-tittle">Sản phẩm nổi bật</div>
             <div class="container__featured-products">
                 @foreach ($randomPro as $item)
                     <div class="container__featured-products-items">
@@ -40,9 +40,6 @@
                             <a href="{{ url('/client/wishlist/addtowishlist', $item->ID) }}" class="iconProduct">
                                 <ion-icon name="heart-outline"></ion-icon>
                             </a>
-                            {{-- <a href="" class="iconProduct">
-                            <ion-icon name="git-compare-outline"></ion-icon>
-                        </a> --}}
                         </div>
                         <a href="{{ url('/client/products/specificProduct', $item->Slug) }}"
                             style="background-image: url({{ $item->Main_IMG }})"
@@ -58,14 +55,14 @@
         <div class="container__newArrivals">
             <div class="container__newArrivals-content">
                 <div class="container__newArrivals-content-tittle">
-                    <a href="{{ url('client/new-arrival') }}">New Arrivals</a>
+                    <a href="{{ url('client/new-arrival') }}">Sản phẩm mới</a>
                 </div>
                 <div class="container__newArrivals-content-text">
-                    Make bold fashion choices with our latest Purse and Wallets
+                    Giày thời trang cao cấp 
                 </div>
                 <div class="container__newArrivals-content-button">
                     <a href="{{ url('/client/products/new-arrival') }}">
-                        <p>Shop Now</p>
+                        <p>Mua ngay</p>
                     </a>
                 </div>
             </div>
@@ -89,7 +86,7 @@
         </div>
         <div class="container__featured">
             <div class="container__featured-tittle"><a href="url('/client/products/trending') "
-                    style="color: black">Trending Now</a> </div>
+                    style="color: black">Đang là xu hướng</a> </div>
             <div class="container__featured-products">
                 @foreach ($trending as $item)
                     <div class="container__featured-products-items">
@@ -100,9 +97,6 @@
                             <a href="{{ url('/client/wishlist/addtowishlist', $item->ID) }}" class="iconProduct">
                                 <ion-icon name="heart-outline"></ion-icon>
                             </a>
-                            {{-- <a href="" class="iconProduct">
-                                <ion-icon name="git-compare-outline"></ion-icon>
-                            </a> --}}
                         </div>
                         <a href="{{ url('/client/products/specificProduct', $item->Slug) }}"
                             style="background-image: url({{ $item->Main_IMG }})"
@@ -115,7 +109,7 @@
                 @endforeach
             </div>
         </div>
-        @foreach ($channel as $item)
+        @foreach ($nike as $item)
             <div class="container__listCol">
                 <div class="container__listCol-items">
                     <div class="container__listCol-items-img">
@@ -124,12 +118,12 @@
                         <div class="container__listCol-items-img-child"
                             style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                         <div class="container__listCol-items-tittle">
-                            <button onclick="location.href='{{ url('client/products/channel') }}'">View More</button>
+                            <button onclick="location.href='{{ url('client/products/channel') }}'">Xem thêm</button>
                         </div>
                     </div>
                 </div>
         @endforeach
-        @foreach ($dior as $item)
+        @foreach ($adidas as $item)
             <div class="container__listCol-items">
                 <div class="container__listCol-items-img">
                     <div class="container__listCol-items-img-child"
@@ -137,12 +131,12 @@
                     <div class="container__listCol-items-img-child"
                         style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/dior') }}'">View More</button>
+                        <button onclick="location.href='{{ url('client/products/dior') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
         @endforeach
-        @foreach ($gucci as $item)
+        @foreach ($newBalance as $item)
             <div class="container__listCol-items">
                 <div class="container__listCol-items-img">
                     <div class="container__listCol-items-img-child"
@@ -151,12 +145,12 @@
                         style="background-image: url({{ $item->After_Hover_IMG }});">
                     </div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/gucci') }}'">View More</button>
+                        <button onclick="location.href='{{ url('client/products/gucci') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
         @endforeach
-        @foreach ($LV as $item)
+        @foreach ($puma as $item)
             <div class="container__listCol-items">
                 <div class="container__listCol-items-img">
                     <div class="container__listCol-items-img-child"
@@ -164,46 +158,43 @@
                     <div class="container__listCol-items-img-child"
                         style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/louis-vuiton') }}'">View More</button>
+                        <button onclick="location.href='{{ url('client/products/louis-vuiton') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
     <div class="brands">
-        @foreach ($channel as $item)
+        @foreach ($nike as $item)
             <div class="brands__items">
                 <img src="{{ $item->IMG }}" style="height: 100px; width: 100px;" alt="">
-                <div class="brands__items-name">Chanel</div>
+                <div class="brands__items-name">Nike</div>
             </div>
         @endforeach
-        @foreach ($dior as $item)
+        @foreach ($adidas as $item)
             <div class="brands__items">
                 <img src="{{ $item->IMG }}" style="height: 100px; width: 100px;" alt="">
-                <div class="brands__items-name">Dior</div>
+                <div class="brands__items-name">Adidas</div>
             </div>
         @endforeach
-        @foreach ($gucci as $item)
+        @foreach ($newBalance as $item)
             <div class="brands__items">
                 <img src="{{ $item->IMG }}" style="height: 60px; width: 100px;" alt="">
-                <div class="brands__items-name">Gucci</div>
+                <div class="brands__items-name">New Balance</div>
             </div>
         @endforeach
-        @foreach ($LV as $item)
+        @foreach ($puma as $item)
             <div class="brands__items">
                 <img src="{{ $item->IMG }}" style="height: 100px; width: 100px;" alt="">
-                <div class="brands__items-name">Louis Vuitton</div>
+                <div class="brands__items-name">Puma</div>
             </div>
         @endforeach
     </div>
     <div class="subscribeUs">
         <div class="subscribeUs__text">
-            <div class="subscribeUs__text-firstText">Subscribe To Our Newsletter</div>
-            <div class="subscribeUs__text-secondText">Keep your finger on the pulse of fashion with weekly
-                round-ups
-                of
-                our
-                latest arrivals, upcoming launches, special promotions and trend-focused editorials.
+            <div class="subscribeUs__text-firstText">Theo dõi chúng tôi</div>
+            <div class="subscribeUs__text-secondText">Luôn theo dõi nhịp đập của thời trang hàng tuần.
+                Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu hướng.
             </div>
             <form action="" method="POST">
                 @csrf

@@ -7,7 +7,7 @@
         <div class="container">
 
             <div class="container__list">
-                <div class="container__list-tittle">Favorite List</div>
+                <div class="container__list-tittle">Danh sách sản phẩm yêu thích</div>
                 <div class="container__list-products">
                     <div class="container__list-products-top">
                         <div class="container__list-products-top-checkbox">
@@ -15,8 +15,8 @@
                         </div>
                         <div class="container__list-products-top-right">
                             <div class="container__list-products-top-right-total">
-                                <p>Total:</p>
-                                <p>{{ $total }} items</p>
+                                <p>Tổng:</p>
+                                <p>{{ $total }} món</p>
                             </div>
                             <div class="container__list-products-top-right-button">
                                 <a href=""><ion-icon name="cart-outline"></ion-icon></a>
@@ -62,7 +62,7 @@
 
     </div>
     <div class="container__featured">
-        <div class="container__featured-tittle">You May Also Like</div>
+        <div class="container__featured-tittle">Gợi ý sản phẩm</div>
         <div class="container__featured-products">
             <div class="container__featured-products">
                 @foreach ($ran_pro as $item)
@@ -74,9 +74,6 @@
                             <a href="{{ url('/client/wishlist/addtowishlist', $item->ID) }}" class="iconProduct">
                                 <ion-icon name="heart-outline"></ion-icon>
                             </a>
-                            {{-- <a href="" class="iconProduct">
-                    <ion-icon name="git-compare-outline"></ion-icon>
-                </a> --}}
                         </div>
                         <a href="{{ url('/client/products/specificProduct', $item->Slug) }}"
                             style="background-image: url({{ $item->Main_IMG }})"

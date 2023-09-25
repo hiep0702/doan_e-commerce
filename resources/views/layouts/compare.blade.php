@@ -12,10 +12,8 @@
                             Image
                         </th>
                         <td id="img" style="background-image: url({{ $product_1->Main_IMG }});">
-                            {{-- <img src="{{ $product_1->Main_IMG }}" width="250px" height="300px" alt=""> --}}
                         </td>
                         <td id="img" style="background-image: url({{ $product_2->Main_IMG }});">
-                            {{-- <img src="{{ $product_2->Main_IMG }}" width="250px" height="300px" alt=""> --}}
                         </td>
                     </tr>
                     <tr>
@@ -77,14 +75,20 @@
                         <th>
                         </th>
                         <td>
-                            <a href="{{ url('/client/wishlist/addtowishlist', $product_1->ID) }}"><ion-icon name="heart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/wishlist/addtocart', $product_1->ID) }}"><ion-icon name="cart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/products/deleteproduct1') }}"><ion-icon name="close-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtowishlist', $product_1->ID) }}"><ion-icon
+                                    name="heart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtocart', $product_1->ID) }}"><ion-icon
+                                    name="cart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/products/deleteproduct1') }}"><ion-icon
+                                    name="close-outline"></ion-icon></a>
                         </td>
                         <td>
-                            <a href="{{ url('/client/wishlist/addtowishlist', $product_2->ID) }}"><ion-icon name="heart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/wishlist/addtocart', $product_2->ID) }}"><ion-icon name="cart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/products/deleteproduct2') }}"><ion-icon name="close-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtowishlist', $product_2->ID) }}"><ion-icon
+                                    name="heart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtocart', $product_2->ID) }}"><ion-icon
+                                    name="cart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/products/deleteproduct2') }}"><ion-icon
+                                    name="close-outline"></ion-icon></a>
                         </td>
                     </tr>
                 @elseif($product_1 !== null && $product_2 == null)
@@ -151,9 +155,12 @@
                         <th>
                         </th>
                         <td>
-                            <a href="{{ url('/client/wishlist/addtowishlist', $product_1->ID) }}"><ion-icon name="heart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/wishlist/addtocart', $product_1->ID) }}"><ion-icon name="cart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/products/deleteproduct1') }}"><ion-icon name="close-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtowishlist', $product_1->ID) }}"><ion-icon
+                                    name="heart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtocart', $product_1->ID) }}"><ion-icon
+                                    name="cart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/products/deleteproduct1') }}"><ion-icon
+                                    name="close-outline"></ion-icon></a>
                         </td>
                         <td>
 
@@ -226,9 +233,12 @@
                         <td>
                         </td>
                         <td>
-                            <a href="{{ url('/client/wishlist/addtowishlist', $product_2->ID) }}"><ion-icon name="heart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/wishlist/addtocart', $product_2->ID) }}"><ion-icon name="cart-outline"></ion-icon></a>
-                            <a href="{{ url('/client/products/deleteproduct2') }}"><ion-icon name="close-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtowishlist', $product_2->ID) }}"><ion-icon
+                                    name="heart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/wishlist/addtocart', $product_2->ID) }}"><ion-icon
+                                    name="cart-outline"></ion-icon></a>
+                            <a href="{{ url('/client/products/deleteproduct2') }}"><ion-icon
+                                    name="close-outline"></ion-icon></a>
                         </td>
                     @else
                     <tr>

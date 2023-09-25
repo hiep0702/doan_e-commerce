@@ -15,60 +15,44 @@
                         <input type="text" placeholder="Search" name="searchBox">
                     </div>
                     <div class="container__sideBar-box">
-                        <div class="container__sideBar-box-tittle">Brands</div>
+                        <div class="container__sideBar-box-tittle">Thương hiệu</div>
                         <hr class="box1">
                         <div class="container__sideBar-box-cate">
-                            <input type="radio" name="brands" id="filter" value="Gucci">
-                            <div class="container__sideBar-box-cate-name">Gucci</div>
+                            <input type="radio" name="brands" id="filter" value="New Balance">
+                            <div class="container__sideBar-box-cate-name">New Balance</div>
                         </div>
                         <div class="container__sideBar-box-cate">
-                            <input type="radio" name="brands" id="filter" value="Louis Vuitton">
-                            <div class="container__sideBar-box-cate-name">Louis Vuitton</div>
+                            <input type="radio" name="brands" id="filter" value="Puma">
+                            <div class="container__sideBar-box-cate-name">Puma</div>
                         </div>
                         <div class="container__sideBar-box-cate">
-                            <input type="radio" name="brands" id="filter" value="Dior">
-                            <div class="container__sideBar-box-cate-name">Dior</div>
+                            <input type="radio" name="brands" id="filter" value="Adidas">
+                            <div class="container__sideBar-box-cate-name">Adidas</div>
                         </div>
                         <div class="container__sideBar-box-cate">
-                            <input type="radio" name="brands" id="filter" value="Chanel">
-                            <div class="container__sideBar-box-cate-name">Chanel</div>
+                            <input type="radio" name="brands" id="filter" value="Nike">
+                            <div class="container__sideBar-box-cate-name">Nike</div>
                         </div>
                     </div>
                     <div class="container__sideBar-box">
-                        <div class="container__sideBar-box-tittle">Price</div>
+                        <div class="container__sideBar-box-tittle">Giá tiền</div>
                         <hr class="box1">
                         <div class="container__sideBar-box-cate">
                             <input type="radio" name="Price" id="filter" value="high">
-                            <div class="container__sideBar-box-cate-name">High to low</div>
+                            <div class="container__sideBar-box-cate-name">Cao đến thấp</div>
                         </div>
                         <div class="container__sideBar-box-cate">
                             <input type="radio" name="Price" id="filter" value="ow">
-                            <div class="container__sideBar-box-cate-name">Low to high</div>
+                            <div class="container__sideBar-box-cate-name">Thấp đến cao</div>
                         </div>
                     </div>
-                    {{-- <div class="container__sideBar-box">
-                    <div class="container__sideBar-box-tittle">Collection</div>
-                    <hr class="box1">
-                    <div class="container__sideBar-box-cate">
-                        <input type="checkbox" name="" id="filter" value="filter">
-                        <div class="container__sideBar-box-cate-name">New Arrivals</div>
-                    </div>
-                    <div class="container__sideBar-box-cate">
-                        <input type="checkbox" name="" id="filter" value="filter">
-                        <div class="container__sideBar-box-cate-name">Trending</div>
-                    </div>
-                    <div class="container__sideBar-box-cate">
-                        <input type="checkbox" name="" id="filter" value="filter">
-                        <div class="container__sideBar-box-cate-name">Discount</div>
-                    </div>
-                </div> --}}
                     <div class="container__sideBar-filter">
-                        <button type="submit">Filter</button>
+                        <button type="submit">Lọc</button>
                     </div>
                 </form>
             </div>
             <div class="container__list">
-                <div class="container__list-tittle">Long Wallet</div>
+                <div class="container__list-tittle">Giày nam</div>
                 <div class="container__list-products">
                     @foreach ($longWallet as $item)
                         <div class="container__list-products-item">
@@ -79,9 +63,6 @@
                                 <a href="{{ url('/client/wishlist/addtowishlist', $item->ID) }}" class="iconProduct">
                                     <ion-icon name="heart-outline"></ion-icon>
                                 </a>
-                                {{-- <a href="" class="iconProduct">
-                            <ion-icon name="git-compare-outline"></ion-icon>
-                        </a> --}}
                             </div>
                             <a href="{{ url('/client/products/specificProduct', $item->Slug) }}"
                                 style="background-image: url({{ $item->Main_IMG }})"
@@ -99,7 +80,7 @@
     <hr class="main1">
     </div>
     <div class="container__featured">
-        <div class="container__featured-tittle">You May Also Like</div>
+        <div class="container__featured-tittle">Gợi ý sản phẩm</div>
         <div class="container__featured-products">
             @foreach ($randomProduct as $item)
                 <div class="container__featured-products-items">
@@ -110,9 +91,6 @@
                         <a href="{{ url('/client/wishlist/addtowishlist', $item->ID) }}" class="iconProduct">
                             <ion-icon name="heart-outline"></ion-icon>
                         </a>
-                        {{-- <a href="" class="iconProduct">
-                    <ion-icon name="git-compare-outline"></ion-icon>
-                </a> --}}
                     </div>
                     <a href="{{ url('/client/products/specificProduct', $item->Slug) }}"
                         style="background-image: url({{ $item->Main_IMG }})"
@@ -128,12 +106,9 @@
     </div>
     <div class="subscribeUs">
         <div class="subscribeUs__text">
-            <div class="subscribeUs__text-firstText">Subscribe To Our Newsletter</div>
-            <div class="subscribeUs__text-secondText">Keep your finger on the pulse of fashion with weekly
-                round-ups
-                of
-                our
-                latest arrivals, upcoming launches, special promotions and trend-focused editorials.
+            <div class="subscribeUs__text-firstText">Theo dõi chúng tôi</div>
+            <div class="subscribeUs__text-secondText">Luôn theo dõi nhịp đập của thời trang hàng tuần.
+                Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu hướng.
             </div>
             <div class="subscribeUs__text-input">
                 <input type="text" placeholder="Email address" autocomplete="off">

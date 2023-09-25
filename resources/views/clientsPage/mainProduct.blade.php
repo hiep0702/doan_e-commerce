@@ -78,7 +78,7 @@
         <button>Write Us A Reviews</button>
     </div>
     <div class="container__featured">
-        <div class="container__featured-tittle">You May Also Like</div>
+        <div class="container__featured-tittle">Gợi ý sản phẩm</div>
         <div class="container__featured-products">
             @foreach ($ran_pro as $item)
                 <a class="container__featured-products-items"
@@ -96,12 +96,9 @@
     </div>
     <div class="subscribeUs">
         <div class="subscribeUs__text">
-            <div class="subscribeUs__text-firstText">Subscribe To Our Newsletter</div>
-            <div class="subscribeUs__text-secondText">Keep your finger on the pulse of fashion with weekly
-                round-ups
-                of
-                our
-                latest arrivals, upcoming launches, special promotions and trend-focused editorials.
+            <div class="subscribeUs__text-firstText">Theo dõi chúng tôi</div>
+            <div class="subscribeUs__text-secondText">Luôn theo dõi nhịp đập của thời trang hàng tuần.
+                Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu hướng.
             </div>
             <div class="subscribeUs__text-input">
                 <input type="text" placeholder="Email address" autocomplete="off">

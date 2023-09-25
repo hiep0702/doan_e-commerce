@@ -14,14 +14,14 @@
         <div id="smallHeader" class="headerSmall ">
             <div class="headerSmallBig">
                 <div class="headerSmall__logo">
-                    <a href="{{ url('client/home') }}">PURSELLET</a>
+                    <a href="{{ url('client/home') }}">Sugar</a>
                 </div>
                 <div id="dropSmallMenu" class="headerSmall__menu">
-                    <div><a href="{{ url('client/home') }}">Home</a></div>
-                    <div>Categories</div>
-                    <div>Collection</div>
-                    <div>Brands</div>
-                    <div><a href="{{ url('client/aboutUs') }}">About Us</a></div>
+                    <div><a href="{{ url('client/home') }}">Trang chủ</a></div>
+                    <div>Thể loại</div>
+                    <div>Bộ sưu tập</div>
+                    <div>Thương hiệu</div>
+                    <div><a href="{{ url('client/aboutUs') }}">Về chúng tôi</a></div>
                 </div>
                 <div class="headerSmall__right">
                         <a href="{{ url('client/myProfile') }}" class="">
@@ -47,25 +47,25 @@
                 <div id="showSmallMenu" class="headerSmall__menuDrop">
                     <div class="headerSmall__menuDrop-big">
                         <div class="headerSmall__menuDrop-categories">
-                            <a href="{{ url('client/products/long-wallet') }}">Long Wallet</a>
-                            <a href="{{ url('client/products/small-wallet') }}">Small Wallet</a>
-                            <a href="{{ url('client/products/cards-holder') }}">Cards Holder</a>
-                            <a href="{{ url('client/products/chain-and-strap') }}">Chain and Strap</a>
+                            <a href="{{ url('client/products/long-wallet') }}">Giày nam</a>
+                            <a href="{{ url('client/products/small-wallet') }}">Giày nữ</a>
+                            <a href="{{ url('client/products/cards-holder') }}">Giày thời trang</a>
+                            <a href="{{ url('client/products/chain-and-strap') }}">Giày thể thao</a>
                         </div>
                         <div class="headerSmall__menuDrop-collection">
-                            <a href="{{ url('client/products/new-arrival') }}">New Arrivals</a>
-                            <a href="{{ url('client/products/trending') }}">Trending</a>
-                            <a href="{{ url('client/products/discount') }}">On Sales</a>
+                            <a href="{{ url('client/products/new-arrival') }}">Mới nhất</a>
+                            <a href="{{ url('client/products/trending') }}">Xu hướng</a>
+                            <a href="{{ url('client/products/discount') }}">Đang bán</a>
                         </div>
                         <div class="headerSmall__menuDrop-brands">
-                            <a href="{{ url('client/products/dior') }}">Dior</a>
-                            <a href="{{ url('client/products/gucci') }}">Gucci</a>
-                            <a href="{{ url('client/products/channel') }}">Chanel</a>
-                            <a href="{{ url('client/products/louis-vuiton') }}">Louis Vuiton</a>
+                            <a href="{{ url('client/products/dior') }}">Adidas</a>
+                            <a href="{{ url('client/products/gucci') }}">New Balance</a>
+                            <a href="{{ url('client/products/channel') }}">Nike</a>
+                            <a href="{{ url('client/products/louis-vuiton') }}">Puma</a>
                         </div>
                         <div class="headerSmall__menuDrop-aboutUs">
-                            <a href="{{ url('client/aboutUs') }}">Store</a>
-                            <a href="{{ url('client/aboutUs') }}">Contact Us</a>
+                            <a href="{{ url('client/aboutUs') }}">Cửa hàng</a>
+                            <a href="{{ url('client/aboutUs') }}">Liên hệ</a>
                         </div>
                     </div>
                 </div>
@@ -82,46 +82,46 @@
                     </div>
                     <div class="header__sideBar-cate">
                         <div class="header__sideBar-cate-menu">
-                            <div><a href="{{ url('client/home') }}">Home</a></div>
+                            <div><a href="{{ url('client/home') }}">Trang chủ</a></div>
                             <div class="" id="dropdown1">
-                                <div class="dropdown1__name">Categories</div>
+                                <div class="dropdown1__name">Thể loại</div>
                                 <ion-icon name="caret-forward-outline"></ion-icon>
                             </div>
                             <div class="" id="dropdown2">
-                                <div class="dropdown2__name">Collection</div>
+                                <div class="dropdown2__name">Bộ sưu tập</div>
                                 <ion-icon name="caret-forward-outline"></ion-icon>
                             </div>
                             <div class="" id="dropdown3">
-                                <div class="dropdown3__name">Brands</div>
+                                <div class="dropdown3__name">Thương hiệu</div>
                                 <ion-icon name="caret-forward-outline"></ion-icon>
                             </div>
-                            <div><a href="{{ url('client/Cart') }}">My Shopping Cart</a></div>
-                            <div><a href="{{ url('client/wishList') }}">My Wish List</a></div>
-                            <div><a href="{{ url('client/aboutUs') }}">About Us</a></div>
+                            <div><a href="{{ url('client/Cart') }}">Giỏ hàng</a></div>
+                            <div><a href="{{ url('client/wishList') }}">Sản phẩm yêu thích</a></div>
+                            <div><a href="{{ url('client/aboutUs') }}">Về chúng tôi</a></div>
                         </div>
                     </div>
                 </div>
                 <div id="drop1" class="">
                     <div class="header__side-category">
-                        <div><a href="{{ url('client/products/long-wallet') }}">Long Wallet</a></div>
-                        <div><a href="{{ url('client/products/small-wallet') }}">Small Wallet</a></div>
-                        <div><a href="{{ url('client/products/cards-holder') }}">Cards Holder</a></div>
-                        <div><a href="{{ url('client/products/chain-and-strap') }}">Chain and Strap Wallet</a></div>
+                        <div><a href="{{ url('client/products/long-wallet') }}">Giày nam</a></div>
+                        <div><a href="{{ url('client/products/small-wallet') }}">Giày nữ</a></div>
+                        <div><a href="{{ url('client/products/cards-holder') }}">Giày thời trang</a></div>
+                        <div><a href="{{ url('client/products/chain-and-strap') }}">Giày thể thao</a></div>
                     </div>
                 </div>
                 <div id="drop2" class="">
                     <div class="header__side-collection">
-                        <div><a href="{{ url('client/products/new-arrival') }}">New Arrivals</a></div>
-                        <div><a href="{{ url('client/products/trending') }}">Trending</a></div>
-                        <div><a href="{{ url('client/products/discount') }}">On Sales</a></div>
+                        <div><a href="{{ url('client/products/new-arrival') }}">Mới nhất</a></div>
+                        <div><a href="{{ url('client/products/trending') }}">Xu hướng</a></div>
+                        <div><a href="{{ url('client/products/discount') }}">Đang bán</a></div>
                     </div>
                 </div>
                 <div id="drop3" class="">
                     <div class="header__side-brand">
-                        <div><a href="{{ url('client/products/dior') }}">Dior</a></div>
-                        <div><a href="{{ url('client/products/gucci') }}">Gucci</a></div>
-                        <div><a href="{{ url('client/products/channel') }}">Channel</a></div>
-                        <div><a href="{{ url('client/products/louis-vuiton') }}">Louis Vuitton</a></div>
+                        <div><a href="{{ url('client/products/dior') }}">Adidas</a></div>
+                        <div><a href="{{ url('client/products/gucci') }}">New Balance</a></div>
+                        <div><a href="{{ url('client/products/channel') }}">Nike</a></div>
+                        <div><a href="{{ url('client/products/louis-vuiton') }}">Puma</a></div>
                     </div>
                 </div>
             </div>
@@ -129,15 +129,15 @@
                 <div id="openLog" class="header__log">
                     <div class="header__log-signed" style="">
                         <div class="header__log-signed-profile">
-                            <a href="{{ url('client/myProfile') }}">My Profile</a>
+                            <a href="{{ url('client/myProfile') }}">Tài khoản</a>
                         </div>
                         <div class="header__log-signed-signOut">
-                            <a href="{{ url('client/logout') }}">Sign Out</a>
+                            <a href="{{ url('client/logout') }}">Đăng xuất</a>
                         </div>
                     </div>
                 </div>
                 <div id="shoppingCart" class="header__cart">
-                    <div class="header__cart-tittle"><a href="{{ url('client/Cart') }}">Shopping Cart</a>
+                    <div class="header__cart-tittle"><a href="{{ url('client/Cart') }}">Giỏ hàng</a>
                         <button id="hideCart">
                             <ion-icon name="chevron-up-outline"></ion-icon>
                         </button>
@@ -190,19 +190,18 @@
                         <p class="total-price">${{ $total_price }}</p>
                     </div>
                     <div class="header__cart-checkout">
-                        <a href="{{ url('client/Cart') }}">Check Out</a>
+                        <a href="{{ url('client/Cart') }}">Thanh toán</a>
                     </div>
                 </div>
                 <div class="header__update">
                     <div id="topUpdate" class="header__update-all">
-                        <div class="header__update-1"><a style="color: white" href=""> UPDATE: Sign in and
-                                play a game to collect a discounted up to 20% code</a>
+                        <div class="header__update-1"><a style="color: white" href=""> Cập nhật: Đăng nhập và
+                            chơi trò chơi để nhận mã giảm giá lên tới 20%</a>
                         </div>
-                        <div class="header__update-1"><a style="color: white" href=""> Use code "bananhkhoa" to
-                                discount 20% on your bill</a>
+                        <div class="header__update-1"><a style="color: white" href=""> Sử dụng mã "hiepdepzai" để
+                            giảm giá 20% trên hóa đơn của bạn</a>
                         </div>
-                        <div class="header__update-1"><a style="color: white" href=""> New collection is
-                                coming soon</a>
+                        <div class="header__update-1"><a style="color: white" href=""> Bộ sưu tập mới sắp ra mắt</a>
                         </div>
                     </div>
                 </div>
@@ -215,13 +214,12 @@
                     </div>
                     <div class="header__nav-logo">
                         <a style="color: black" href="{{ url('client/home') }}">
-                            P U R S E L L E T
+                            S U G A R
                         </a>
                     </div>
                     <div class="header__nav-right">
                         <a href="{{ url('client/myProfile') }}" class="userName">{{ $customer[0]->username }}</a>
                         <a class="iconHead" id="log">
-                            {{-- <ion-icon name="person"></ion-icon> --}}
                             @if ($customer[0]->Avatar !== null)
                                 <div class="avatarUser"
                                     style="background-image:url('{{ asset('images/avatar/' . $customer[0]->Avatar) }}')">
@@ -246,15 +244,15 @@
                 <div id="openLog" class="header__log">
                     <div class="header__log-notSign">
                         <div class="header__log-notSign-signIn">
-                            <a href="{{ url('client/login') }}">Sign In</a>
+                            <a href="{{ url('client/login') }}">Đăng nhập</a>
                         </div>
                         <div class="header__log-notSign-signUp">
-                            <a href="{{ url('client/login') }}">Sign Up</a>
+                            <a href="{{ url('client/login') }}">Đăng ký</a>
                         </div>
                     </div>
                 </div>
                 <div id="shoppingCart" class="header__cart">
-                    <div class="header__cart-tittle"><a href="{{ url('client/Cart') }}">Shopping Cart</a>
+                    <div class="header__cart-tittle"><a href="{{ url('client/Cart') }}">Giỏ hàng</a>
                         <button id="hideCart">
                             <ion-icon name="chevron-up-outline"></ion-icon>
                         </button>
@@ -296,14 +294,13 @@
                 </div>
                 <div class="header__update">
                     <div id="topUpdate" class="header__update-all">
-                        <div class="header__update-1"><a style="color: white" href=""> UPDATE: Sign in and
-                                play a game to collect a discounted up to 20% code</a>
+                        <div class="header__update-1"><a style="color: white" href=""> Cập nhật: Đăng nhập và
+                            chơi trò chơi để nhận mã giảm giá lên tới 20%</a>
                         </div>
-                        <div class="header__update-1"><a style="color: white" href=""> Use code "bananhkhoa" to
-                                discount 20% on your bill</a>
+                        <div class="header__update-1"><a style="color: white" href=""> Sử dụng mã "hiepdepzai" để
+                            giảm giá 20% trên hóa đơn của bạn</a>
                         </div>
-                        <div class="header__update-1"><a style="color: white" href=""> New collection is
-                                coming soon</a>
+                        <div class="header__update-1"><a style="color: white" href=""> Bộ sưu tập mới sắp ra mắt</a>
                         </div>
                     </div>
                 </div>
@@ -316,7 +313,7 @@
                     </div>
                     <div class="header__nav-logo">
                         <a style="color: black" href="{{ url('client/home') }}">
-                            P U R S E L L E T
+                            S U G A R
                         </a>
                     </div>
                     <div class="header__nav-right">
@@ -324,53 +321,14 @@
                             <ion-icon name="person-outline"></ion-icon>
                         </a>
                         <a class="iconHead" href="{{ url('client/login') }}">
-                            {{-- <div class="quantityCart">{{ $cart_quantity }}</div> --}}
                             <ion-icon name="cart-outline"></ion-icon>
                         </a>
                         <a href="{{ url('client/wishList') }}" class="iconHead">
-                            {{-- <div class="quantityCart">{{ $wishList_quantity }}</div> --}}
                             <ion-icon name="heart-outline"></ion-icon>
                         </a>
                     </div>
                 </div>
             @endif
-
-            {{-- <div class="header__update">
-                <div id="topUpdate" class="header__update-all">
-                    <div class="header__update-1"><a style="color: white" href=""> Sale up to 50%..</a></div>
-                    <div class="header__update-1"><a style="color: white" href=""> Give code for..</a></div>
-                    <div class="header__update-1"><a style="color: white" href=""> Free ship if..</a></div>
-                </div>
-            </div>
-            <div class="header__nav">
-                <div class="header__nav-menu">
-                    <button style="background-color: transparent; border: none" id="openMenu">
-                        <ion-icon style="font-size: 40px;" name="menu-outline"></ion-icon>
-                        <p>Menu</p>
-                    </button>
-                </div>
-                <div class="header__nav-logo">
-                    <a style="color: black" href="{{ url('client/home') }}">
-                        P U R S E L L E T
-                    </a>
-                </div>
-                <div class="header__nav-right">
-
-                    <button id="log">
-                            <ion-icon name="person"></ion-icon>
-                            <ion-icon name="person-outline"></ion-icon>
-                    </button>
-                    <button id="showCart">
-                            <div class="quantityCart">{{ $cart_quantity }}</div>
-                        <ion-icon name="cart-outline"></ion-icon>
-                        </a>
-                        <button>
-                                <div class="quantityCart">{{ $wishList_quantity }}</div>
-                            <ion-icon name="heart-outline"></ion-icon>
-                        </button>
-                </div>
-            </div>
-        </div> --}}
     </form>
 
 
@@ -440,6 +398,4 @@
     <script src="{{ asset('javascript/client/header.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
 </body>
-
-
 </html>
