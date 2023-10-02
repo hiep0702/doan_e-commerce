@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-List Product 
+Danh sách sản phẩm 
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@ List Product
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Products
-                        <small>List</small>
+                    <h1 class="page-header">Sản phẩm
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.product.search')}}" method="get">
                         @csrf
-                        <input name="search" class="input-search" placeholder="Search Code / Product / Brand / Category">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input name="search" class="input-search" placeholder="Tìm Mã / Sản phẩm / Thương hiệu / Thể loại">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('error'))
@@ -46,15 +46,15 @@ List Product
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Code</th>
-                        <th>Brand</th>
-                        <th>Category</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
-                        <th>Add</th>
-                        <th>Detail</th>
+                        <th>Mã</th>
+                        <th>Thương hiệu</th>
+                        <th>Thể loại</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Ảnh</th>
+                        <th>Xóa</th>
+                        <th>Sửa</th>
+                        <th>Thêm</th>
+                        <th>Chi tiết</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,10 +66,10 @@ List Product
                         <td>{{$product->Category_Name}}</td>
                         <td>{{$product->Name}}</td>
                         <td><img width="100" src="{{$product->IMG}}" alt=""></td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.product.delete', $product->ID)}}"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.product.edit', $product->ID)}}">Edit</a></td>
-                        <td class="center"><i class="fa fa-plus fa-fw"></i> <a href="{{route('admin.product-detail.create', $product->ID)}}">Add</a></td>
-                        <td class="center"><i class="fa fa-eye fa-fw"></i> <a href="{{route('admin.product-detail.detail', $product->ID)}}">View</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.product.delete', $product->ID)}}"> Xóa</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.product.edit', $product->ID)}}">Sửa</a></td>
+                        <td class="center"><i class="fa fa-plus fa-fw"></i> <a href="{{route('admin.product-detail.create', $product->ID)}}">Thêm</a></td>
+                        <td class="center"><i class="fa fa-eye fa-fw"></i> <a href="{{route('admin.product-detail.detail', $product->ID)}}">Xem thêm</a></td>
                     </tr>
                     @endforeach
                 </tbody>

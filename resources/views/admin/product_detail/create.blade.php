@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Creates Product Detail
+    Tạo chi tiết sản phẩm
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Product Detail
-                    <small>Add</small>
+                <h1 class="page-header">Chi tiết sản phẩm
+                    <small>thêm mới</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -19,7 +19,7 @@
                     @csrf
                     {{-- Product --}}
                     <div class="form-group" >
-                        <label>Product</label>
+                        <label>Sản phẩm</label>
                         <select class="form-control" name="product_id">
                             <option selected value="{{$product->ID}}">{{$product->Name}}</option>
                         </select>
@@ -27,8 +27,8 @@
 
                     {{-- Import Price --}}
                     <div class="form-group">
-                        <label>Product Detail Import Price</label>
-                        <input class="form-control" name="import_price" placeholder="Please Enter Product Detail Import Price" />
+                        <label>Giá nhập</label>
+                        <input class="form-control" name="import_price" placeholder="Nhập giá nhập" />
                         @error('import_price')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -38,8 +38,8 @@
 
                     {{-- Import Price --}}
                     <div class="form-group">
-                        <label>Product Detail Export Price</label>
-                        <input class="form-control" name="export_price" placeholder="Please Enter Product Detail Export Price" />
+                        <label>Giá bán</label>
+                        <input class="form-control" name="export_price" placeholder="Nhập giá bán" />
                         @error('export_price')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -49,8 +49,8 @@
 
                     {{-- Sale Price --}}
                     <div class="form-group">
-                        <label>Product Detail Sale Price</label>
-                        <input class="form-control" name="sale_price" placeholder="Please Enter Product Detail Sale Price" />
+                        <label>Giá giảm</label>
+                        <input class="form-control" name="sale_price" placeholder="Nhập giá giảm" />
                         @error('sale_price')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -60,8 +60,8 @@
 
                     {{-- Main Image --}}
                     <div class="form-group">
-                        <label>Product Detail Main Image</label>
-                        <input class="form-control" name="main_img" placeholder="Please Enter Product Detail Main Image" />
+                        <label>Ảnh chính</label>
+                        <input class="form-control" name="main_img" placeholder="Nhập ảnh chính" />
                         @error('main_img')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -71,8 +71,8 @@
 
                     {{-- Slide Image 1 --}}
                     <div class="form-group">
-                        <label>Product Detail Slide Image 1</label>
-                        <input class="form-control" name="slide_img_1" placeholder="Please Enter Product Detail Slide Image 1" />
+                        <label>Ảnh slide 1</label>
+                        <input class="form-control" name="slide_img_1" placeholder="Nhập ảnh slide 1" />
                         @error('slide_img_1')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -82,8 +82,8 @@
 
                     {{-- Slide Image 2 --}}
                     <div class="form-group">
-                        <label>Product Detail Slide Image 2</label>
-                        <input class="form-control" name="slide_img_2" placeholder="Please Enter Product Detail Slide Image 2" />
+                        <label>Ảnh slide 2</label>
+                        <input class="form-control" name="slide_img_2" placeholder="Nhập ảnh slide 2" />
                         @error('slide_img_2')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -93,8 +93,8 @@
 
                     {{-- Information --}}
                     <div class="form-group">
-                        <label>Product Detail Information</label>
-                        <input class="form-control" name="information" placeholder="Please Enter Product Detail Information" />
+                        <label>Thông tin chi tiết sản phẩm</label>
+                        <input class="form-control" name="information" placeholder="Nhập thông tin chi tiết sản phẩm" />
                         @error('information')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -104,8 +104,8 @@
 
                     {{-- Material --}}
                     <div class="form-group">
-                        <label>Product Detail Material</label>
-                        <input class="form-control" name="material" placeholder="Please Enter Product Detail Material" />
+                        <label>Chi tiết chất liệu</label>
+                        <input class="form-control" name="material" placeholder="Nhập chi tiết chất liệu" />
                         @error('material')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -115,8 +115,8 @@
 
                     {{-- Color --}}
                     <div class="form-group">
-                        <label>Product Detail Color</label>
-                        <input class="form-control" name="color" placeholder="Please Enter Product Detail Color" />
+                        <label>Chi tiết màu sắc</label>
+                        <input class="form-control" name="color" placeholder="Nhập chi tiết màu sắc" />
                         @error('color')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -126,8 +126,8 @@
 
                     {{-- Size --}}
                     <div class="form-group">
-                        <label>Product Detail Size</label>
-                        <input class="form-control" name="size" placeholder="Please Enter Product Detail Size" />
+                        <label>Chi tiết kích cỡ</label>
+                        <input class="form-control" name="size" placeholder="Nhập chi tiết kích cỡ" />
                         @error('size')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -137,8 +137,8 @@
 
                     {{-- Code --}}
                     <div class="form-group">
-                        <label>Product Detail Code</label>
-                        <input class="form-control" name="code" placeholder="Please Enter Product Detail Code" />
+                        <label>Mã chi tiết sản phẩm</label>
+                        <input class="form-control" name="code" placeholder="Nhập mã chi tiết sản phẩm" />
                         @error('code')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -148,8 +148,8 @@
 
                     {{-- Quantity --}}
                     <div class="form-group">
-                        <label>Product Detail Quantity</label>
-                        <input class="form-control" name="quantity" placeholder="Please Enter Product Detail Quantity" type="number" min="1"/>
+                        <label>Chi tiết số lượng sản phẩm</label>
+                        <input class="form-control" name="quantity" placeholder="Nhập chi tiết số lượng sản phẩm" type="number" min="1"/>
                         @error('quantity')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -159,7 +159,7 @@
 
                     {{-- Is Trending or Feature or Arrivals --}}
                     <div class="form-group">
-                        <label>Is Trending? </label><br>
+                        <label>Đang là xu hướng? </label><br>
                         <label class="radio-inline">
                             <input name="is_trending" value="0" checked type="radio">No
                         </label>
@@ -169,7 +169,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Is Feature? </label><br>
+                        <label>Là tính năng? </label><br>
                         <label class="radio-inline">
                             <input name="is_feature" value="0" checked type="radio">No
                         </label>
@@ -179,7 +179,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Is Arrivals? </label><br>
+                        <label>Là sản phẩm mới? </label><br>
                         <label class="radio-inline">
                             <input name="is_arrivals" value="0" checked type="radio">No
                         </label>
@@ -187,7 +187,7 @@
                             <input name="is_arrivals" value="New Arrivals" type="radio">Yes
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">Create</button>
+                    <button type="submit" class="btn btn-default">Tạo</button>
                     <form>
             </div>
         </div>

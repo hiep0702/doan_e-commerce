@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Edit Payment
+    Chỉnh sửa phương thức
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Payment
-                        <small>Edit</small>
+                    <h1 class="page-header">Phương thức
+                        <small>Chỉnh sửa</small>
                     </h1>
                 </div>
                 @if (session('success'))
@@ -24,16 +24,16 @@
                         @csrf
                         @method('put')
                         <div class="form-group">
-                            <label>Method</label>
+                            <label>Phương thức</label>
                             <input class="form-control" value="{{ $payment->Method }}" name="method"
-                                placeholder="Please Enter Payment" />
+                                placeholder="Nhập phương thức" />
                             @error('method')
                                 <div class="alert alert-danger">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-default">Payment Edit </button>
+                        <button type="submit" class="btn btn-default">Cập nhật </button>
                         <form>
                 </div>
             </div>

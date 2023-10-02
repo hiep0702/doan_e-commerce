@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    List Subscribe Member
+    Danh sách đăng ký thành viên
 @endsection
 
 @section('content')
@@ -10,20 +10,19 @@
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Subscribe Member
-                            <small>List</small>
+                        <h1 class="page-header">Thành viên đăng ký
+                            <small>Danh sách</small>
                         </h1>
                     </div>
                     <div class="form-group">
                         <form action="{{ route('admin.mail.search') }}" method="post">
                             @csrf
-                            <input name="search" class="input-search" placeholder="Search Mail ">
-                            <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                            <input name="search" class="input-search" placeholder="Tìm Mail ">
+                            <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                         </form>
                     </div>
                     <div class="heading-right">
-                        <a href="{{ route('admin.product.create') }}" class="btn-add-product btn btn-warning">Add
-                            Product</a>
+                        <a href="{{ route('admin.product.create') }}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                     </div>
                 </div>
                 @if (!empty($mails))
@@ -42,7 +41,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('admin.mail.mail') }}" class="btn-add-product btn btn-success">Send Mail</a>
+                    <a href="{{ route('admin.mail.mail') }}" class="btn-add-product btn btn-success">Gửi thư</a>
                     {!! $mails->links() !!}
                 @endif
             </div>

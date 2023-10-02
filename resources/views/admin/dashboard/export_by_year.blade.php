@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Sales By Year
+    Bán hàng theo năm
 @endsection
 
 @section('content')
@@ -10,8 +10,8 @@
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Sales
-                            <small>By Year</small>
+                        <h1 class="page-header">Bán hàng
+                            <small>theo năm</small>
                         </h1>
                     </div>
                 </div>
@@ -19,12 +19,12 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr align="center">
-                                <th>Total Quantity</th>
-                                <th>1st Sale</th>
-                                <th>2nd Sale</th>
-                                <th>3rd Sale</th>
-                                <th>Sales By Day</th>
-                                <th>Sales By Month</th>
+                                <th>Tổng số lượng</th>
+                                <th>Lần 1</th>
+                                <th>Lần 2</th>
+                                <th>Lần 3</th>
+                                <th>Theo ngày</th>
+                                <th>Theo tháng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,26 +32,26 @@
                                     <td>{{ $total_quantity }}</td>
                                     <td>
                                         @if(!empty($top_products[0]->Name)) 
-                                            {{$top_products[0]->Name}} :{{$top_products[0]->Quantity}} Products
+                                            {{$top_products[0]->Name}} :{{$top_products[0]->Quantity}} Sản phẩm
                                         @endif
                                     </td>
                                     <td>
                                         @if(!empty($top_products[1]->Name)) 
-                                            {{$top_products[1]->Name}} :{{$top_products[1]->Quantity}} Products
+                                            {{$top_products[1]->Name}} :{{$top_products[1]->Quantity}} Sản phẩm
                                         @endif
                                     </td>
                                     <td>
                                         @if(!empty($top_products[2]->Name)) 
-                                            {{$top_products[2]->Name}} :{{$top_products[2]->Quantity}} Products
+                                            {{$top_products[2]->Name}} :{{$top_products[2]->Quantity}} Sản phẩm
                                         @endif
                                     </td>
                                 <td class="center">
                                     <i class="fa fa-pencil-o  fa-fw"></i>
-                                    <a href="{{ route('admin.dashboard.export-by-day') }}"> See more</a>
+                                    <a href="{{ route('admin.dashboard.export-by-day') }}"> Xem thêm</a>
                                 </td>
                                 <td class="center">
                                     <i class="fa fa-pencil fa-fw"></i>
-                                    <a href="{{ route('admin.dashboard.export-by-month') }}"> See more</a>
+                                    <a href="{{ route('admin.dashboard.export-by-month') }}"> Xem thêm</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -84,7 +84,7 @@
                         data: {
                             labels: listOfHours,
                             datasets: [{
-                                    label: 'Quantity',
+                                    label: 'Số lượng',
                                     data: listOfQuantity,
                                     borderWidth: 1
                                 },

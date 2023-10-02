@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    List Discounts Code
+    Danh sách mã giảm giá
 @endsection
 
 @section('content')
@@ -10,20 +10,19 @@
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Discounts Code
-                            <small>List</small>
+                        <h1 class="page-header">Mã giảm giá
+                            <small>danh sách</small>
                         </h1>
                     </div>
                     <div class="form-group">
                         <form action="{{ route('admin.discount.search') }}" method="post">
                             @csrf
-                            <input name="search" class="input-search" placeholder="Search Code / Discount / Date / Status">
-                            <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                            <input name="search" class="input-search" placeholder="Tìm Mã / % Giảm / Ngày / Trạng thái">
+                            <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                         </form>
                     </div>
                     <div class="heading-right">
-                        <a href="{{ route('admin.product.create') }}" class="btn-add-product btn btn-warning">Add
-                            Product</a>
+                        <a href="{{ route('admin.product.create') }}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                     </div>
                 </div>
                 @if (session('error'))
@@ -48,15 +47,15 @@
                         <thead>
                             <tr align="center">
                                 <th>STT</th>
-                                <th>Code</th>
-                                <th>Discount</th>
-                                <th>Status</th>
-                                <th>Created At</th>
-                                <th>Date Start</th>
-                                <th>Date End</th>
-                                <th>Temporary</th>
-                                <th>Delete</th>
-                                <th>Edit</th>
+                                <th>Mã</th>
+                                <th>Giảm giá</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày tạo</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Tạm thời</th>
+                                <th>Xóa</th>
+                                <th>Sửa</th>
                             </tr>
                         </thead>
                         <tbody id="table-body-side"></tbody>
@@ -80,9 +79,9 @@
                                     <td>{{ $code->Date_End }}</td>
                                     <td>{{ $code->Temporary ? 'V' : '' }}</td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                            href="{{ route('admin.discount.delete', $code->ID) }}"> Delete</a></td>
+                                            href="{{ route('admin.discount.delete', $code->ID) }}"> Xóa</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                                            href="{{ route('admin.discount.edit', $code->ID) }}">Edit</a></td>
+                                            href="{{ route('admin.discount.edit', $code->ID) }}">Sửa</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

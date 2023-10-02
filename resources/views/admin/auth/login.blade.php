@@ -7,7 +7,7 @@
     <meta name="description" content="Khóa Học Lập Trình Laravel Framework 7.x">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>Đăng nhập</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('admin/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,7 +30,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">Đăng nhập</h3>
                     </div>
                     @if (session('error'))
                         <div class="alert alert-danger">
@@ -58,8 +58,8 @@
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
-                                <a href="{{route('admin.auth.register')}}" class="btn btn-lg btn-warning btn-block">Register</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Đăng nhập</button>
+                                <a href="{{route('admin.auth.register')}}" class="btn btn-lg btn-warning btn-block">Đăng ký</a>
                             </fieldset>
                         </form>
                     </div>

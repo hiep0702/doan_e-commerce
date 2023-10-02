@@ -16,7 +16,7 @@
                     <form action="{{ route('admin.mail.send-mail') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Content</label>
+                            <label>Nội dung</label>
                             <textarea id="demo" name="mail" style="width:1000px;height:500px"></textarea>
                             @error('mail')
                                 <div class="alert alert-danger">
@@ -24,7 +24,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-default">Send</button>
+                        <button type="submit" class="btn btn-default">Gửi</button>
                         <form>
                 </div>
             </div>

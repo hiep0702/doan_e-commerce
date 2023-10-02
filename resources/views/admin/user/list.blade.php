@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-List User
+Danh sách người dùng
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@ List User
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Users
-                        <small>List</small>
+                    <h1 class="page-header">Người dùng
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.user.search')}}" method="GET">
                         @csrf
-                        <input name="search" class="input-search" placeholder="Search...">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input name="search" class="input-search" placeholder="">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('error'))
@@ -46,16 +46,16 @@ List User
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Code User</th>
-                        <th>User Name</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>DOB</th>
+                        <th>Mã người dùng</th>
+                        <th>Tài khoản</th>
+                        <th>Họ</th>
+                        <th>Tên</th>
+                        <th>Ngày sinh</th>
                         <th>Email</th>
-                        <th>Number Phone</th>
-                        <th>Total Spending</th>
+                        <th>Số điện thoại</th>
+                        <th>Tổng chi tiêu</th>
                         <th>Rank</th>
-                        <th>Detail</th>
+                        <th>Chi tiết</th>
                     </tr>
                 </thead>
                 <tbody>

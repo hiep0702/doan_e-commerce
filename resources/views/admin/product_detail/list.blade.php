@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    List Products Detail
+    Danh sách chi tiết sản phẩm
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Products Detail
-                        <small>List</small>
+                    <h1 class="page-header">Chi tiết sản phẩm
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.product-detail.search')}}" method="GET">
                         @csrf
-                        <input name="search" class="input-search" placeholder="Code / Price / Material / Color / Quantity...">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input name="search" class="input-search" placeholder="">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('success'))
@@ -42,23 +42,23 @@
                     <thead>
                         <tr align="center">
                             <th>STT</th>
-                            <th>Code</th>
-                            <th>Import Price</th>
-                            <th>Export Price</th>
-                            <th>Sale Price</th>
-                            <th>Main Image</th>
-                            <th>Slide Image 1</th>
-                            <th>Slide Image 2</th>
-                            <th>Information</th>
-                            <th>Material</th>
-                            <th>Color</th>
-                            <th>Size</th>
-                            <th>Quantity</th>
-                            <th>Trending</th>
-                            <th>Arrivals</th>
-                            <th>Feature</th>
-                            <th>Delete</th>
-                            <th>Edit</th>
+                            <th>Mã</th>
+                            <th>Giá nhập</th>
+                            <th>Giá bán</th>
+                            <th>Giá giảm</th>
+                            <th>Ảnh chính</th>
+                            <th>Ảnh slide 1</th>
+                            <th>Ảnh slide 2</th>
+                            <th>Thông tin</th>
+                            <th>Chất liệu</th>
+                            <th>Màu sắc</th>
+                            <th>Kích cỡ</th>
+                            <th>Số lượng</th>
+                            <th>Xu hướng</th>
+                            <th>Mới về</th>
+                            <th>Tính năng</th>
+                            <th>Xóa</th>
+                            <th>Sửa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,8 +86,8 @@
                             <td>{{$product->Is_Trending ? 'V' : ''}}</td>
                             <td>{{$product->Is_New_Arrivals ? 'V' : ''}}</td>
                             <td>{{$product->Is_Feature ? 'V' : ''}}</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.product-detail.delete', $product->ID)}}"> Delete</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.product-detail.edit', $product->ID)}}">Edit</a></td>
+                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.product-detail.delete', $product->ID)}}"> Xóa</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.product-detail.edit', $product->ID)}}">Sửa</a></td>
                         </tr>
                         @endforeach
                     </tbody>

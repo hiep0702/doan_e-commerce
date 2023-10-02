@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    List Slides
+    Danh sách Slides
 @endsection
 
 @section('content')
@@ -11,18 +11,18 @@
             <div class="heading">
                 <div>
                     <h1 class="page-header">Slides
-                        <small>List</small>
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.slide.search')}}" method="get">
                         @csrf
-                        <input name="search" class="input-search" placeholder="Search Name / Title / Slide">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input name="search" class="input-search" placeholder="Tìm tên / tiêu đề / slide">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('success'))
@@ -42,13 +42,13 @@
                     <thead>
                         <tr align="center">
                             <th>STT</th>
-                            <th>Brand</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Top Slide</th>
-                            <th>Middle Slide</th>
-                            <th>Delete</th>
-                            <th>Edit</th>
+                            <th>Thương hiệu</th>
+                            <th>Tiêu đề</th>
+                            <th>Ảnh</th>
+                            <th>Slide đầu</th>
+                            <th>Slide giữa</th>
+                            <th>Xóa</th>
+                            <th>Sửa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,8 +60,8 @@
                             <td><img src="{{$slide->IMG}}" style="width: 200px" alt=""></td>
                             <td>{{$slide->Is_Top_Slide ? 'V' : ''}}</td>
                             <td>{{$slide->Is_Middle_Slide ? 'V' : ''}}</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.slide.delete', $slide->ID)}}"> Delete</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.slide.edit', $slide->ID)}}">Edit</a></td>
+                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.slide.delete', $slide->ID)}}"> Xóa</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.slide.edit', $slide->ID)}}">Sửa</a></td>
                         </tr>
                         @endforeach
                     </tbody>

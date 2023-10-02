@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Creates Category
+    Thêm thể loại
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>Add</small>
+                <h1 class="page-header">Thể loại
+                    <small>Thêm mới</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -18,8 +18,8 @@
                 <form action="{{ route('admin.category.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Category Name</label>
-                        <input class="form-control" name="name" placeholder="Please Enter Category Name" />
+                        <label>Tên thể loại</label>
+                        <input class="form-control" name="name" placeholder="Nhập tên thể loại" />
                         @error('name')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -27,15 +27,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Category Code</label>
-                        <input class="form-control" name="code" placeholder="Please Enter Category Code" />
+                        <label>Mã thể loại</label>
+                        <input class="form-control" name="code" placeholder="Nhập mã thể loại" />
                         @error('code')
                             <div class="alert alert-danger">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-default">Create</button>
+                    <button type="submit" class="btn btn-default">Thêm</button>
                     <form>
             </div>
         </div>

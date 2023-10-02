@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Order
+    Đơn đặt hàng
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Orders
-                        <small>List</small>
+                    <h1 class="page-header">Đơn đặt hàng
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.order-detail.search')}}" method="GET">
                         @csrf
-                        <input name="search" class="input-search" placeholder="Order Code / Method / Status / Location / Date">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input name="search" class="input-search" placeholder="Mã đơn / Thanh toán / Trạng thái / Địa chỉ / Ngày tạo">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('success'))
@@ -42,18 +42,18 @@
                     <thead>
                         <tr align="center">
                             <th>STT</th>
-                            <th>Order Code</th>
-                            <th>Customer Code</th>
-                            <th>Customer</th>
-                            <th>Total Quantity</th>
-                            <th>Total Price</th>
-                            <th>Status</th>
-                            <th>Location</th>
-                            <th>Payment</th>
-                            <th>Discount Code</th>
-                            <th>Date</th>
-                            <th>Detail</th>
-                            <th>Edit</th>
+                            <th>Mã đơn</th>
+                            <th>Mã khách hàng</th>
+                            <th>Khách hàng</th>
+                            <th>Tổng số lượng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Địa chỉ</th>
+                            <th>Thanh toán</th>
+                            <th>Mã giảm giá</th>
+                            <th>Ngày tạo đơn</th>
+                            <th>Chi tiết</th>
+                            <th>Sửa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,8 +80,8 @@
                             <td>{{$order->Method}}</td>
                             <td>{{$order->Code}}</td>
                             <td>{{$order->created_at}}</td>
-                            <td class="center"><i class="fa fa-eye  fa-fw"></i><a href="{{route('admin.order-detail.detail', $order->ID)}}"> View</a></td>
-                            <td class="center"><i class="fa fa-pencil  fa-fw"></i><a href="{{route('admin.order-detail.edit', $order->ID)}}"> Edit</a></td>
+                            <td class="center"><i class="fa fa-eye  fa-fw"></i><a href="{{route('admin.order-detail.detail', $order->ID)}}"> Xem thêm</a></td>
+                            <td class="center"><i class="fa fa-pencil  fa-fw"></i><a href="{{route('admin.order-detail.edit', $order->ID)}}"> Sửa</a></td>
                         </tr>
                         @endforeach
                     </tbody>

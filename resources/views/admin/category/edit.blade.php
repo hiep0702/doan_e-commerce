@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Edit Category
+    Sửa thể loại
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>Edit</small>
+                <h1 class="page-header">Thể loại
+                    <small>Chỉnh sửa</small>
                 </h1>
             </div>
             @if (session('success'))
@@ -24,8 +24,8 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label>Category Name</label>
-                        <input class="form-control" value="{{$category->Name}}" name="name" placeholder="Please Enter Category Name" />
+                        <label>Tên thể loại</label>
+                        <input class="form-control" value="{{$category->Name}}" name="name" placeholder="Nhập tên thể loại" />
                         @error('name')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -33,15 +33,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Category Code</label>
-                        <input class="form-control" value="{{$category->Code}}" name="code" placeholder="Please Enter Category Code" />
+                        <label>Mã thể loại</label>
+                        <input class="form-control" value="{{$category->Code}}" name="code" placeholder="Nhập mã thể loại" />
                         @error('code')
                             <div class="alert alert-danger">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-default">Category Edit</button>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
                     <form>
             </div>
         </div>

@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-Revenue By Day
+Doanh thu theo ngày
 @endsection
 
 @section('content')
@@ -10,8 +10,8 @@ Revenue By Day
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Revenue
-                            <small>By Day</small>
+                        <h1 class="page-header">Doanh thu
+                            <small>theo ngày</small>
                         </h1>
                     </div>
                 </div>
@@ -19,10 +19,10 @@ Revenue By Day
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr align="center">
-                                <th>Revenue By Day</th>
-                                <th>Profit By Day</th>
-                                <th>Revenue By Month</th>
-                                <th>Revenue By Year</th>
+                                <th>Doanh thu theo ngày</th>
+                                <th>PLợi nhuận theo ngày</th>
+                                <th>Doanh thu theo tháng</th>
+                                <th>Doanh thu theo năm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,11 +31,11 @@ Revenue By Day
                                 <td>${{ $total_revenue - $total_capital }}</td>
                                 <td class="center">
                                     <i class="fa fa-pencil-o  fa-fw"></i>
-                                    <a href="{{route('admin.dashboard.revenue-by-month')}}"> See more</a>
+                                    <a href="{{route('admin.dashboard.revenue-by-month')}}"> Xem thêm</a>
                                 </td>
                                 <td class="center">
                                     <i class="fa fa-pencil fa-fw"></i>
-                                    <a href="{{route('admin.dashboard.revenue-by-year')}}"> See more</a>
+                                    <a href="{{route('admin.dashboard.revenue-by-year')}}"> Xem thêm</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -69,12 +69,12 @@ Revenue By Day
                         data: {
                             labels: listOfHours,
                             datasets: [{
-                                    label: 'Profit',
+                                    label: 'Lợi nhuận',
                                     data: listOfProfit,
                                     borderWidth: 1
                                 },
                                 {
-                                    label: 'Revenue',
+                                    label: 'Doanh thu',
                                     data: listOfRevenue,
                                     borderWidth: 1
                                 }
