@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Users By Day
+    Người dùng theo ngày
 @endsection
 
 @section('content')
@@ -10,8 +10,8 @@
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Users
-                            <small>By Day</small>
+                        <h1 class="page-header">Người dùng
+                            <small>theo ngày</small>
                         </h1>
                     </div>
                 </div>
@@ -19,10 +19,10 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr align="center">
-                                <th>Total Users</th>
-                                <th>Today's New Users</th>
-                                <th>Uers By Month</th>
-                                <th>Users By Year</th>
+                                <th>Tổng số người dùng</th>
+                                <th>Người dùng mới ngày hôm nay</th>
+                                <th>Người dùng theo tháng</th>
+                                <th>Người dùng theo năm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,11 +31,11 @@
                                 <td>{{ $new_users }}</td>
                                 <td class="center">
                                     <i class="fa fa-pencil-o  fa-fw"></i>
-                                    <a href="{{ route('admin.dashboard.user-by-month') }}"> See more</a>
+                                    <a href="{{ route('admin.dashboard.user-by-month') }}"> Xem thêm</a>
                                 </td>
                                 <td class="center">
                                     <i class="fa fa-pencil fa-fw"></i>
-                                    <a href="{{ route('admin.dashboard.user-by-year') }}"> See more</a>
+                                    <a href="{{ route('admin.dashboard.user-by-year') }}"> Xem thêm</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -71,7 +71,7 @@
                         data: {
                             labels: listOfHours,
                             datasets: [{
-                                label: 'User',
+                                label: 'Người dùng',
                                 data: listOfUsers,
                                 borderWidth: 1
                             }, ]

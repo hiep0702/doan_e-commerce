@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Edit Order {{ $order->ID }}
+    Chỉnh sửa đơn hàng {{ $order->ID }}
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Order
-                        <small>Edit</small>
+                    <h1 class="page-header">Đơn hàng
+                        <small>chỉnh sửa</small>
                     </h1>
                 </div>
                 @if (session('success'))
@@ -25,31 +25,31 @@
                         @method('put')
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Order Code</label>:
+                                <label>Mã đơn hàng</label>:
                                 {{ $order->Code }}
                             </h1>
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Customer Code</label>:
+                                <label>Mã khách hàng</label>:
                                 {{ $user->Code }}
                             </h1>
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Customer Name</label>:
+                                <label>Họ khách hàng</label>:
                                 {{ $order->customer->Last_Name }}
                             </h1>
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Customer Name</label>:
+                                <label>Tên khách hàng</label>:
                                 {{ $order->Location }}
                             </h1>
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Total Quantity</label>:
+                                <label>Tổng số lượng</label>:
                                 @php
                                     $quantity = App\Models\OrderDetail::where('Order_ID', $order->ID)->sum('Quantity');
                                     $price = App\Models\OrderDetail::where('Order_ID', $order->ID)->sum('Price');
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Total Price</label>:
+                                <label>Tổng tiền</label>:
                                 @php
                                     echo '$' . $price;
                                 @endphp
@@ -67,13 +67,13 @@
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Payment</label>:
+                                <label>Thanh toán</label>:
                                 {{ $order->payment->Method }}
                             </h1>
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Discount Code</label>:
+                                <label>Mã giảm giá</label>:
                                 @if (!@empty($order->code))
                                     {{ $order->code->Code }}
                                 @endif
@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Status</label>:
+                                <label>Trạng thái</label>:
                                 @php
                                     if ($order->Status == 'Done' || $order->Status == 'Cancel') {
                                         echo $order->Status;
@@ -93,16 +93,12 @@
                                         </select>';
                                     }
                                 @endphp
-                                {{-- <select name="status">
-                                <option @if ($order->Status == 'Pending') selected @endif value="Pending">Pending</option>
-                                <option @if ($order->Status == 'Done') selected @endif value="Done">Done</option>
-                                <option @if ($order->Status == 'Cancel') selected @endif value="Cancel">Cancel</option>
-                            </select> --}}
+                                
                             </h1>
                         </div>
                         <button @if ($order->Status == 'Done' || $order->Status == 'Cancel') disabled @endif {{-- type="submit"  --}}
                             class="btn btn-default" id="submit-btn">
-                            Order Edit
+                            Cập nhật
                         </button>
                         <form>
                 </div>
@@ -114,37 +110,21 @@
     </div>
 
     <script>
-        // $(document).ready(function(){
-        //     $('#brand').click(function(){
-        //         var brand = $(this).val();
-        //         if(brand != ''){
-        //             var _token = $('input[name="_token"]').val();
-        //             $.ajax({
-        //                 url:"{{ route('admin.product.search') }}",
-        //                 method:"POST",
-        //                 data:{brand:brand, _token:_token},
-        //                 success:function(data){
-        //                 $('#categories').html(data);
-        //                 }
-        //             })
-        //         }
-        //     })
-        // })
 
         $(document).ready(function() {
             $('#submit-btn').click(function(e) {
                 e.preventDefault();
                 let status = $('#status').val();
                 if (status == 'Done') {
-                    if (confirm('Did you doned this order?')) {
+                    if (confirm('Bạn đã thực hiện đơn hàng này chưa?')) {
                         $('#form').submit();
                     }
                 } else if (status == 'Cancel') {
-                    if (confirm('Do you want cancels this order?')) {
+                    if (confirm('Bạn có muốn hủy đơn hàng này không?')) {
                         $('#form').submit();
                     }
                 } else {
-                    alert('This order has pending status');
+                    alert('Đơn hàng này có trạng thái chờ xử lý');
                 }
             });
         });

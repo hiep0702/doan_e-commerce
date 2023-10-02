@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Edit Slide
+    Chỉnh sửa Slide
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Slide
-                        <small>Edit</small>
+                        <small>chỉnh sửa</small>
                     </h1>
                 </div>
                 @if (session('success'))
@@ -24,7 +24,7 @@
                         @csrf
                         @method('put')
                         <div class="form-group">
-                            <label>Brand</label>
+                            <label>Thương hiệu</label>
                             <select class="form-control" name="brand" id="">
                                 @foreach ($brands as $brand)
                                     <option @if ($slide->Brand_ID == $brand->ID) checked @endif value="{{ $brand->ID }}">{{ $brand->Name }}</option>
@@ -37,8 +37,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Title</label>
-                            <input class="form-control" value="{{$slide->Tittle}}" name="title" placeholder="Please Enter Title" />
+                            <label>Tiêu đề</label>
+                            <input class="form-control" value="{{$slide->Tittle}}" name="title" placeholder="Nhập tiêu đề" />
                             @error('title')
                                 <div class="alert alert-danger">
                                     {{ $message }}
@@ -46,8 +46,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Image</label>
-                            <input class="form-control" value="{{$slide->IMG}}" name="image" placeholder="Please Enter Image" />
+                            <label>Ảnh</label>
+                            <input class="form-control" value="{{$slide->IMG}}" name="image" placeholder="Nhập link ảnh" />
                             @error('image')
                                 <div class="alert alert-danger">
                                     {{ $message }}
@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Is Top Slide? </label><br>
+                            <label>Là slide đầu? </label><br>
                             <label class="radio-inline">
                                 <input name="top_or_middle_slide" @if ($slide->Is_Top_Slide == 'Top Slide') checked @endif value="top_slide" type="radio">
                             </label>
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Is Middle Slide? </label><br>
+                            <label>Là slide giữa? </label><br>
                             <label class="radio-inline">
                                 <input name="top_or_middle_slide" @if ($slide->Is_Middle_Slide == 'Middle Slide') checked @endif value="middle_slide" type="radio">
                             </label>
@@ -78,7 +78,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-default">Slide Edit</button>
+                        <button type="submit" class="btn btn-default">Cập nhật</button>
                         <form>
                 </div>
             </div>

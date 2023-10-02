@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-List Payment
+Danh sách thanh toán
 @endsection
 
 @section('content')
@@ -10,19 +10,19 @@ List Payment
         <div class="row">
             <div class="heading">
                 <div>
-                    <h1 class="page-header">Payment
-                        <small>List</small>
+                    <h1 class="page-header">Thanh toán
+                        <small>danh sách</small>
                     </h1>
                 </div>
                 <div class="form-group">
                     <form action="{{route('admin.payment.search')}}" method="post">
                         @csrf
-                        <input  name="search" class="input-search" placeholder="Search Code / Discount / Date">
-                        <button type="submit" class="btn-add-product btn btn-success">Search</button>
+                        <input  name="search" class="input-search" placeholder="Tìm mã / Giám giá / Ngày tạo">
+                        <button type="submit" class="btn-add-product btn btn-success">Tìm kiếm</button>
                     </form>
                 </div>
                 <div class="heading-right">
-                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Add Product</a>
+                    <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-warning">Thêm sản phẩm</a>
                 </div>
             </div>
             @if (session('error'))
@@ -47,9 +47,9 @@ List Payment
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Method</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
+                        <th>Phương thức</th>
+                        <th>Xóa</th>
+                        <th>Sửa</th>
                     </tr>
                 </thead>
                 <tbody id="table-body-side"></tbody>
@@ -58,8 +58,8 @@ List Payment
                     <tr class="odd gradeX" align="center">
                         <td>{{$index + 1}}</td>
                         <td>{{$payment->Method}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.payment.delete', $payment->ID)}}"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.payment.edit', $payment->ID)}}">Edit</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('admin.payment.delete', $payment->ID)}}"> Xóa</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.payment.edit', $payment->ID)}}"> Sửa</a></td>
                     </tr>
                     @endforeach
                 </tbody>

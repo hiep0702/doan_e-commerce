@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Create Payment
+    Tạo thanh toán
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Payment
-                    <small>Add</small>
+                <h1 class="page-header">Thanh toán
+                    <small>thêm mới</small>
                 </h1>
             </div>
             @if (session('success'))
@@ -23,15 +23,15 @@
                 <form action="{{route('admin.payment.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Method</label>
-                        <input class="form-control" name="method" placeholder="Please Enter Method" />
+                        <label>Phương thức</label>
+                        <input class="form-control" name="method" placeholder="Nhập phương thức" />
                         @error('method')
                         <div class="alert alert-danger">
                             {{$message}}
                         </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-default">Payment Add</button>
+                    <button type="submit" class="btn btn-default">Thêm mới</button>
                 <form>
             </div>
         </div>

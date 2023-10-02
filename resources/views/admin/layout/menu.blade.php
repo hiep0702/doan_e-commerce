@@ -1,57 +1,54 @@
 <ul class="nav" id="side-menu">
     <li>
-        <a href="#"><i class="fa fa-th-large fa-fw"></i> Brand<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-th-large fa-fw"></i> Thương hiệu<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.brand.index') }}">List Brand</a>
+                <a href="{{ route('admin.brand.index') }}">Danh sách thương hiệu</a>
             </li>
             <li>
-                <a href="{{ route('admin.brand.create') }}">Add Brand</a>
+                <a href="{{ route('admin.brand.create') }}">Thêm thương hiệu</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-list fa-fw"></i> Category<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-list fa-fw"></i> Thể loại<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.category.index') }}">List Category</a>
+                <a href="{{ route('admin.category.index') }}">Danh sách thể loại</a>
             </li>
             <li>
-                <a href="{{ route('admin.category.create') }}">Add Category</a>
+                <a href="{{ route('admin.category.create') }}">Thêm thể loại</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-tachometer fa-fw"></i> Dashboard<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-tachometer fa-fw"></i> Trang chủ<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.dashboard.revenue-by-day') }}">Revenue</a>
+                <a href="{{ route('admin.dashboard.revenue-by-day') }}">Doanh thu</a>
             </li>
             <li>
-                <a href="{{ route('admin.dashboard.export-by-day') }}">Sales</a>
+                <a href="{{ route('admin.dashboard.export-by-day') }}">Bán hàng</a>
             </li>
             <li>
-                <a href="{{ route('admin.dashboard.order-by-day') }}">Order</a>
+                <a href="{{ route('admin.dashboard.order-by-day') }}">Đơn hàng</a>
             </li>
             <li>
-                <a href="{{ route('admin.dashboard.user-by-day') }}">User</a>
+                <a href="{{ route('admin.dashboard.user-by-day') }}">Người dùng</a>
             </li>
-            {{-- <li>
-                <a href="{{ route('admin.dashboard.trending-product') }}">Trending Product</a>
-            </li> --}}
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-money fa-fw"></i> Discount Code<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-money fa-fw"></i> Mã giảm giá<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.discount.index') }}">List Discount Code</a>
+                <a href="{{ route('admin.discount.index') }}">Danh sách mã giảm giá</a>
             </li>
             <li>
-                <a href="{{ route('admin.discount.create') }}">Add Discount Code</a>
+                <a href="{{ route('admin.discount.create') }}">Thêm mã giảm giá</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
@@ -60,54 +57,51 @@
         <a href="#"><i class="fa fa-paper-plane-o fa-fw"></i> Mail<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.mail.index') }}">Subscribe Member</a>
-                <a href="{{ route('admin.mail.mail') }}">Send Mail</a>
+                <a href="{{ route('admin.mail.index') }}">Đăng ký thành viên</a>
+                <a href="{{ route('admin.mail.mail') }}">Gửi</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Order<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Đơn hàng<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.order-detail.index') }}">List Order</a>
+                <a href="{{ route('admin.order-detail.index') }}">Danh sách đơn hàng</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-credit-card fa-fw"></i> Payment<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-credit-card fa-fw"></i> Thanh toán<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.payment.index') }}">List Payment</a>
+                <a href="{{ route('admin.payment.index') }}">Danh sách thanh toán</a>
             </li>
             <li>
-                <a href="{{ route('admin.payment.create') }}">Add Payment</a>
+                <a href="{{ route('admin.payment.create') }}">Thêm thanh toán</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-cube fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.product.index') }}">List Product</a>
+                <a href="{{ route('admin.product.index') }}">Danh sách sản phẩm</a>
             </li>
             <li>
-                <a href="{{ route('admin.product.create') }}">Add Product</a>
+                <a href="{{ route('admin.product.create') }}">Thêm sản phẩm</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-list fa-fw"></i> Product Detail<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-list fa-fw"></i> Chi tiết sản phẩm<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.product-detail.index') }}">List Product Detail</a>
+                <a href="{{ route('admin.product-detail.index') }}">Danh sách chi tiết sản phẩm</a>
             </li>
-            {{-- <li>
-                <a href="{{route('admin.product-detail.create')}}">Add Product Detail</a>
-            </li> --}}
         </ul>
         <!-- /.nav-second-level -->
     </li>
@@ -115,19 +109,19 @@
         <a href="#"><i class="fa fa-file-image-o fa-fw"></i> Slide<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.slide.index') }}">List Slide</a>
+                <a href="{{ route('admin.slide.index') }}">Danh sách slide</a>
             </li>
             <li>
-                <a href="{{ route('admin.slide.create') }}">Add Slide</a>
+                <a href="{{ route('admin.slide.create') }}">Thêm slide</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->
     </li>
     <li>
-        <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li>
-                <a href="{{ route('admin.user.index') }}">List User</a>
+                <a href="{{ route('admin.user.index') }}">Danh sách người dùng</a>
             </li>
         </ul>
         <!-- /.nav-second-level -->

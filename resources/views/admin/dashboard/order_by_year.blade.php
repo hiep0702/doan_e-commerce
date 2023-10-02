@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Order By Year
+    Đơn hàng theo năm
 @endsection
 
 @section('content')
@@ -10,21 +10,19 @@
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Order
-                            <small>By Year</small>
+                        <h1 class="page-header">Đơn hàng
+                            <small>theo năm</small>
                         </h1>
                     </div>
                 </div>
                 <div>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
-                            <tr align="center">
-                                <th>Pending</th>
-                                <th>Done</th>
-                                <th>Cancel</th>
-                                <th>Order By Day</th>
-                                <th>Order By Month</th>
-                            </tr>
+                            <th>Chưa giải quyết</th>
+                                <th>Đã xong</th>
+                                <th>Đã hủy</th>
+                                <th>Đơn hàng theo ngày</th>
+                                <th>Đơn hàng theo tháng</th>
                         </thead>
                         <tbody>
                             <tr class="odd gradeX" align="center">
@@ -33,11 +31,11 @@
                                 <td>{{ $cancel }}</td>
                                 <td class="center">
                                     <i class="fa fa-pencil-o  fa-fw"></i>
-                                    <a href="{{ route('admin.dashboard.order-by-day') }}"> See more</a>
+                                    <a href="{{ route('admin.dashboard.order-by-day') }}"> Xem thêm</a>
                                 </td>
                                 <td class="center">
                                     <i class="fa fa-pencil fa-fw"></i>
-                                    <a href="{{ route('admin.dashboard.order-by-month') }}"> See more</a>
+                                    <a href="{{ route('admin.dashboard.order-by-month') }}"> Xem thêm</a>
                                 </td>
                             </tr>
                         </tbody>

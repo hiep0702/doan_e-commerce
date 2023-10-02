@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="heading">
                     <div>
-                        <h1 class="page-header">Dashboard</h1>
+                        <h1 class="page-header">Trang chủ</h1>
                     </div>
                 </div>
 
@@ -18,36 +18,36 @@
                     <div class="card item-chart">
                         <div class="card-body">
                             <h1 class="card-title">
-                                Revenue
+                                Doanh thu
                             </h1>
-                            <a href="{{route('admin.dashboard.revenue-by-day')}}" class="btn btn-primary">See Detail</a>
+                            <a href="{{route('admin.dashboard.revenue-by-day')}}" class="btn btn-primary">Xem chi tiết</a>
                         </div>
                     </div>
 
                     <div class="card item-chart">
                         <div class="card-body">
                             <h1 class="card-title">
-                                Sales 
+                                Bán hàng 
                             </h1>
-                            <a href="{{route('admin.dashboard.export-by-day')}}" class="btn btn-primary">See Detail</a>
+                            <a href="{{route('admin.dashboard.export-by-day')}}" class="btn btn-primary">Xem chi tiết</a>
                         </div>
                     </div>
 
                     <div class="card item-chart">
                         <div class="card-body">
                             <h1 class="card-title">
-                                Orders
+                                Đơn hàng
                             </h1>
-                            <a href="{{route('admin.dashboard.order-by-day')}}" class="btn btn-primary">See Detail</a>
+                            <a href="{{route('admin.dashboard.order-by-day')}}" class="btn btn-primary">Xem chi tiết</a>
                         </div>
                     </div>
 
                     <div class="card item-chart">
                         <div class="card-body">
                             <h1 class="card-title">
-                                Users
+                                Người dùng
                             </h1>
-                            <a href="{{route('admin.dashboard.user-by-day')}}" class="btn btn-primary">See Detail</a>
+                            <a href="{{route('admin.dashboard.user-by-day')}}" class="btn btn-primary">Xem chi tiết</a>
                         </div>
                     </div>
                 </div>

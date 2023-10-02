@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Create Product
+    Tạo sản phẩm
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Product
-                    <small>Add</small>
+                <h1 class="page-header">Sản phẩm
+                    <small>thêm mới</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -18,7 +18,7 @@
                 <form action="{{ route('admin.product.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Brand</label>
+                        <label>Thương hiệu</label>
                         <select class="form-control" id="brand" name="brand">
                             @foreach ($brands as $brand)
                                 <option value="{{ $brand->ID }}">
@@ -33,7 +33,7 @@
                         @enderror
                     </div>
                     <div class="form-group" >
-                        <label>Category</label>
+                        <label>Thể loại</label>
                         <select class="form-control" id="category" name="category">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->ID }}">
@@ -48,8 +48,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Product Name</label>
-                        <input class="form-control" name="name" placeholder="Please Enter Product Name" />
+                        <label>Tên sản phẩm</label>
+                        <input class="form-control" name="name" placeholder="Nhập tên sản phẩm" />
                         @error('name')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -57,8 +57,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Product Image</label>
-                        <input class="form-control" name="img" placeholder="Please Enter Category Image" />
+                        <label>Ảnh</label>
+                        <input class="form-control" name="img" placeholder="Nhập ảnh sản phẩm" />
                         @error('img')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -66,15 +66,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Product Code</label>
-                        <input class="form-control" name="code" placeholder="Please Enter Product Code" />
+                        <label>Mã sản phẩm</label>
+                        <input class="form-control" name="code" placeholder="Nhập mã sản phẩm" />
                         @error('code')
                             <div class="alert alert-danger">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-default">Create</button>
+                    <button type="submit" class="btn btn-default">Tạo</button>
                     <form>
             </div>
         </div>

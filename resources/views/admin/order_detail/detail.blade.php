@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-Order Detail {{$order->ID}}
+Chi tiết đơn hàng {{$order->ID}}
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@ Order Detail {{$order->ID}}
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Order
-                    <small>Detail</small>
+                <h1 class="page-header">Đơn hàng
+                    <small>chi tiết</small>
                 </h1>
             </div>
             @if (session('success'))
@@ -23,12 +23,12 @@ Order Detail {{$order->ID}}
                 <table style="width: 100%;" class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Order Code</th>
-                            <th>Customer Code</th>
-                            <th>Customer</th>
-                            <th>Status</th>
-                            <th>Location</th>
-                            <th>Date</th>
+                            <th>Mã đơn</th>
+                            <th>Mã khách hàng</th>
+                            <th>Khách hàng</th>
+                            <th>Trạng thái</th>
+                            <th>Địa chỉ</th>
+                            <th>Ngày tạo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,11 +56,11 @@ Order Detail {{$order->ID}}
                     <thead>
                         <tr align="center">
                             <th>STT</th>
-                            <th>Category</th>
-                            <th>Brand</th>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                            <th>Thể loại</th>
+                            <th>Thương hiệu</th>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -97,7 +97,7 @@ Order Detail {{$order->ID}}
                         </tr>
                         @endforeach
                         <tr class="odd gradeX" align="center">
-                        <td colspan="4"><b>Total</b></td>
+                        <td colspan="4"><b>Tổng</b></td>
                         <td colspan="1"><b>{{ App\Models\OrderDetail::where('Order_ID', $order_detail[0]->Order_ID)->sum('Quantity') }}</b></td>
                         <td colspan="1">
                             <b>

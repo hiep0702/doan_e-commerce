@@ -18,12 +18,12 @@
             </a>
             {{-- {{ \Auth::guard('admins')->admin()->name }} --}}
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> Thông tin</a>
                 </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="{{route('admin.auth.logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="{{route('admin.auth.logout')}}"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->

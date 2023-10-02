@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    Edit Product
+    Chỉnh sửa sản phẩm
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Product
-                    <small>Edit</small>
+                <h1 class="page-header">Sản phẩm
+                    <small>chỉnh sửa</small>
                 </h1>
             </div>
             @if (session('success'))
@@ -24,7 +24,7 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label>Brand</label>
+                        <label>Thương hiệu</label>
                         <select class="form-control" name="brand">
                             @foreach ($brands as $brand)
                                 <option value="{{ $brand->ID }}" @if ($product->Brand_ID == $brand->ID) selected @endif>
@@ -39,7 +39,7 @@
                         @enderror
                     </div>
                     <div class="form-group" >
-                        <label>Category</label>
+                        <label>Thể loại</label>
                         <div id="categories">
                             <select class="form-control" name="category">
                                 @foreach ($categories as $category)
@@ -56,8 +56,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Product Name</label>
-                        <input class="form-control" value="{{$product->Name}}" name="name" placeholder="Please Enter Product Name" />
+                        <label>Tên sản phẩm</label>
+                        <input class="form-control" value="{{$product->Name}}" name="name" placeholder="Nhập tên sản phẩm" />
                         @error('name')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -65,8 +65,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Product Image</label>
-                        <input class="form-control" value="{{$product->IMG}}" name="img" placeholder="Please Enter Category Img" />
+                        <label>Ảnh</label>
+                        <input class="form-control" value="{{$product->IMG}}" name="img" placeholder="Nhập link ảnh sản phẩm" />
                         @error('img')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -74,15 +74,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Product Code</label>
-                        <input class="form-control" value="{{$product->Code}}" name="code" placeholder="Please Enter Product Code" />
+                        <label>Mã sản phẩm</label>
+                        <input class="form-control" value="{{$product->Code}}" name="code" placeholder="Nhập mã sản phẩm" />
                         @error('code')
                             <div class="alert alert-danger">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-default">Product Edit</button>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
                     <form>
             </div>
         </div>
