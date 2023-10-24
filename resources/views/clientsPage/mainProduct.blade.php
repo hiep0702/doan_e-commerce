@@ -32,7 +32,7 @@
                                     </a>
                                 </div>
                                 <div class="price">
-                                    <div class="price__official">$<b>{{ $item->Export_Price }}</b></div>
+                                    <div class="price__official"><b>{{ $item->Export_Price }}</b> VND</div>
                                 </div>
                                 <div class="color">
                                     @foreach ($getColor as $item)
@@ -40,30 +40,29 @@
                                             href="{{ url('/client/products/specificProduct', $item->Slug) }}"></a>
                                     @endforeach
                                 </div>
-                                {{-- <a href="{{ url('/client/products/compareproduct', $item->ID) }}">so sanh</a> --}}
                             </div>
                             <button id="compare" value="{{ $item->ID }}"><ion-icon name="git-compare-outline"></ion-icon></button>
 
                             <div class="container__productInfo-main-add">
-                                <button type="submit">Add to cart</button>
+                                <button type="submit">Thêm vào giỏ hàng</button>
                             </div>
                             <hr>
                             <div class="container__productInfo-main-descrip">
-                                <h2>Description</h2>
+                                <h2>Mô tả</h2>
                                 <ul>
                                     <li>{{ $item->Information }}</li>
                                 </ul>
                             </div>
                             <hr>
                             <div class="container__productInfo-main-details">
-                                <h2>Details</h2>
+                                <h2>Chi tiết</h2>
                                 <ul>
-                                    <li><b>Size:</b> {{ $item->Size }}</li>
-                                    <li><b>Material:</b> {{ $item->Material }}</li>
-                                    <li><b>Code:</b> {{ $item->Code }}</p>
-                                    <li><b>In Stock:</b> {{ $item->Quantity }}</li>
+                                    <li><b>Kích cỡ:</b> {{ $item->Size }}</li>
+                                    <li><b>Chất liệu:</b> {{ $item->Material }}</li>
+                                    <li><b>Mã sản phẩm:</b> {{ $item->Code }}</p>
+                                    <li><b>Số lượng:</b> {{ $item->Quantity }}</li>
                                 </ul>
-                                <a  href="{{ url('/client/products/specificProduct/pdf', $item->Slug) }}"><ion-icon name="download-outline"></ion-icon></a>
+                                {{-- <a  href="{{ url('/client/products/specificProduct/pdf', $item->Slug) }}"><ion-icon name="download-outline"></ion-icon></a> --}}
                             </div>
                         </div>
                     </div>
@@ -74,8 +73,8 @@
     </div>
     <hr class="main__hr">
     <div class="main__reivew">
-        <p>Reviews</p>
-        <button>Write Us A Reviews</button>
+        {{-- <p>Reviews</p>
+        <button>Write Us A Reviews</button> --}}
     </div>
     <div class="container__featured">
         <div class="container__featured-tittle">Gợi ý sản phẩm</div>
