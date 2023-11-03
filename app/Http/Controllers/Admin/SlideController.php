@@ -74,20 +74,43 @@ class SlideController extends Controller
         return redirect()->route('admin.slide.index')->with('success', 'Deleted Successfully!');
     }
 
+    // public function search(Request $request)
+    // {
+    //     $slides = DB::table('sliedes As s')
+    //         ->join('brands as b', 's.Brand_ID', 'b.ID')
+    //         ->where('Name', 'LIKE', '%' . $request->search . '%')
+    //         ->orWhere('Tittle', 'LIKE', '%' . $request->search . '%')
+    //         ->orWhere('Is_Top_Slide', 'LIKE', '%' . $request->search . '%')
+    //         ->orWhere('Is_Middle_Slide', 'LIKE', '%' . $request->search . '%')
+    //         ->paginate(10)
+    //         ->appends(request()->query());
+    //     if (!count($slides)) {
+    //         $error = 'No Result';
+    //         return view('admin.slide.list', compact('error'));
+    //     }
+    //     return view('admin.slide.list', compact('slides'));
+    // }
+
     public function search(Request $request)
     {
+        $searchTerm = '%' . $request->input('search') . '%';
+
         $slides = DB::table('sliedes As s')
-        ->join('brands as b', 's.Brand_ID', 'b.ID')
-        ->where('Name', 'LIKE', '%'. $request->search . '%')
-        ->orWhere('Tittle', 'LIKE', '%'. $request->search . '%')
-        ->orWhere('Is_Top_Slide', 'LIKE', '%'. $request->search . '%')
-        ->orWhere('Is_Middle_Slide', 'LIKE', '%'. $request->search . '%')
-        ->paginate(10)
-        ->appends(request()->query());
-        if(!count($slides)){
-            $error = 'No Result';
+            ->join('brands as b', 's.Brand_ID', '=', 'b.ID')
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('Name', 'LIKE', $searchTerm)
+                    ->orWhere('Tittle', 'LIKE', $searchTerm)
+                    ->orWhere('Is_Top_Slide', 'LIKE', $searchTerm)
+                    ->orWhere('Is_Middle_Slide', 'LIKE', $searchTerm);
+            })
+            ->paginate(10)
+            ->appends(request()->query());
+
+        if ($slides->isEmpty()) {
+            $error = 'Không tìm thấy kết quả';
             return view('admin.slide.list', compact('error'));
         }
+
         return view('admin.slide.list', compact('slides'));
     }
 }

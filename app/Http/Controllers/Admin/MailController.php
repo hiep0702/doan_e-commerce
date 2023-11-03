@@ -7,8 +7,9 @@ use App\Mail\subscriberMail;
 use Illuminate\Http\Request;
 use App\Models\subscriber;
 use Illuminate\Support\Facades\Mail;
-use Alert;
-use DB;
+use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
+
 class MailController extends Controller
 {
     public function index()
@@ -28,14 +29,13 @@ class MailController extends Controller
         $mail_content = $req->mail;
 
         $details = [
-            'title' => 'Email from Pursellet'
-            ,'body' => $mail_content
+            'title' => 'Email from Pursellet', 'body' => $mail_content
         ];
-        
-        $subscriber = DB::table('subscriber')
-        ->get('email');
 
-        foreach($subscriber as $item){
+        $subscriber = DB::table('subscriber')
+            ->get('email');
+
+        foreach ($subscriber as $item) {
             Mail::to($item->email)->send(new subscriberMail($details));
         };
 
@@ -45,15 +45,17 @@ class MailController extends Controller
 
     public function search(Request $request)
     {
-        $data = $request->search;
+        $searchTerm = '%' . $request->input('search') . '%';
+
         $mails = DB::table('subscriber')
-            ->where('email', 'like', '%' . $data . '%')
+            ->where('email', 'like', $searchTerm)
             ->paginate(10);
 
-        if(!count($mails)){
-            $error = 'No Result';
+        if ($mails->isEmpty()) {
+            $error = 'Không tìm thấy kết quả';
             return view('admin.mail.list', compact('error'));
         }
+
         return view('admin.mail.list', compact('mails'));
     }
 }

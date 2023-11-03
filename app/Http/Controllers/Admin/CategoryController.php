@@ -12,16 +12,19 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $categories = Category::paginate(10);
         return view('admin.category.list', compact('categories'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.category.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required|unique:categories',
             'code' => 'required|unique:categories',
@@ -38,12 +41,14 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success', 'Created Successfully');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $category = Category::find($id);
         return view('admin.category.edit', compact('category'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $this->validate($request, [
             'name' => 'required',
             'code' => 'required',
@@ -60,11 +65,12 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success', 'Updated Successfully');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $category = Category::find($id);
         $category_id = $category->ID;
         $products = Product::where('Category_ID', $category_id)->count();
-        if($products){
+        if ($products) {
             return redirect()->route('admin.category.index')->with('error', 'Cannot detele this category!');
         }
         Category::where('ID', $id)->delete();
@@ -73,15 +79,18 @@ class CategoryController extends Controller
 
     public function search(Request $request)
     {
-        $data = $request->search;
+        $searchTerm = '%' . $request->input('search') . '%';
+
         $categories = DB::table('categories')
-            ->where('Code', 'like', '%' . $data . '%')
-            ->orWhere('Name', 'like', '%' . $data . '%')
+            ->where('Code', 'like', $searchTerm)
+            ->orWhere('Name', 'like', $searchTerm)
             ->paginate(10);
-        if(!count($categories)){
-            $error = 'No Result';
+
+        if ($categories->isEmpty()) {
+            $error = 'Không tìm thấy kết quả';
             return view('admin.category.list', compact('error'));
         }
+
         return view('admin.category.list', compact('categories'));
     }
 }

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+
 class ProductDetailController extends Controller
 {
     public function index()
@@ -139,25 +140,30 @@ class ProductDetailController extends Controller
 
     public function search(Request $request)
     {
-        $data = $request->search;
+        $searchTerm = '%' . $request->input('search') . '%';
+
         $product_details = DB::table('product_details As p')
             ->select('p.*')
-            ->where('p.Code', 'like', '%' . $data . '%')
-            ->orWhere('p.Import_Price', 'like', '%' . $data . '%')
-            ->orWhere('p.Export_Price', 'like', '%' . $data . '%')
-            ->orWhere('p.Sale_Price', 'like', '%' . $data . '%')
-            ->orWhere('p.Material', 'like', '%' . $data . '%')
-            ->orWhere('p.Color', 'like', '%' . $data . '%')
-            ->orWhere('p.Quantity', 'like', '%' . $data . '%')
-            ->orWhere('p.Is_Trending', 'like', '%' . $data . '%')
-            ->orWhere('p.Is_New_Arrivals', 'like', '%' . $data . '%')
-            ->orWhere('p.Is_Feature', 'like', '%' . $data . '%')
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('p.Code', 'like', $searchTerm)
+                    ->orWhere('p.Import_Price', 'like', $searchTerm)
+                    ->orWhere('p.Export_Price', 'like', $searchTerm)
+                    ->orWhere('p.Sale_Price', 'like', $searchTerm)
+                    ->orWhere('p.Material', 'like', $searchTerm)
+                    ->orWhere('p.Color', 'like', $searchTerm)
+                    ->orWhere('p.Quantity', 'like', $searchTerm)
+                    ->orWhere('p.Is_Trending', 'like', $searchTerm)
+                    ->orWhere('p.Is_New_Arrivals', 'like', $searchTerm)
+                    ->orWhere('p.Is_Feature', 'like', $searchTerm);
+            })
             ->paginate(5)
             ->appends(request()->query());
-        if (!count($product_details)) {
-            $error = 'No Result';
+
+        if ($product_details->isEmpty()) {
+            $error = 'Không tìm thấy kết quả';
             return view('admin.product_detail.list', compact('error'));
         }
+
         return view('admin.product_detail.list', compact('product_details'));
     }
 }

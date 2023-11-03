@@ -66,12 +66,12 @@
                         <tr class="odd gradeX" align="center">
                             <td>{{$index + 1}}</td>
                             <td>{{$product->Code}}</td>
-                            <td>${{$product->Import_Price}}</td>
-                            <td>${{$product->Export_Price}}</td>
+                            <td>{{$product->Import_Price}} VND</td>
+                            <td>{{$product->Export_Price}} VND</td>
                             <td>
                                 @php
                                     if($product->Sale_Price){
-                                        echo '$'.$product->Sale_Price;
+                                        echo $product->Sale_Price.' VND';
                                     }
                                 @endphp
                             </td>

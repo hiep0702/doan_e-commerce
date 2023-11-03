@@ -23,7 +23,6 @@ class DiscountCodeController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->temporary);
         $this->validate($request, [
             'code' => 'required|unique:codes',
             'discount' => 'required|numeric|min:1|max:50',

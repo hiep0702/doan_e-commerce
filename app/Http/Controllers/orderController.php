@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\ProductDetail;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class orderController extends Controller
 {
@@ -55,7 +55,7 @@ class orderController extends Controller
         ->where('customer_ID',$customer_ID)
         ->update(['orders.Status' => 'Cancel']);
 
-        Alert::success('Cancel Order Successfully!');
+        Alert::success('Hủy đơn hàng thành công!');
         return redirect()->back();
     }
 }

@@ -11,11 +11,10 @@ use App\Models\ProductDetail;
 use App\Models\Product;
 use App\Models\User;
 use Symfony\Component\HttpFoundation\Response;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 use Illuminate\Support\Carbon as SupportCarbon;
 use Payment;
-use RealRashid\SweetAlert\Facades\Alert as FacadesAlert;
 
 class shoppingcartController extends Controller
 {
@@ -50,99 +49,11 @@ class shoppingcartController extends Controller
 
         $ran_pro = $products->take(4);
 
-        // dd(reverse($carts));
-
         foreach ($carts as $cart) {
             $subtotals += $cart->subtotal;
         }
         return view('clientsPage.shoppingCart', compact('carts', 'subtotals', 'ran_pro'));
-
-
-
-
-        // session()->put('cart_quantity',count($carts));
-
-        // $cart_quantity = session()->get('cart_quantity');
-
-        // dD($carts);
-
-        // $all_cart_products=[];
-        // foreach($carts as $item){
-        //     $product = ProductDetail::where('ID',$item->Product_Detail_ID)->get();
-        //     array_push($all_cart_products,$product);
-        // }
-
-        // foreach($all_cart_products as $item){
-        //     $pro_name = Product::where('id',$item->Product_Detail_ID)->get();
-        //     array_push($all_cart_products,$pro_name);
-        // }
-        // dd($all_cart_products);
-
-
-
-        // $Product_Details_ID = [];
-        // foreach ($carts as $item) {
-        //     array_push($Product_Details_ID, $item->Product_Detail_ID);
-        // };
-
-        // $product_Details_Slug = [];
-        // foreach ($Product_Details_ID as $item) {
-        //     $Slug =  ProductDetail::where('product_details.ID', $item)
-        //         ->join('Products', 'Products.id', '=', 'product_details.Product_ID')
-        //         ->get('product_details.Slug');
-        //     foreach ($Slug as $kk) {
-        //         array_push($product_Details_Slug, $kk);
-        //     }
-        // }
-
-        // $specific_item_slug = [];
-        // foreach ($product_Details_Slug as $item) {
-        //     array_push($specific_item_slug, $item->Slug);
-        // }
-
-        // $all_cart_products = [];
-        // foreach ($specific_item_slug as $item) {
-        //     $pro =  ProductDetail::where('product_details.Slug', $item)
-        //         ->join('Products', 'Products.id', '=', 'product_details.Product_ID')
-        //         ->get();
-        //     array_push($all_cart_products, $pro);
-        // }
-
-        // $allPro = [];
-        // foreach ($all_cart_products as $item) {
-        //     array_push($allPro, $item[0]);
-        // }
-
-        // dd($this_customer[0]->id);
     }
-
-    // public function postShoppingCart(Request $request)
-    // {
-    //     if ($request->get('product')) {
-
-    //         $product_id = $request->get('product');
-    //         $customer_id = Auth::guard('users')->id();
-    //         $old_quantity = DB::table('carts')
-    //             ->where('Customer_ID', $customer_id)
-    //             ->where('Product_Detail_ID', $product_id)
-    //             ->select('Product_quantity')
-    //             ->get();
-    //         $cart = DB::table('carts')
-    //             ->where('Customer_ID', $customer_id)
-    //             ->where('Product_Detail_ID', $product_id)
-    //             ->update([
-    //                 'Product_quantity' => $old_quantity[0]->Product_quantity + 1,
-    //             ]);
-    //         $new_item = DB::table('carts')
-    //             ->where('Customer_ID', $customer_id)
-    //             ->where('Product_Detail_ID', $product_id)
-    //             ->get();
-    //         $item = $new_item[0];
-    //         $output =  '<div>' . $item->Product_quantity . '</div>';
-    //         echo $output;
-    //     }
-    // }
-
 
     public function handleIncreaseQuantity(Request $request)
     {
@@ -266,7 +177,7 @@ class shoppingcartController extends Controller
                 $discount = $discountCode[0]->Discount;
                 echo $discount;
             } else {
-                $error = ['error' => 'Your Discount Code Is Invalid Or Expire'];
+                $error = ['error' => 'Mã giảm giá của bạn không hợp lệ hoặc hết hạn'];
                 return response()->json($error);
             }
         }
@@ -274,7 +185,6 @@ class shoppingcartController extends Controller
 
     public function addToCart(Request $req)
     {
-        // dd('gege');
         $customer_ID = Auth::guard('users')->id();
         $this_customer = User::where('id', $customer_ID)->get();
         $pro_ID = $req->ID;
@@ -285,7 +195,7 @@ class shoppingcartController extends Controller
             ->where('Product_Detail_ID', $pro_ID)
             ->exists()
         ) {
-            Alert::error('This Item Has Already Existed In Shopping Cart')->autoclose(1500);
+            Alert::error('Mặt hàng này đã tồn tại trong giỏ hàng')->autoclose(1500);
             return redirect()->back();
         } else {
 
@@ -296,7 +206,7 @@ class shoppingcartController extends Controller
                     'Product_quantity' => 1,
                     'created_at' => Carbon::now()
                 ]);
-            Alert::success('Added To Shopping Cart')->autoclose(1500);
+            Alert::success('Đã thêm vào giỏ hàng')->autoclose(1500);
             return redirect()->back();
         }
     }
@@ -400,7 +310,7 @@ class shoppingcartController extends Controller
                         ->where('Customer_ID', $customer_ID)
                         ->delete();
                 } else {
-                    Alert::error('Discount Code is invalid')->autoclose(1500);
+                    Alert::error('Mã giảm giá không hợp lệ')->autoclose(1500);
                     return redirect()->back();
                 }
             } else {

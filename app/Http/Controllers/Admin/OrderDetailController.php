@@ -106,24 +106,29 @@ class OrderDetailController extends Controller
 
     public function search(Request $request)
     {
-        $data = $request->search;
+        $searchTerm = '%' . $request->input('search') . '%';
+
         $orders = DB::table('orders As o')
             ->join('users as u', 'o.Customer_ID', '=', 'u.id')
             ->join('orders_details as od', 'o.ID', '=', 'od.Order_ID')
             ->join('payments as p', 'o.Payment_ID', '=', 'p.ID')
             ->select('o.ID', 'o.Code as Order_Code', 'u.Code as Customer_Code', 'u.username as Username', 'o.Status', 'o.Location', 'p.Method', 'o.created_at', DB::raw('sum(od.Quantity) as TotalQuantity'), DB::raw('sum(od.Price * od.Quantity) as TotalPrice'))
-            ->where('o.Code', 'like', '%' . $data . '%')
-            ->orWhere('p.Method', 'like', '%' . $data . '%')
-            ->orWhere('o.Status', 'like', '%' . $data . '%')
-            ->orWhere('o.Location', 'like', '%' . $data . '%')
-            ->orWhereDate('o.created_at', 'like', '%' . $data . '%')
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('o.Code', 'like', $searchTerm)
+                    ->orWhere('p.Method', 'like', $searchTerm)
+                    ->orWhere('o.Status', 'like', $searchTerm)
+                    ->orWhere('o.Location', 'like', $searchTerm)
+                    ->orWhereDate('o.created_at', 'like', $searchTerm);
+            })
             ->groupBy('Order_Code', 'Customer_Code', 'o.Status', 'o.Location', 'p.Method', 'o.created_at')
             ->paginate(10)
             ->appends(request()->query());
-        if (!count($orders)) {
-            $error = 'No Result';
+
+        if ($orders->isEmpty()) {
+            $error = 'Không tìm thấy kết quả';
             return view('admin.order_detail.list', compact('error'));
         }
+
         return view('admin.order_detail.list', compact('orders'));
     }
 }
