@@ -96,7 +96,7 @@ class DiscountCodeController extends Controller
             ->orWhere('Temporary', 'LIKE', '%' . $request->search . '%')
             ->get();
         if (!count($codes)) {
-            $error = 'No Result';
+            $error = 'Không tìm thấy kết quả';
             return view('admin.discount_code.list', compact('error'));
         }
         return view('admin.discount_code.list', compact('codes'));
