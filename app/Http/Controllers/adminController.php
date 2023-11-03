@@ -10,7 +10,7 @@ class adminController extends Controller
     private $allPro;
     public function __construct()
     {
-        $this->allPro = new productModel();
+        $this->allPro = new productModel;
     }
 
     

@@ -7,14 +7,13 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Brand;
-use PDF;
 use App\Models\Wishlist;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 
 class wishListController extends Controller
@@ -35,7 +34,6 @@ class wishListController extends Controller
         ->get();
 
         DB::enableQueryLog();
-
 
         $Product_Details_ID = [];
         foreach ($wish_list as $item) {
@@ -98,8 +96,6 @@ class wishListController extends Controller
 
     public function addToCart(Request $req)
     {
-        // dd('asd');
-
         $customer_ID = Auth::guard('users')->id();
         $this_customer = User::where('id', $customer_ID)->get();
         $customer_ID = $this_customer[0]->id;
@@ -136,7 +132,7 @@ class wishListController extends Controller
             ->where('Product_Detail_ID', $pro_ID)
             ->exists()
         ) {
-            Alert::error('This Item Has Already Existed')->autoclose(1500);
+            Alert::error('Mặt hàng này đã tồn tại')->autoclose(1500);
             return redirect()->back();
         } else {
             DB::table('wish_list')
@@ -145,7 +141,7 @@ class wishListController extends Controller
                     'Customer_ID'   => $customer_ID,
                     'created_at' =>  Carbon::now()
                 ]);
-            Alert::success('Added To Wish List')->autoclose(1500);
+            Alert::success('Đã thêm vào danh sách yêu thích')->autoclose(1500);
             return redirect()->back();
         }
     }
@@ -154,6 +150,5 @@ class wishListController extends Controller
     {
         $Products_ID = [];
         $hihi = $req->checkBoxes;
-        dd($hihi);
     }
 }

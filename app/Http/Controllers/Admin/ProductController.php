@@ -16,10 +16,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = DB::table('products As p')
-        ->join('brands as b', 'p.Brand_ID', '=', 'b.ID')
-        ->join('categories as c', 'p.Category_ID', '=', 'c.ID')
-        ->select('p.*', 'b.Name as Brand_Name', 'c.Name as Category_Name')
-        ->paginate(10);
+            ->join('brands as b', 'p.Brand_ID', '=', 'b.ID')
+            ->join('categories as c', 'p.Category_ID', '=', 'c.ID')
+            ->select('p.*', 'b.Name as Brand_Name', 'c.Name as Category_Name')
+            ->paginate(10);
         return view('admin.product.list', compact('products'));
     }
 
@@ -92,7 +92,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product_id = $product->ID;
         $product_details = ProductDetail::where('Product_ID', $product_id)->count();
-        if($product_details){
+        if ($product_details) {
             return redirect()->route('admin.product.index')->with('error', 'Cannot detele this product!');
         }
         Product::where('ID', $id)->delete();
@@ -101,21 +101,26 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $data = $request->search;
+        $searchTerm = '%' . $request->input('search') . '%';
+
         $products = DB::table('products As p')
-        ->join('brands as b', 'p.Brand_ID', '=', 'b.ID')
-        ->join('categories as c', 'p.Category_ID', '=', 'c.ID')
-        ->select('p.*', 'b.Name as Brand_Name', 'c.Name as Category_Name')
-        ->where('p.Code', 'like', '%' . $data . '%')
-        ->orWhere('b.Name', 'like', '%' . $data . '%')
-        ->orWhere('c.Name', 'like', '%' . $data . '%')
-        ->orWhere('p.Name', 'like', '%' . $data . '%')
-        ->paginate(10)
-        ->appends(request()->query());
-        if(!count($products)){
-            $error = 'No Result';
+            ->join('brands as b', 'p.Brand_ID', '=', 'b.ID')
+            ->join('categories as c', 'p.Category_ID', '=', 'c.ID')
+            ->select('p.*', 'b.Name as Brand_Name', 'c.Name as Category_Name')
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('p.Code', 'like', $searchTerm)
+                    ->orWhere('b.Name', 'like', $searchTerm)
+                    ->orWhere('c.Name', 'like', $searchTerm)
+                    ->orWhere('p.Name', 'like', $searchTerm);
+            })
+            ->paginate(10)
+            ->appends(request()->query());
+
+        if ($products->isEmpty()) {
+            $error = 'Không tìm thấy kết quả';
             return view('admin.product.list', compact('error'));
         }
+
         return view('admin.product.list', compact('products'));
     }
 }

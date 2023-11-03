@@ -12,9 +12,9 @@ use App\Models\Code;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use Alert;
 use App\Mail\DiscountMail;
 use Illuminate\Support\Facades\Mail;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class homepageController extends Controller
 {

@@ -11,7 +11,7 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\User;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Str;

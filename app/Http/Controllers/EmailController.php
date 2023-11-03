@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-Use Alert;
-
 use App\Mail\changePassword;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use RealRashid\SweetAlert\SweetAlertServiceProvider;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EmailController extends Controller
 {
@@ -61,14 +59,14 @@ class EmailController extends Controller
                 'title' => 'Recover Your Password From Pursellet'
                 ,'body' => 'Your new password is:'.$randomString
             ];
-            Alert::success('Email Sent Successfully')->autoclose(1500);
+            Alert::success('Email đã được gửi thành công')->autoclose(1500);
 
             Mail::to($user_email[0]->Email)->send(new changePassword($details));
             return redirect()->route('client.login');
         }
         
         else{
-            Alert::error('This username does not exist')->autoclose(1500);
+            Alert::error('Tên người dùng này không tồn tại')->autoclose(1500);
             return redirect()->back();
         }
     }

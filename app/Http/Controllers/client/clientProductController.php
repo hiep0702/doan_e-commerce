@@ -7,13 +7,13 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Brand;
-use PDF;
-Use Alert;
+use Barryvdh\DomPDF\PDF;
+use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 
 class clientProductController extends Controller
