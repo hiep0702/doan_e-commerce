@@ -245,7 +245,7 @@ class clientProductController extends Controller
         return view('layouts.chainsandStrap', ['chainAndStrap' => $chainAndStrap, 'randomProduct' => $ran_pro, 'cart_quantity' => $cart_quantity]);
     }
 
-    public function getGucci(Request $req)
+    public function getNewBalance(Request $req)
     {
         $keyWord = $req->searchBox;
 
@@ -260,7 +260,7 @@ class clientProductController extends Controller
             $gucci = DB::table('brands')
                 ->join('Products', 'Products.Brand_ID', '=', 'brands.ID')
                 ->join('product_details', 'Products.ID', '=', 'product_details.Product_ID')
-                ->where('Products.Brand_ID', 4)
+                ->where('Products.Brand_ID', 3)
                 ->groupBy('Product_details.Product_ID')
                 ->paginate(13);
         } else {
@@ -268,7 +268,7 @@ class clientProductController extends Controller
                 case "high":
                     $gucci = Category::join('Products', 'categories.ID', '=', 'Products.category_ID')
                         ->join('product_details', 'Products.ID', '=', 'product_details.Product_ID')
-                        ->where('Products.Brand_ID', 4)
+                        ->where('Products.Brand_ID', 3)
                         ->where('categories.name', 'like', '%' . $category_name . '%')
                         ->where('Products.Name', 'like', '%' . $keyWord . '%')
                         ->orderBy('Product_details.Export_Price', 'DESC')
@@ -300,7 +300,7 @@ class clientProductController extends Controller
     }
 
 
-    public function getLouisVuiton(Request $req)
+    public function getPuma(Request $req)
     {
         $keyWord = $req->searchBox;
 
@@ -315,7 +315,7 @@ class clientProductController extends Controller
             $louisVuiton = DB::table('brands')
                 ->join('Products', 'Products.Brand_ID', '=', 'brands.ID')
                 ->join('product_details', 'Products.ID', '=', 'product_details.Product_ID')
-                ->where('Products.Brand_ID', 3)
+                ->where('Products.Brand_ID', 4)
                 ->groupBy('Product_details.Product_ID')
                 ->paginate(13);
         } else {
@@ -323,7 +323,7 @@ class clientProductController extends Controller
                 case "high":
                     $louisVuiton = Category::join('Products', 'categories.ID', '=', 'Products.category_ID')
                         ->join('product_details', 'Products.ID', '=', 'product_details.Product_ID')
-                        ->where('Products.Brand_ID', 3)
+                        ->where('Products.Brand_ID', 4)
                         ->where('categories.name', 'like', '%' . $category_name . '%')
                         ->where('Products.Name', 'like', '%' . $keyWord . '%')
                         ->orderBy('Product_details.Export_Price', 'DESC')
@@ -355,7 +355,7 @@ class clientProductController extends Controller
     }
 
 
-    public function getChannel(Request $req)
+    public function getNike(Request $req)
     {
         $keyWord = $req->searchBox;
 
@@ -408,7 +408,7 @@ class clientProductController extends Controller
         }
         return view('layouts.Channel', ['Channel' => $channel, 'randomProduct' => $ran_pro, 'cart_quantity' => $cart_quantity]);
     }
-    public function getDior(Request $req)
+    public function getAdidas(Request $req)
     {
         $keyWord = $req->searchBox;
 
@@ -521,7 +521,6 @@ class clientProductController extends Controller
                     break;
             }
         }
-        // dd($products);
 
         return view('layouts.newArrival'
         , ['products' => $products
@@ -627,7 +626,7 @@ class clientProductController extends Controller
         $get_color = DB::table('Products')
             ->join('Product_details', 'Products.ID', '=', 'product_details.Product_ID')->where('product_details.Product_ID', $product_ID)->get();
         $cart_quantity = session()->get('cart_quantity');
-        // dd($this_product);
+
         return view('clientsPage.mainProduct', ['product' => $this_product, 'getColor' => $get_color, 'ran_pro' => $ran_pro, 'cart_quantity' => $cart_quantity]);
     }
 

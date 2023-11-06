@@ -10,8 +10,8 @@
                 @foreach ($top_slides_img as $top)
                     <div style="background-image: url({{ $top->IMG }})" class="container__slideCol-item">
                         <div class="container__slideCol-item-content">
-                            <p class="container__left-frame-text-p1">Sản phẩm tốt nhất cho bạn..</p>
-                            <p class="container__left-frame-text-p2">Xu hướng mới năm 2023</p>
+                            <p style="color: #FF0000" class="container__left-frame-text-p1">Sản phẩm tốt nhất cho bạn..</p>
+                            <p style="color: #FF0000" class="container__left-frame-text-p2">Xu hướng mới năm 2023</p>
                             <a href="">Mua ngay</a>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                         <div class="container__listCol-items-img-child"
                             style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                         <div class="container__listCol-items-tittle">
-                            <button onclick="location.href='{{ url('client/products/channel') }}'">Xem thêm</button>
+                            <button onclick="location.href='{{ url('client/products/nike') }}'">Xem thêm</button>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                     <div class="container__listCol-items-img-child"
                         style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/dior') }}'">Xem thêm</button>
+                        <button onclick="location.href='{{ url('client/products/adidas') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@
                         style="background-image: url({{ $item->After_Hover_IMG }});">
                     </div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/gucci') }}'">Xem thêm</button>
+                        <button onclick="location.href='{{ url('client/products/new-balance') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
                     <div class="container__listCol-items-img-child"
                         style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/louis-vuiton') }}'">Xem thêm</button>
+                        <button onclick="location.href='{{ url('client/products/puma') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>

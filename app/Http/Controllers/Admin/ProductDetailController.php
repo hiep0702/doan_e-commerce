@@ -88,7 +88,6 @@ class ProductDetailController extends Controller
         $this->validate($request, [
             'import_price' => 'required|numeric',
             'export_price' => 'required|numeric',
-            // 'sale_price' => 'numeric',
             'main_img' => 'required',
             'slide_img_1' => 'required',
             'slide_img_2' => 'required',

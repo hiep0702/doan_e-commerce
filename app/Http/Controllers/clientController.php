@@ -58,7 +58,7 @@ class clientController extends Controller
                 ->select('First_Name', 'Last_Name', 'username', 'Dob', 'Email', 'Number_Phone', 'Rank', 'Code', 'Avatar')
                 ->get();
         }
-        // dd($user);
+
         return view('clientsPage.myProfile', compact('user'));
     }
 
@@ -73,13 +73,11 @@ class clientController extends Controller
                 'firstname' => 'required',
                 'lastname' => 'required',
                 'email' => 'required|email|unique:users',
-                // 'dob' => 'required',
             ]);
         } else {
             $validator = Validator::make($request->all(), [
                 'firstname' => 'required',
                 'lastname' => 'required',
-                // 'dob' => 'required',
             ]);
         }
 

@@ -22,11 +22,11 @@ class homepageController extends Controller
     {
         $middle_slides_img = DB::table('sliedes')
             ->where('Is_Top_Slide', 0)
-            ->where('Is_Middle_Slide', 'Middle Slide')
+            ->where('Is_Middle_Slide', 1)
             ->get();
 
         $top_slides_img = DB::table('sliedes')
-            ->where('Is_Top_Slide', 'Top Slide')
+            ->where('Is_Top_Slide', 1)
             ->where('Is_Middle_Slide', 0)
             ->get();
 
@@ -80,7 +80,7 @@ class homepageController extends Controller
 
         $hehe_img = DB::table('sliedes')
             ->where('Is_Top_Slide', 0)
-            ->where('Is_Middle_Slide', 'Middle Slide')
+            ->where('Is_Middle_Slide', 1)
             ->get()
             ->shuffle();
 
@@ -165,7 +165,7 @@ class homepageController extends Controller
             ]);
 
             $details = [
-                'title' => 'Recover Your Password From Pursellet', 'body' => 'Your discounted code is:' . $string
+                'title' => 'Khôi phục mật khẩu của bạn', 'body' => 'Mã giảm giá của bạn là:' . $string
             ];
 
             Mail::to($user_mail[0]->Email)->send(new DiscountMail($details));
@@ -190,10 +190,8 @@ class homepageController extends Controller
         ]);
 
         $details = [
-            'title' => 'Recover Your Password From Pursellet', 'body' => 'Your discounted code is:' . $string
+            'title' => 'Khôi phục mật khẩu của bạn', 'body' => 'Mã giảm giá của bạn là:' . $string
         ];
-
-        // Alert::success('Please check your email for discount code')->autoclose(2000);
 
         Mail::to($user_mail[0]->Email)->send(new DiscountMail($details));
 

@@ -36,8 +36,8 @@ class SlideController extends Controller
             'Brand_ID' => $request->brand,
             'Tittle' => $request->title,
             'IMG' => $request->image,
-            'Is_Top_Slide' => $request->top_or_middle_slide == 'top_slide' ? 'Top Slide' : '',
-            'Is_Middle_Slide' => $request->top_or_middle_slide == 'middle_slide' ? 'Middle Slide' : '',
+            'Is_Top_Slide' => $request->top_or_middle_slide == 'top_slide' ? 1 : '',
+            'Is_Middle_Slide' => $request->top_or_middle_slide == 'middle_slide' ? 1 : '',
         ]);
 
         return redirect()->route('admin.slide.index')->with('success', 'Created Successfully');
