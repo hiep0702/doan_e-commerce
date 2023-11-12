@@ -58,10 +58,10 @@
                             <a href="{{ url('client/products/discount') }}">Đang bán</a>
                         </div>
                         <div class="headerSmall__menuDrop-brands">
-                            <a href="{{ url('client/products/dior') }}">Adidas</a>
-                            <a href="{{ url('client/products/gucci') }}">New Balance</a>
-                            <a href="{{ url('client/products/channel') }}">Nike</a>
-                            <a href="{{ url('client/products/louis-vuiton') }}">Puma</a>
+                            <a href="{{ url('client/products/adidas') }}">Adidas</a>
+                            <a href="{{ url('client/products/new-balance') }}">New Balance</a>
+                            <a href="{{ url('client/products/nike') }}">Nike</a>
+                            <a href="{{ url('client/products/puma') }}">Puma</a>
                         </div>
                         <div class="headerSmall__menuDrop-aboutUs">
                             <a href="{{ url('client/aboutUs') }}">Cửa hàng</a>
@@ -118,10 +118,10 @@
                 </div>
                 <div id="drop3" class="">
                     <div class="header__side-brand">
-                        <div><a href="{{ url('client/products/dior') }}">Adidas</a></div>
-                        <div><a href="{{ url('client/products/gucci') }}">New Balance</a></div>
-                        <div><a href="{{ url('client/products/channel') }}">Nike</a></div>
-                        <div><a href="{{ url('client/products/louis-vuiton') }}">Puma</a></div>
+                        <div><a href="{{ url('client/products/adidas') }}">Adidas</a></div>
+                        <div><a href="{{ url('client/products/new-balance') }}">New Balance</a></div>
+                        <div><a href="{{ url('client/products/nike') }}">Nike</a></div>
+                        <div><a href="{{ url('client/products/puma') }}">Puma</a></div>
                     </div>
                 </div>
             </div>

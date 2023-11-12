@@ -15,7 +15,7 @@
                         <input type="text" placeholder="Search" name="searchBox">
                     </div>
                     <div class="container__sideBar-box">
-                        <div class="container__sideBar-box-tittle">Categories</div>
+                        <div class="container__sideBar-box-tittle">Thể loại</div>
                         <hr class="box1">
                         <div class="container__sideBar-box-cate">
                             <input type="radio" name="category" id="filter" value="Giày nam">

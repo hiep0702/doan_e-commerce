@@ -24,7 +24,7 @@ Chi tiết đơn hàng {{$order->ID}}
                     <thead>
                         <tr>
                             <th>Mã đơn</th>
-                            <th>Mã khách hàng</th>
+                            {{-- <th>Mã khách hàng</th> --}}
                             <th>Khách hàng</th>
                             <th>Trạng thái</th>
                             <th>Địa chỉ</th>
@@ -34,7 +34,7 @@ Chi tiết đơn hàng {{$order->ID}}
                     <tbody>
                         <tr>
                             <th>{{$order->Code}}</th>
-                            <th>{{$user->Code}}</th>
+                            {{-- <th>{{$user->Code}}</th> --}}
                             <th>{{$order->customer->Last_Name}}</th>
                             <th
                                 @if ($order->Status == 'Pending')

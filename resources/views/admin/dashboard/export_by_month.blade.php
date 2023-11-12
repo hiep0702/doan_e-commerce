@@ -20,9 +20,9 @@
                         <thead>
                             <tr align="center">
                                 <th>Tổng số lượng</th>
-                                <th>Lần 1</th>
+                                {{-- <th>Lần 1</th>
                                 <th>Lần 2</th>
-                                <th>Lần 3</th>
+                                <th>Lần 3</th> --}}
                                 <th>Theo ngày</th>
                                 <th>Theo năm</th>
                             </tr>
@@ -30,7 +30,7 @@
                         <tbody>
                             <tr class="odd gradeX" align="center">
                                     <td>{{ $total_quantity }}</td>
-                                    <td>
+                                    {{-- <td>
                                         @if(!empty($top_products[0]->Name)) 
                                             {{$top_products[0]->Name}} :{{$top_products[0]->Quantity}} Sản phẩm
                                         @endif
@@ -44,7 +44,7 @@
                                         @if(!empty($top_products[2]->Name)) 
                                             {{$top_products[2]->Name}} :{{$top_products[2]->Quantity}} Sản phẩm
                                         @endif
-                                    </td>
+                                    </td> --}}
                                 <td class="center">
                                     <i class="fa fa-pencil-o  fa-fw"></i>
                                     <a href="{{ route('admin.dashboard.export-by-day') }}"> Xem thêm</a>

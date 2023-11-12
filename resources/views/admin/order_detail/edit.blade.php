@@ -29,21 +29,21 @@
                                 {{ $order->Code }}
                             </h1>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <h1 class="form-control">
                                 <label>Mã khách hàng</label>:
                                 {{ $user->Code }}
                             </h1>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Họ khách hàng</label>:
-                                {{ $order->customer->Last_Name }}
+                                <label>Tên khách hàng</label>:
+                                {{ $order->customer->First_Name }} {{ $order->customer->Last_Name }}
                             </h1>
                         </div>
                         <div class="form-group">
                             <h1 class="form-control">
-                                <label>Tên khách hàng</label>:
+                                <label>Địa chỉ khách hàng</label>:
                                 {{ $order->Location }}
                             </h1>
                         </div>

@@ -53,7 +53,7 @@
             </form>
         </div>
             <div class="container__list">
-                <div class="container__list-tittle">giày thời trang</div>
+                <div class="container__list-tittle">Giày thời trang</div>
                 <div class="container__list-products">
                     @foreach ($cardsHolder as $item)
                         <div class="container__list-products-item">

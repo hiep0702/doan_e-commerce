@@ -283,7 +283,7 @@ class shoppingcartController extends Controller
                         ->insert([
                             'Code'  =>   $order_code
                             , 'Customer_ID' => $customer_ID
-                            , 'Payment_ID' => 1
+                            , 'Payment_ID' => 2
                             , 'Code_ID'  => $discount_code
                             , 'Location' => $customer_address
                             , 'Status' => 'Pending'
@@ -318,7 +318,7 @@ class shoppingcartController extends Controller
                     ->insert([
                         'Code'  =>   $order_code
                         , 'Customer_ID' => $customer_ID
-                        , 'Payment_ID' => 1
+                        , 'Payment_ID' => 2
                         , 'Code_ID'  => null
                         , 'Location' => $customer_address
                         , 'Status' => 'Pending'

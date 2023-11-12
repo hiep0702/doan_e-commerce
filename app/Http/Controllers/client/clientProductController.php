@@ -658,7 +658,7 @@ class clientProductController extends Controller
         ->where('Product_Detail_ID', $pro_ID)
         ->exists()
     ) {
-        Alert::error('This Item Has Already Existed In Shopping Cart')->autoclose(1500);
+        Alert::error('Mặt hàng này đã tồn tại trong giỏ hàng')->autoclose(1500);
         return redirect()->back();
     } else {
 
@@ -670,7 +670,7 @@ class clientProductController extends Controller
                 'created_at' => Carbon::now()
             ]);
 
-        Alert::success('Added To Shopping Cart')->autoclose(1500);
+        Alert::success('Đã thêm vào giỏ hàng')->autoclose(1500);
         return redirect()->back();
     }
         return redirect()->back();
