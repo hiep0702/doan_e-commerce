@@ -45,7 +45,7 @@
                                         <div class="colorProduct" style="background-color: {{ $item->Color }};"></div>
 
                                     </div>
-                                    <div class="container__product-list-cart-total">${{ $item->Export_Price }}</div>
+                                    <div class="container__product-list-cart-total"> {{ number_format($item->Export_Price, 0, ',', '.') }}</div>
                                     <div class="container__product-list-cart-button">
                                         <a href="{{ url('/client/wishlist/addtocart', $item->ID) }}"><ion-icon name="cart-outline"></ion-icon></a>
                                         <a href="{{ url('/client/wishlist/remove', $item->ID) }}"><ion-icon name="close-outline"></ion-icon></a>
@@ -80,7 +80,7 @@
                             class="container__featured-products-items-img"></a>
                         <div class="container__featured-products-items-info">
                             <p>{{ $item->Name }}</p>
-                            <p>${{ $item->Export_Price }}</p>
+                            <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                         </div>
                     </div>
                 @endforeach

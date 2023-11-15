@@ -64,7 +64,7 @@
                             <td>{{$order->Customer_Code}}</td>
                             <td>{{$order->Username}}</td>
                             <td>{{$order->TotalQuantity}}</td>
-                            <td>${{$order->TotalPrice}}</td>
+                            <td>{{ number_format($order->TotalPrice, 0, ',', '.') }}</td>
                             <th
                                 @if ($order->Status == 'Pending')
                                     class="click btn-success"

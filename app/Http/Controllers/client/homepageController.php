@@ -93,10 +93,10 @@ class homepageController extends Controller
     public function subscribe(Request $req)
     {
         $rules = [
-            'subscribe_email'   => 'required|email'
+            'subscribe_email' => 'required|email'
         ];
         $messages = [
-            'required' => 'Email cannot be empty', 'subscribe_email.email' => 'Incorrect email format'
+            'required' => 'Email không được để trống', 'subscribe_email.email' => 'Định dạng email không chính xác'
         ];
 
         $req->validate($rules, $messages);
@@ -108,11 +108,11 @@ class homepageController extends Controller
             ->get('email');
 
         if (isset($existed_email[0])) {
-            Alert::error('This email already exists');
+            Alert::error('Email này đã tồn tại');
         } else {
             DB::table('subscriber')
                 ->insert(['email' => $this_mail]);
-            Alert::success('Subscribe successfully');
+            Alert::success('Đăng ký thành công');
         }
 
         return redirect()->route('homepage');
@@ -125,7 +125,7 @@ class homepageController extends Controller
 
         if (count($has_discount_code) == 1) {
             return response()->json([
-                'error' => 'You already received the discount code',
+                'error' => 'Bạn đã nhận được mã giảm giá',
             ]);
         }
 
@@ -165,7 +165,7 @@ class homepageController extends Controller
             ]);
 
             $details = [
-                'title' => 'Khôi phục mật khẩu của bạn', 'body' => 'Mã giảm giá của bạn là:' . $string
+                'title' => 'Sugar thông báo: ', 'body' => 'Mã giảm giá của bạn là:' . $string
             ];
 
             Mail::to($user_mail[0]->Email)->send(new DiscountMail($details));

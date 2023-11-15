@@ -217,20 +217,20 @@ class clientController extends Controller
                 'password'  => 'bail|required|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
             ],
             $messages = [
-                'firstname.required' => 'First name is required and must be 30 characters or less.',
-                'firstname.max' => 'First name is required and must be 30 characters or less.',
-                'lastname.required' => 'Last name is required and must be 30 characters or less.',
-                'lastname.max' => 'Last name is required and must be 30 characters or less.',
-                'dob.required' => 'DOB is required.',
-                'numberphone.required' => 'Enter your number to be the first to know about exclusive offers, new launches and more via text message.',
-                'numberphone.regex' => 'Number phone is invalid',
-                'numberphone.unique' => 'Number phone is already used',
-                'email.required' => 'Email address is required.',
-                'email.unique' => 'Email is already used',
-                'username.required' => 'User name is required and must be 30 characters or less.',
-                'username.max' => 'User name is required and must be 30 characters or less.',
-                'password.required' => 'Password is required. It must be 8 or more characters and include at least one number and letter. Password is case sensitive and cannot contain spaces.',
-                'password.regex' => 'Password is required. It must be 8 or more characters and include at least one number and letter. Password is case sensitive and cannot contain spaces.',
+                'firstname.required' => 'Họ không được để trống',
+                'firstname.max' => 'Họ chỉ được tối đa 30 ký tự trở xuống.',
+                'lastname.required' => 'Tên không được để trống',
+                'lastname.max' => 'Tên chỉ được tối đa 30 ký tự trở xuống.',
+                'dob.required' => 'Ngày sinh không được để trống.',
+                'numberphone.required' => 'Số điện thoại không được để trống',
+                'numberphone.regex' => 'Số điện thoại không hợp lệ',
+                'numberphone.unique' => 'Số điện thoại đã được sử dụng',
+                'email.required' => 'Email không được để trống.',
+                'email.unique' => 'Email đã được sử dụng',
+                'username.required' => 'Tài khoản không được để trống.',
+                'username.max' => 'Tài khoản chỉ được tối đa 30 ký tự trở xuống.',
+                'password.required' => 'Mật khẩu không được để trống.',
+                'password.regex' => 'Mật khẩu không hợp lệ',
             ]
         );
 
@@ -279,8 +279,8 @@ class clientController extends Controller
 
         ];
         $messages = [
-            'required'  => 'This Field Is Required'
-            , 'Cnew_pass.same' => 'Confirm Password Must Match With Password'
+            'required'  => 'Trường này là bắt buộc'
+            , 'Cnew_pass.same' => 'Xác nhận mật khẩu phải khớp với mật khẩu'
         ];
         $req->validate($rules, $messages);
 
@@ -306,7 +306,7 @@ class clientController extends Controller
             ->where('id', $this_user_ID)
             ->update(['password' => $new_password]);
 
-            Alert::success('Changing password successfully')
+            Alert::success('Đổi mật khẩu thành công')
             ->autoclose(2000);
             
             return redirect()->back();

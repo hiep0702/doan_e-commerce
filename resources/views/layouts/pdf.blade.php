@@ -82,8 +82,8 @@
     <form action="">
         <div class="container">
             <div class="container__header">
-                <div>PURSELLET</div>
-                <div>Pursellet.com</div>
+                <div>SUGAR</div>
+                <div>SUGAR.com</div>
             </div>
             <div class="container__content">
                 <div class="container__content-title">Product Details</div>

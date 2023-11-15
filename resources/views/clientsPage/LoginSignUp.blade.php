@@ -102,35 +102,35 @@
                     <div class="condition">
                         <div>
                             <span class="condition-check-password condition-succes-1"></span>
-                            <small class="condition-item-1">Must be 8 or more characters</small>
+                            <small class="condition-item-1">Phải có 8 ký tự trở lên</small>
                         </div>
                         <div>
                             <span class="condition-check-password condition-succes-2"></span>
-                            <small class="condition-item-2">Must include at least one number and letter</small>
+                            <small class="condition-item-2">Phải bao gồm ít nhất một số và chữ cái</small>
                         </div>
                     </div>
                     <div class="policy">
                         <p>
                             <input type="checkbox" />
-                            By checking this box, you agree to receive recurring automated
-                            promotional and personalized marketing text messages (e.g. cart
-                            reminders) from PURSELLET at the cell number used when signing
-                            up. Consent is not a condition of any purchase. Reply HELP for
-                            help and STOP to cancel. Msg frequency varies. Msg & data rates
-                            may apply. View <a href="#">Terms</a> & <a href="#">Privacy</a>.
+                            Bằng việc chọn hộp này, bạn đồng ý nhận thông tin tự động định kỳ
+                            tin nhắn văn bản tiếp thị quảng cáo và cá nhân hóa (ví dụ: giỏ hàng
+                            lời nhắc) từ SUGAR tại số ô được sử dụng khi ký
+                            hướng lên. Sự đồng ý không phải là điều kiện của bất kỳ giao dịch mua nào. Trả lời TRỢ GIÚP cho
+                            trợ giúp và STOP để hủy bỏ. Tần số tin nhắn khác nhau. Tốc độ tin nhắn và dữ liệu
+                            có thể áp dụng. Xem <a href="#">Điều kiện</a> & <a href="#">Sự riêng tư</a>.
                         </p>
                     </div>
                     <div class="policy">
                         <p>
                             <input type="checkbox" />
-                            Sign up to receive PURSELLET emails (you can withdraw your
-                            consent at any time). Read our <a href="#">Privacy Policy</a> and
-                            <a href="#">Contact Us</a> for more details.
+                            Đăng ký để nhận email SUGAR (bạn có thể rút tiền
+                            đồng ý bất cứ lúc nào). Tìm hiểu chúng tôi <a href="#">Chính sách bảo mật</a> và
+                            <a href="#">Liên hệ chúng tôi</a> để biết thêm chi tiết.
                         </p>
                     </div>
                     <button type="submit" class="create-account-btn">CREATE ACCOUNT</button>
                     <p class="terms-privacy">
-                        PURSELLET USES YOUR INFORMATION TO CREATE AND ADMINISTER YOUR
+                        SUGAR USES YOUR INFORMATION TO CREATE AND ADMINISTER YOUR
                         ACCOUNT. BY CLICKING CREATE ACCOUNT, YOU AGREE TO ABIDE BY KATE
                         SPADE <a href="#">TERMS AND CONDITIONS</a>. READ OUR
                         <a href="#">PRIVACY POLICY</a> FOR MORE DETAILS.

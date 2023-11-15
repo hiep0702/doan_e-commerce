@@ -86,7 +86,7 @@
                         class="container__featured-products-items-img"></div>
                     <div class="container__featured-products-items-info">
                         <p>{{ $item->Name }}</p>
-                        <p>${{ $item->Export_Price }}</p>
+                        <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                     </div>
                 </a>
             @endforeach

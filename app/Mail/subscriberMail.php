@@ -28,6 +28,6 @@ class subscriberMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Pursellet')->view('clientsPage.email');
+        return $this->subject('Sugar')->view('clientsPage.email');
     }
 }

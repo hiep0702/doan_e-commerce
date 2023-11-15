@@ -29,7 +29,7 @@ class MailController extends Controller
         $mail_content = $req->mail;
 
         $details = [
-            'title' => 'Email from Pursellet', 'body' => $mail_content
+            'title' => 'Sugar thông báo: ', 'body' => $mail_content
         ];
 
         $subscriber = DB::table('subscriber')
@@ -39,7 +39,7 @@ class MailController extends Controller
             Mail::to($item->email)->send(new subscriberMail($details));
         };
 
-        Alert::success('sending mails successfully');
+        Alert::success('Gửi thư thành công');
         return redirect()->back();
     }
 

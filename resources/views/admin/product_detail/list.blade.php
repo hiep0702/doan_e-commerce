@@ -66,12 +66,13 @@
                         <tr class="odd gradeX" align="center">
                             <td>{{$index + 1}}</td>
                             <td>{{$product->Code}}</td>
-                            <td>{{$product->Import_Price}} VND</td>
-                            <td>{{$product->Export_Price}} VND</td>
+                            <td>{{ number_format($product->Import_Price, 0, ',', '.') }}</td>
+                            <td>{{ number_format($product->Export_Price, 0, ',', '.')}}</td>
                             <td>
                                 @php
                                     if($product->Sale_Price){
-                                        echo $product->Sale_Price.' VND';
+                                        $formattedPrice = number_format($product->Sale_Price, 0, ',', '.');
+                                        echo $formattedPrice;
                                     }
                                 @endphp
                             </td>

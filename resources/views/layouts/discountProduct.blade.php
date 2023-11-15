@@ -65,7 +65,7 @@
 
             </div>
             <div class="container__list">
-                <div class="container__list-tittle">Đang bán</div>
+                <div class="container__list-tittle">Đang giảm giá</div>
                 <div class="container__list-products">
                     <div class="container__list-products-item">
                         <div style="background-image: url(./8858227441694-removebg-preview.png)"
@@ -147,7 +147,7 @@
                         class="container__featured-products-items-img"></div>
                     <div class="container__featured-products-items-info">
                         <p>{{ $item->Name }}</p>
-                        <p>${{ $item->Export_Price }}</p>
+                        <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                     </div>
                 </a>
             @endforeach

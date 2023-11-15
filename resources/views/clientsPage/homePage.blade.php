@@ -46,7 +46,7 @@
                             class="container__featured-products-items-img"></a>
                         <div class="container__featured-products-items-info">
                             <p>{{ $item->Name }}</p>
-                            <p>${{ $item->Export_Price }}</p>
+                            <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -103,7 +103,7 @@
                             class="container__featured-products-items-img"></a>
                         <div class="container__featured-products-items-info">
                             <p>{{ $item->Name }}</p>
-                            <p>${{ $item->Export_Price }}</p>
+                            <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -246,7 +246,7 @@
         </div>
         <div class="title">
             <div class="gameTitle">
-                <div>PURSELLET GAME</div>
+                <div>SUGAR GAME</div>
             </div>
             <div class="title__left">
                 <ion-icon name="alarm-outline"></ion-icon>

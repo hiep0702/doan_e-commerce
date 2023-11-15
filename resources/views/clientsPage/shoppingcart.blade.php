@@ -53,7 +53,7 @@
                                     </div>
 
                                     <div class="productSubtotal container__product-list-cart-total">
-                                        ${{ $item->subtotal }}</div>
+                                        {{ number_format($item->subtotal, 0, ',', '.') }} VND</div>
                                     <div class="container__product-list-cart-button">
                                         <a href="{{ url('/client/Cart/removefromcart', $item->Product_Detail_ID) }}">
                                             <ion-icon name="close-outline"></ion-icon>
@@ -73,19 +73,19 @@
                             <div class="container__cartTotal-big2-info">
                                 <div class="container__cartTotal-big2-info-sub">
                                     <div class="container__cartTotal-big2-info-sub-left">Phụ phí</div>
-                                    <div class="subtotals container__cartTotal-big2-info-sub-right">${{ $subtotals }}
+                                    <div class="subtotals container__cartTotal-big2-info-sub-right">{{ $subtotals }}
                                     </div>
                                 </div>
                                 <div class="container__cartTotal-big2-info-ship">
                                     <div class="container__cartTotal-big2-info-left">Phí ship</div>
-                                    <div class="ship-money container__cartTotal-big2-info-right">$5</div>
+                                    <div class="ship-money container__cartTotal-big2-info-right">15.000</div>
                                 </div>
                                 <div class="container__cartTotal-big2-info-deli">
                                     {{-- <input type="text" list="ship" id="ship" placeholder="Delivery Option" /> --}}
                                     <select name="ship" id="ship">
-                                        <option value="5">Bình thường - $5</option>
-                                        <option value="8">Nhanh - $8</option>
-                                        <option value="12">Hỏa tốc - $12</option>
+                                        <option value="15000">Bình thường - 15.000</option>
+                                        <option value="30000">Nhanh - 30.000</option>
+                                        <option value="45000">Hỏa tốc - 45.000</option>
                                     </select>
                                 </div>
                                 <div class="container__cartTotal-big2-info-give">
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                             <div class="container__cartTotal-big2-button">
-                                <button type="submit">Thanh toán</button>
+                                <button type="submit">Đặt hàng</button>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                             class="container__featured-products-items-img"></a>
                         <div class="container__featured-products-items-info">
                             <p>{{ $item->Name }}</p>
-                            <p>${{ $item->Export_Price }}</p>
+                            <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -186,7 +186,9 @@
             } else {
                 totalPrice = subtotals + shipPrice
             }
-            $('.total-price').html("$" + totalPrice);
+            // $('.total-price').html(totalPrice + " VND");
+            $('.total-price').html(totalPrice.toLocaleString('vi-VN'));
+
 
             function calculatePriceTotal() {
                 var totalPrice = 0;
@@ -201,7 +203,9 @@
                 } else {
                     totalPrice = subtotals + shipPrice
                 }
-                $('.total-price').html("$" + totalPrice);
+                // $('.total-price').html(totalPrice + " VND");
+                $('.total-price').html(totalPrice.toLocaleString('vi-VN'));
+
             }
 
             // Increase Button
@@ -264,7 +268,7 @@
 
             // Ship Option
             $('#ship').on('change', function() {
-                $('.ship-money').html("$" + this.value)
+                $('.ship-money').html(this.value)
                 calculatePriceTotal();
             });
 

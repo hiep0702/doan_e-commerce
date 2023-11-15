@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="container__history-list-item-content-details-totalPrice">
                                     <div>Tổng tiền</div>
-                                    <div>${{ $user->Total_Price }}</div>
+                                    <div>{{  number_format($user->Total_Price, 0, ',', '.') }}</div>
                                 </div>
                             </div>
                         </div>

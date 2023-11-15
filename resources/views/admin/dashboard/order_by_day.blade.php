@@ -11,7 +11,7 @@
                 <div class="heading">
                     <div>
                         <h1 class="page-header">Đơn hàng
-                            <small>theo hàng</small>
+                            <small>hôm nay</small>
                         </h1>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     ]);
 
                     var options = {
-                        title: "Today's Orders",
+                        title: "Đơn đặt hàng hôm nay",
                         is3D: true,
                     };
 
