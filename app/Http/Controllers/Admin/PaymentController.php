@@ -30,7 +30,7 @@ class PaymentController extends Controller
             'Method' => $request->method,
         ]);
 
-        return redirect()->route('admin.payment.index')->with('success', 'Created Successfully');
+        return redirect()->route('admin.payment.index')->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id)
@@ -54,13 +54,13 @@ class PaymentController extends Controller
             'Method' => $request->method,
         ]);
 
-        return redirect()->route('admin.payment.edit', $id)->with('success', 'Updated Successfully');
+        return redirect()->route('admin.payment.edit', $id)->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)
     {
         Payment::where('ID', $id)->delete();
-        return redirect()->route('admin.payment.index')->with('success', 'Deleted Successfully!');
+        return redirect()->route('admin.payment.index')->with('success', 'Đã xoá thành công!');
     }
 
     public function search(Request $request)

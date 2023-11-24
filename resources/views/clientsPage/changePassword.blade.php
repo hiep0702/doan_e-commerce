@@ -16,12 +16,12 @@
         <div class="container">
             <form action="" id="signInForm" method="POST" class="container__signIn active">
                 @csrf
-                <div class="container__signIn-tittle">Find Your Password</div>
-                <div class="container__signIn-text">Enter your username then we will send password to your email </div>
+                <div class="container__signIn-tittle">Tìm mật khẩu của bạn</div>
+                <div class="container__signIn-text">Nhập tài khoản của bạn sau đó chúng tôi sẽ gửi mật khẩu mới vào email của bạn </div>
                 <div class="container__signIn-input">
                     <div class="input-group">
                         <input placeholder="" type="text" name="user_name" autocomplete="off" class="input">
-                        <label class="user-label">Username</label>
+                        <label class="user-label">Tài khoản</label>
                         <small>
                             @error('user_name')
                                 {{ $message }}
@@ -30,10 +30,10 @@
                     </div>
                 </div>
                 <div class="container__signIn-button">
-                    <button id="" type="submit">Submit</button>
+                    <button id="" type="submit">Gửi</button>
                 </div>
                 <div class="container__signIn-change">
-                    <a href="http://127.0.0.1:8000/client/login">Sign In</a>
+                    <a href="http://127.0.0.1:8000/client/login">Đăng nhập</a>
                 </div>`
             </form>
         </div>

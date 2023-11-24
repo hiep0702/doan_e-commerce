@@ -42,7 +42,7 @@ class BrandController extends Controller
             'Slug'          => $slug,
         ]);
 
-        return redirect()->route('admin.brand.index')->with('success', 'Created Successfully');
+        return redirect()->route('admin.brand.index')->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id)
@@ -70,7 +70,7 @@ class BrandController extends Controller
             'Slug'          => $slug,
         ]);
 
-        return redirect()->route('admin.brand.index')->with('success', 'Updated Successfully');
+        return redirect()->route('admin.brand.index')->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)
@@ -79,10 +79,10 @@ class BrandController extends Controller
         $brand_id = $brand->ID;
         $products = Product::where('Brand_ID', $brand_id)->count();
         if ($products) {
-            return redirect()->route('admin.brand.index')->with('error', 'Cannot detele this brand!');
+            return redirect()->route('admin.brand.index')->with('error', 'Không thể xóa thương hiệu này!');
         }
         Brand::where('ID', $id)->delete();
-        return redirect()->route('admin.brand.index')->with('success', 'Deleted Successfully');
+        return redirect()->route('admin.brand.index')->with('success', 'Đã xoá thành công');
     }
 
     public function search(Request $request)

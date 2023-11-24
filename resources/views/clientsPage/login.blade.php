@@ -17,11 +17,11 @@
             <form action="{{ url('http://127.0.0.1:8000/client/login') }}" id="signInForm" method="POST"
                 class="container__signIn active">
                 @csrf
-                <div class="container__signIn-tittle">Sign In</div>
+                <div class="container__signIn-tittle">Đăng nhập</div>
                 <div class="container__signIn-input">
                     <div class="input-group">
                         <input placeholder="" type="text" name="user_name" autocomplete="off" class="input">
-                        <label class="user-label">Username</label>
+                        <label class="user-label">Tài khoản</label>
                         <small>
                             @error('user_name')
                                 {{ $message }}
@@ -30,7 +30,7 @@
                     </div>
                     <div class="input-group">
                         <input placeholder="" type="password" name="password" autocomplete="off" class="input">
-                        <label class="user-label">Password</label>
+                        <label class="user-label">Mật khẩu</label>
                         <small>
                             @error('password')
                                 {{ $message }}
@@ -39,21 +39,21 @@
                     </div>
                 </div>
                 <div class="container__signIn-button">
-                    <button id="" type="submit">Sign in</button>
+                    <button id="" type="submit">Đăng nhập</button>
                 </div>
-                <div class="container__signIn-forget"><a href="http://127.0.0.1:8000/client/forgetPassword">Forgotten password?</a></div>
+                <div class="container__signIn-forget"><a href="http://127.0.0.1:8000/client/forgetPassword">Quên mật khẩu</a></div>
                 <div class="container__signIn-change">
-                    <button id="toRegister">Register</button>
+                    <button id="toRegister">Đăng ký</button>
                 </div>
             </form>
             <form action="{{ url('http://127.0.0.1:8000/client/register') }}" method="POST" id="registerForm"
                 class="container__signOut ">
                 @csrf
-                <div class="container__signIn-tittle">Register</div>
+                <div class="container__signIn-tittle">Đăng ký</div>
                 <div class="container__signIn-input">
                     <div class="input-group">
                         <input placeholder="" type="text" name="first_name" autocomplete="off" class="input">
-                        <label class="user-label">Firstname</label>
+                        <label class="user-label">Họ</label>
                         <small>
                             @error('first_name')
                                 {{ $message }}
@@ -62,7 +62,7 @@
                     </div>
                     <div class="input-group">
                         <input placeholder="" type="text" name="last_name" autocomplete="off" class="input">
-                        <label class="user-label">Lastname</label>
+                        <label class="user-label">Tên</label>
                         <small>
                             @error('last_name')
                                 {{ $message }}
@@ -80,7 +80,7 @@
                     </div>
                     <div class="input-group">
                         <input placeholder="" type="text" name="user_name" autocomplete="off" class="input">
-                        <label class="user-label">Username</label>
+                        <label class="user-label">Tài khoản</label>
                         <small>
                             @error('user_name')
                                 {{ $message }}
@@ -89,7 +89,7 @@
                     </div>
                     <div class="input-group">
                         <input placeholder="" type="password" name="password" autocomplete="off" class="input">
-                        <label class="user-label">Password</label>
+                        <label class="user-label">Mật hhẩu</label>
                         <small>
                             @error('password')
                                 {{ $message }}
@@ -98,7 +98,7 @@
                     </div>
                     <div class="input-group">
                         <input placeholder="" type="password" name="c_password" autocomplete="off" class="input">
-                        <label class="user-label">Confirm Password</label>
+                        <label class="user-label">Nhập lại mật khẩu</label>
                         <small>
                             @error('c_password')
                                 {{ $message }}
@@ -107,10 +107,10 @@
                     </div>
                 </div>
                 <div class="container__signIn-button">
-                    <button type="submit">Sign up</button>
+                    <button type="submit">Đăng ký</button>
                 </div>
                 <div class="container__signIn-change">
-                    <button id="toSignIn">Sign in</button>
+                    <button id="toSignIn">Đăng nhập</button>
                 </div>
             </form>
         </div>

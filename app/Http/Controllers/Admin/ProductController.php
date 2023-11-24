@@ -43,16 +43,18 @@ class ProductController extends Controller
 
         $slug = Str::slug($request->name);
 
+        $IMG = cloudinary()->upload($request->file('img')->getRealPath())->getSecurePath();
+
         Product::create([
             'Brand_ID' => $request->brand,
             'Category_ID' => $request->category,
             'Name' => $request->name,
-            'IMG' => $request->img,
+            'IMG' => $IMG,
             'Code' => $request->code,
             'Slug' => $slug,
         ]);
 
-        return redirect()->route('admin.product.index')->with('success', 'Created Successfully');
+        return redirect()->route('admin.product.index')->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id)
@@ -75,16 +77,18 @@ class ProductController extends Controller
 
         $slug = Str::slug($request->name);
 
+        $IMG = cloudinary()->upload($request->file('img')->getRealPath())->getSecurePath();
+
         Product::where('ID', $id)->update([
             'Brand_ID' => $request->brand,
             'Category_ID' => $request->category,
             'Name' => $request->name,
-            'IMG' => $request->img,
+            'IMG' => $IMG,
             'Code' => $request->code,
             'Slug' => $slug,
         ]);
 
-        return redirect()->route('admin.product.index')->with('success', 'Updated Successfully');
+        return redirect()->route('admin.product.index')->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)
@@ -93,10 +97,10 @@ class ProductController extends Controller
         $product_id = $product->ID;
         $product_details = ProductDetail::where('Product_ID', $product_id)->count();
         if ($product_details) {
-            return redirect()->route('admin.product.index')->with('error', 'Cannot detele this product!');
+            return redirect()->route('admin.product.index')->with('error', 'Không thể xóa sản phẩm này!');
         }
         Product::where('ID', $id)->delete();
-        return redirect()->route('admin.product.index')->with('success', 'Deleted Successfully');
+        return redirect()->route('admin.product.index')->with('success', 'Đã xoá thành công');
     }
 
     public function search(Request $request)

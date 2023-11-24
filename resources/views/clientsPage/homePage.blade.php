@@ -236,13 +236,13 @@
         </button>
         <div id="startBoard" class="start">
             <div class="start__content">
-                <div>You will get 1 point with 1 click to the ball</div>
-                <div>1 point = 1% discount on your checkout</div>
-                <div>You have 15 seconds for 1 turn</div>
-                <div>You can play again if you want to get higher point!</div>
-                <div>You can only get the code 1 time</div>
+                <div>Bạn sẽ nhận được 1 điểm chỉ với 1 cú click vào bóng</div>
+                <div>1 điểm = giảm giá 1% khi thanh toán</div>
+                <div>Bạn có 15 giây cho 1 lượt</div>
+                <div>Bạn có thể chơi lại nếu muốn đạt điểm cao hơn!</div>
+                <div>Bạn chỉ có thể nhận được mã 1 lần</div>
             </div>
-            <button id="startGame">Play</button>
+            <button id="startGame">Chơi</button>
         </div>
         <div class="title">
             <div class="gameTitle">
@@ -260,19 +260,19 @@
         <div id="resultBoard" class="result">
             <div id="score" class="scoreBoard">
                 <div class="scoreBoard__result">
-                    <div>Score:</div>
+                    <div>Điểm:</div>
                     <div id="pointResult"></div>
                 </div>
             </div>
             <div class="scoreBoard__code">
-                You will get a discount code
+                Bạn sẽ nhận được mã giảm giá
             </div>
             <div class="scoreBoard__code1">
                 <div id="percent"></div>%
             </div>
             <div class="scoreBoard__button">
-                <button id="restartGame">Play Again</button>
-                <button id="getCode">Get Code</button>
+                <button id="restartGame">Chơi lại</button>
+                <button id="getCode">Nhận mã</button>
                 {{ csrf_field() }}
             </div>
         </div>
@@ -298,7 +298,7 @@
                         if (data.error) {
                             alert(data.error);
                         } else {
-                            alert('Discount code has been sent to your email');
+                            alert('Mã giảm giá đã được gửi tới email của bạn');
                         }
                     }
                 })

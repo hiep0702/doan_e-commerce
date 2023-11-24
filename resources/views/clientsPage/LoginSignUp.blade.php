@@ -8,31 +8,32 @@
             <form action="/client/login" method="post">
                 @csrf
                 <div class="wrapper">
-                    <h1>Sign In To Your Account</h1>
-                    <p>Already have an account? Welcome back!</p>
+                    <h1>Đăng nhập vào tài khoản của bạn</h1>
+                    <p>Bạn có sẵn sàng để tạo một tài khoản? Chào mừng trở lại!
+                    </p>
                     @if (!empty($error_login))
                         <small class="error">{{ $error_login }}</small>
                     @endif
                     <div class="form">
                         <input name="email_login" type="text" class="form-input email-sign-in" placeholder=" " />
-                        <span class="form-label">Email Address</span>
+                        <span class="form-label">Email</span>
                         @error('email_login')
                             <small class="error">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form form-password-sign-in">
                         <input name="password_login" type="password" class="form-input password-sign-in" placeholder=" " />
-                        <span class="form-label">Password</span>
+                        <span class="form-label">Mật khẩu</span>
                         <button type="button" class="show-password show-password-sign-in">Show</button>
                         @error('password_login')
                             <small class="error">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="option">
-                        <div><input class="remember-me" type="checkbox" />Remember Me</div>
+                        <div><input class="remember-me" type="checkbox" />Nhớ mật khẩu</div>
                         <button>Forgot Password</button>
                     </div>
-                    <button type="submit" class="sign-in-btn">SIGN IN</button>
+                    <button type="submit" class="sign-in-btn">Đăng nhập</button>
                 </div>
             </form>
         </div>

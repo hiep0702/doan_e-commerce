@@ -21,7 +21,7 @@ class clientMiddleware
             return $next($request);
         } else {
             return redirect()->route('client.login')
-            ->with('error', 'You Have To Sign In To Continue');
+            ->with('error', 'Bạn phải đăng nhập để tiếp tục');
         };
     }
 }

@@ -53,13 +53,17 @@ class ProductDetailController extends Controller
 
         $slug = Str::slug($product->Name . "-" . $request->color);
 
+        $Main_IMG = cloudinary()->upload($request->file('main_img')->getRealPath())->getSecurePath();
+        $Slide_IMG_1 = cloudinary()->upload($request->file('slide_img_1')->getRealPath())->getSecurePath();
+        $Slide_IMG_2 = cloudinary()->upload($request->file('slide_img_2')->getRealPath())->getSecurePath();
+
         ProductDetail::create([
             'Import_Price' => $request->import_price,
             'Export_Price' => $request->export_price,
             'Sale_Price' => $request->sale_price,
-            'Main_IMG' => $request->main_img,
-            'Slide_IMG_1' => $request->slide_img_1,
-            'Slide_IMG_2' => $request->slide_img_2,
+            'Main_IMG' => $Main_IMG,
+            'Slide_IMG_1' => $Slide_IMG_1,
+            'Slide_IMG_2' => $Slide_IMG_2,
             'Information' => $request->information,
             'Material' => $request->material,
             'Color' => $request->color,
@@ -73,7 +77,7 @@ class ProductDetailController extends Controller
             'Slug' => $slug,
         ]);
 
-        return redirect()->route('admin.product-detail.index')->with('success', 'Created Successfully');
+        return redirect()->route('admin.product-detail.index')->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id)
@@ -108,13 +112,17 @@ class ProductDetailController extends Controller
         $old_product_detail = ProductDetail::find($id);
         $old_quantity = $old_product_detail->Quantity;
 
+        $Main_IMG = cloudinary()->upload($request->file('main_img')->getRealPath())->getSecurePath();
+        $Slide_IMG_1 = cloudinary()->upload($request->file('slide_img_1')->getRealPath())->getSecurePath();
+        $Slide_IMG_2 = cloudinary()->upload($request->file('slide_img_2')->getRealPath())->getSecurePath();
+
         ProductDetail::where('ID', $id)->update([
             'Import_Price' => $request->import_price,
             'Export_Price' => $request->export_price,
             'Sale_Price' => $request->sale_price,
-            'Main_IMG' => $request->main_img,
-            'Slide_IMG_1' => $request->slide_img_1,
-            'Slide_IMG_2' => $request->slide_img_2,
+            'Main_IMG' => $Main_IMG,
+            'Slide_IMG_1' => $Slide_IMG_1,
+            'Slide_IMG_2' => $Slide_IMG_2,
             'Information' => $request->information,
             'Material' => $request->material,
             'Color' => $request->color,
@@ -128,13 +136,13 @@ class ProductDetailController extends Controller
             'Slug' => $slug,
         ]);
 
-        return redirect()->route('admin.product-detail.index')->with('success', 'Updated Successfully');
+        return redirect()->route('admin.product-detail.index')->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)
     {
         ProductDetail::where('ID', $id)->delete();
-        return redirect()->route('admin.product-detail.index')->with('success', 'Deleted Successfully');
+        return redirect()->route('admin.product-detail.index')->with('success', 'Đã xoá thành công');
     }
 
     public function search(Request $request)

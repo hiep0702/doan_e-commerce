@@ -38,7 +38,7 @@ class CategoryController extends Controller
             'Slug' => $slug,
         ]);
 
-        return redirect()->route('admin.category.index')->with('success', 'Created Successfully');
+        return redirect()->route('admin.category.index')->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id)
@@ -62,7 +62,7 @@ class CategoryController extends Controller
             'Slug' => $slug,
         ]);
 
-        return redirect()->route('admin.category.index')->with('success', 'Updated Successfully');
+        return redirect()->route('admin.category.index')->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)
@@ -71,10 +71,10 @@ class CategoryController extends Controller
         $category_id = $category->ID;
         $products = Product::where('Category_ID', $category_id)->count();
         if ($products) {
-            return redirect()->route('admin.category.index')->with('error', 'Cannot detele this category!');
+            return redirect()->route('admin.category.index')->with('error', 'Không thể xóa thể loại này!');
         }
         Category::where('ID', $id)->delete();
-        return redirect()->route('admin.category.index')->with('success', 'Deleted Successfully');
+        return redirect()->route('admin.category.index')->with('success', 'Đã xoá thành công');
     }
 
     public function search(Request $request)

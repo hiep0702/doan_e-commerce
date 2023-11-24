@@ -15,7 +15,7 @@
             </div>
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="{{ route('admin.product-detail.update', $product_detail->ID) }}" method="POST">
+                <form action="{{ route('admin.product-detail.update', $product_detail->ID) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     {{-- Product --}}
@@ -62,7 +62,7 @@
                     {{-- Main Image --}}
                     <div class="form-group">
                         <label>Ảnh chính</label>
-                        <input class="form-control" value="{{$product_detail->Main_IMG}}" name="main_img" placeholder="Nhập link ảnh chính" />
+                        <input class="form-control" value="{{$product_detail->Main_IMG}}" type="file" name="main_img" placeholder="Nhập link ảnh chính" />
                         @error('main_img')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -73,7 +73,7 @@
                     {{-- Slide Image 1 --}}
                     <div class="form-group">
                         <label>Ảnh slide 1</label>
-                        <input class="form-control" value="{{$product_detail->Slide_IMG_1}}" name="slide_img_1" placeholder="Nhập link ảnh slide 1" />
+                        <input class="form-control" value="{{$product_detail->Slide_IMG_1}}" type="file" name="slide_img_1" placeholder="Nhập link ảnh slide 1" />
                         @error('slide_img_1')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -84,7 +84,7 @@
                     {{-- Slide Image 2 --}}
                     <div class="form-group">
                         <label>Ảnh slide 2</label>
-                        <input class="form-control" value="{{$product_detail->Slide_IMG_2}}" name="slide_img_2" placeholder="Nhập link ảnh slide 2" />
+                        <input class="form-control" value="{{$product_detail->Slide_IMG_2}}" type="file" name="slide_img_2" placeholder="Nhập link ảnh slide 2" />
                         @error('slide_img_2')
                             <div class="alert alert-danger">
                                 {{ $message }}

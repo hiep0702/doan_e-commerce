@@ -190,7 +190,7 @@ class homepageController extends Controller
         ]);
 
         $details = [
-            'title' => 'Khôi phục mật khẩu của bạn', 'body' => 'Mã giảm giá của bạn là:' . $string
+            'title' => 'Sugar thông báo', 'body' => 'Mã giảm giá của bạn là:' . $string
         ];
 
         Mail::to($user_mail[0]->Email)->send(new DiscountMail($details));
