@@ -10,8 +10,8 @@
                 @foreach ($top_slides_img as $top)
                     <div style="background-image: url({{ $top->IMG }})" class="container__slideCol-item">
                         <div class="container__slideCol-item-content">
-                            <p class="container__left-frame-text-p1">Sản phẩm tốt nhất cho bạn..</p>
-                            <p class="container__left-frame-text-p2">Xu hướng mới năm 2023</p>
+                            <p style="color: #FF0000" class="container__left-frame-text-p1">Sản phẩm tốt nhất cho bạn..</p>
+                            <p style="color: #FF0000" class="container__left-frame-text-p2">Xu hướng mới năm 2023</p>
                             <a href="">Mua ngay</a>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             class="container__featured-products-items-img"></a>
                         <div class="container__featured-products-items-info">
                             <p>{{ $item->Name }}</p>
-                            <p>${{ $item->Export_Price }}</p>
+                            <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -103,7 +103,7 @@
                             class="container__featured-products-items-img"></a>
                         <div class="container__featured-products-items-info">
                             <p>{{ $item->Name }}</p>
-                            <p>${{ $item->Export_Price }}</p>
+                            <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -118,7 +118,7 @@
                         <div class="container__listCol-items-img-child"
                             style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                         <div class="container__listCol-items-tittle">
-                            <button onclick="location.href='{{ url('client/products/channel') }}'">Xem thêm</button>
+                            <button onclick="location.href='{{ url('client/products/nike') }}'">Xem thêm</button>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                     <div class="container__listCol-items-img-child"
                         style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/dior') }}'">Xem thêm</button>
+                        <button onclick="location.href='{{ url('client/products/adidas') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@
                         style="background-image: url({{ $item->After_Hover_IMG }});">
                     </div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/gucci') }}'">Xem thêm</button>
+                        <button onclick="location.href='{{ url('client/products/new-balance') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
                     <div class="container__listCol-items-img-child"
                         style="background-image: url({{ $item->After_Hover_IMG }});"></div>
                     <div class="container__listCol-items-tittle">
-                        <button onclick="location.href='{{ url('client/products/louis-vuiton') }}'">Xem thêm</button>
+                        <button onclick="location.href='{{ url('client/products/puma') }}'">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -236,17 +236,17 @@
         </button>
         <div id="startBoard" class="start">
             <div class="start__content">
-                <div>You will get 1 point with 1 click to the ball</div>
-                <div>1 point = 1% discount on your checkout</div>
-                <div>You have 15 seconds for 1 turn</div>
-                <div>You can play again if you want to get higher point!</div>
-                <div>You can only get the code 1 time</div>
+                <div>Bạn sẽ nhận được 1 điểm chỉ với 1 cú click vào bóng</div>
+                <div>1 điểm = giảm giá 1% khi thanh toán</div>
+                <div>Bạn có 15 giây cho 1 lượt</div>
+                <div>Bạn có thể chơi lại nếu muốn đạt điểm cao hơn!</div>
+                <div>Bạn chỉ có thể nhận được mã 1 lần</div>
             </div>
-            <button id="startGame">Play</button>
+            <button id="startGame">Chơi</button>
         </div>
         <div class="title">
             <div class="gameTitle">
-                <div>PURSELLET GAME</div>
+                <div>SUGAR GAME</div>
             </div>
             <div class="title__left">
                 <ion-icon name="alarm-outline"></ion-icon>
@@ -260,19 +260,19 @@
         <div id="resultBoard" class="result">
             <div id="score" class="scoreBoard">
                 <div class="scoreBoard__result">
-                    <div>Score:</div>
+                    <div>Điểm:</div>
                     <div id="pointResult"></div>
                 </div>
             </div>
             <div class="scoreBoard__code">
-                You will get a discount code
+                Bạn sẽ nhận được mã giảm giá
             </div>
             <div class="scoreBoard__code1">
                 <div id="percent"></div>%
             </div>
             <div class="scoreBoard__button">
-                <button id="restartGame">Play Again</button>
-                <button id="getCode">Get Code</button>
+                <button id="restartGame">Chơi lại</button>
+                <button id="getCode">Nhận mã</button>
                 {{ csrf_field() }}
             </div>
         </div>
@@ -298,7 +298,7 @@
                         if (data.error) {
                             alert(data.error);
                         } else {
-                            alert('Discount code has been sent to your email');
+                            alert('Mã giảm giá đã được gửi tới email của bạn');
                         }
                     }
                 })

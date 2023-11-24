@@ -300,10 +300,10 @@ Route::prefix('client/products')->group(function () {
     Route::get('new-arrival', [clientProductController::class, 'getNewArrival']);
     Route::get('discount', [clientProductController::class, 'getDiscount']);
     Route::get('trending', [clientProductController::class, 'getTrending']);
-    Route::get('gucci', [clientProductController::class, 'getGucci']);
-    Route::get('louis-vuiton', [clientProductController::class, 'getLouisVuiton']);
-    Route::get('channel', [clientProductController::class, 'getChannel']);
-    Route::get('dior', [clientProductController::class, 'getDior']);
+    Route::get('new-balance', [clientProductController::class, 'getNewBalance']);
+    Route::get('puma', [clientProductController::class, 'getPuma']);
+    Route::get('nike', [clientProductController::class, 'getNike']);
+    Route::get('adidas', [clientProductController::class, 'getAdidas']);
 
     Route::get('specificProduct/{Slug}', [clientProductController::class, 'getSpecificProduct']);
 

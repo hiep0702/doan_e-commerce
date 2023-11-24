@@ -20,7 +20,7 @@
             @endif
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="{{ route('admin.product.update', $product->ID) }}" method="POST">
+                <form action="{{ route('admin.product.update', $product->ID) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group">
                         <label>Ảnh</label>
-                        <input class="form-control" value="{{$product->IMG}}" name="img" placeholder="Nhập link ảnh sản phẩm" />
+                        <input class="form-control" value="{{$product->IMG}}" type="file" name="img" placeholder="Nhập ảnh sản phẩm" />
                         @error('img')
                             <div class="alert alert-danger">
                                 {{ $message }}

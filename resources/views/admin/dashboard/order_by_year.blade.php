@@ -61,7 +61,7 @@
                     ]);
 
                     var options = {
-                        title: "Today's Orders",
+                        title: "Đơn hàng theo năm",
                         is3D: true,
                     };
 

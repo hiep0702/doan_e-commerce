@@ -20,7 +20,7 @@
                 @endif
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="{{ route('admin.slide.update', $slide->ID) }}" method="POST">
+                    <form action="{{ route('admin.slide.update', $slide->ID) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="form-group">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label>Ảnh</label>
-                            <input class="form-control" value="{{$slide->IMG}}" name="image" placeholder="Nhập link ảnh" />
+                            <input class="form-control" value="{{$slide->IMG}}" type="file" name="image" placeholder="Nhập ảnh" />
                             @error('image')
                                 <div class="alert alert-danger">
                                     {{ $message }}

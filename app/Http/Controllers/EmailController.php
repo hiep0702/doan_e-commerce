@@ -56,8 +56,8 @@ class EmailController extends Controller
             ->update(['password' => $new_password]);
             
             $details = [
-                'title' => 'Recover Your Password From Pursellet'
-                ,'body' => 'Your new password is:'.$randomString
+                'title' => 'Khôi phục mật khẩu của bạn từ Sugar'
+                ,'body' => 'Mật khẩu mới của bạn là:'.$randomString
             ];
             Alert::success('Email đã được gửi thành công')->autoclose(1500);
 

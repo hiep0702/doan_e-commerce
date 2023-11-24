@@ -53,7 +53,7 @@
             </form>
         </div>
             <div class="container__list">
-                <div class="container__list-tittle">giày thời trang</div>
+                <div class="container__list-tittle">Giày thời trang</div>
                 <div class="container__list-products">
                     @foreach ($cardsHolder as $item)
                         <div class="container__list-products-item">
@@ -70,7 +70,7 @@
                                 class="container__list-products-item-img"></a>
                             <div class="container__list-products-item-info">
                                 <p>{{ $item->Name }}</p>
-                                <p>${{ $item->Export_Price }}</p>
+                                <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -98,7 +98,7 @@
                     class="container__featured-products-items-img"></a>
                 <div class="container__featured-products-items-info">
                     <p>{{ $item->Name }}</p>
-                    <p>${{ $item->Export_Price }}</p>
+                    <p>{{ number_format($item->Export_Price, 0, ',', '.') }}</p>
                 </div>
             </div>
             @endforeach

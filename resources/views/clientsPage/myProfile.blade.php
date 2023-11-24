@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="container__history-list-item-content-details-totalPrice">
                                     <div>Tổng tiền</div>
-                                    <div>${{ $user->Total_Price }}</div>
+                                    <div>{{  number_format($user->Total_Price, 0, ',', '.') }}</div>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +182,6 @@
     </form>
     <form id="showChange" class="container__edit" action="{{ url('http://127.0.0.1:8000/client/changepassword') }}">
         @csrf
-        {{-- <div class=" "> --}}
         <div class="editProfile">
             <div class="editProfile__title">Đổi mật khẩu</div>
             <div class="profile editProfile__content">
@@ -215,7 +214,6 @@
                 <ion-icon name="close-outline"></ion-icon>
             </button>
         </div>
-        {{-- </div> --}}
     </form>
 
     <script src="{{ asset('javascript/client/profile.js') }}"></script>
@@ -271,7 +269,6 @@
             $('#upload_form').submit(function(event) {
                 event.preventDefault();
                 var formData = new FormData(this);
-                // formData.append('form', $('input[type=select_file]')[0].files[0]);
                 $.ajax({
                     url: "{{ route('client.edit-avatar') }}",
                     method: "POST",
@@ -285,7 +282,6 @@
                         $('#message').css('display', 'block');
                         $('#message').html(data.message);
                         $('#message').addClass(data.class_name);
-                        // $(".uploaded_image").attr("src", data.avatar);
                         $(".container__info-top-avatar-img").css("background-image", 'url(' +
                             data.avatar + ')');
                         location.reload();

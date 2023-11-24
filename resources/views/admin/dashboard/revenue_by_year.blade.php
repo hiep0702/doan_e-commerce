@@ -27,8 +27,8 @@ Doanh thu theo năm
                         </thead>
                         <tbody>
                             <tr class="odd gradeX" align="center">
-                                <td>${{ $total_revenue }}</td>
-                                <td>${{ $total_revenue - $total_capital }}</td>
+                                <td>{{ number_format($total_revenue, 0, ',', '.') }} VND</td>
+                                <td>{{ number_format($total_revenue - $total_capital, 0, ',', '.') }} VND</td>
                                 <td class="center">
                                     <i class="fa fa-pencil-o  fa-fw"></i>
                                     <a href="{{route('admin.dashboard.revenue-by-day')}}"> xem thêm</a>

@@ -20,7 +20,7 @@
                 @endif
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="{{ route('admin.slide.store') }}" method="POST">
+                    <form action="{{ route('admin.slide.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Thương hiệu</label>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label>Ảnh</label>
-                            <input class="form-control" name="image" placeholder="Nhập link ảnh" />
+                            <input class="form-control" name="image" type="file" placeholder="Nhập ảnh" />
                             @error('image')
                                 <div class="alert alert-danger">
                                     {{ $message }}

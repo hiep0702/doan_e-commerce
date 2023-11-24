@@ -43,7 +43,7 @@
                         <tr align="center">
                             <th>STT</th>
                             <th>Mã đơn</th>
-                            <th>Mã khách hàng</th>
+                            {{-- <th>Mã khách hàng</th> --}}
                             <th>Khách hàng</th>
                             <th>Tổng số lượng</th>
                             <th>Tổng tiền</th>
@@ -61,10 +61,10 @@
                         <tr class="odd gradeX" align="center">
                             <td>{{$index + 1}}</td>
                             <td>{{$order->Order_Code}}</td>
-                            <td>{{$order->Customer_Code}}</td>
+                            {{-- <td>{{$order->Customer_Code}}</td> --}}
                             <td>{{$order->Username}}</td>
                             <td>{{$order->TotalQuantity}}</td>
-                            <td>${{$order->TotalPrice}}</td>
+                            <td>{{ number_format($order->TotalPrice, 0, ',', '.') }}</td>
                             <th
                                 @if ($order->Status == 'Pending')
                                     class="click btn-success"

@@ -40,8 +40,8 @@ class clientLoginController extends Controller
                 'password'  => 'bail|required',
             ],
             $messages = [
-                'user_name.required' => 'User Name Cannot Be Empty',
-                'password.required' => 'Password Cannot Be Empty',
+                'user_name.required' => 'Tài khoản không được để trống',
+                'password.required' => 'Mật khẩu không được để trống',
             ]
         );
         $user_name = $req->user_name;
@@ -54,7 +54,7 @@ class clientLoginController extends Controller
             $this_customer = User::where('id', $customer_ID)->get();
             return redirect()->route('homepage');
         } else {
-            Alert::error('Username or password is incorrect')->autoclose(2000);
+            Alert::error('Tên đăng nhập hoặc mật khẩu của bạn không chính xác')->autoclose(2000);
             return redirect()->back();
         }
     }
@@ -72,13 +72,13 @@ class clientLoginController extends Controller
         ];
 
         $messages = [
-            'required' => 'This Field Cannot Be Empty',
-            'max' => 'This Field Must Be at Most 30 Characters Long',
-            'mail.email' => 'This Is Not A Valid Email',
-            'mail.unique' => 'This Email Has Already Exists',
-            'regex' => 'Alphanumeric Characters And Must Be 8-20 Characters Long',
-            'same'  => 'Must Match With Password'
-            ,'user_name.unique' => 'This username has been used'
+            'required' => 'Trường này không thể để trống',
+            'max' => 'Trường này chỉ dài tối đa 30 ký tự',
+            'mail.email' => 'Đây không phải là một email hợp lệ',
+            'mail.unique' => 'Email này đã tồn tại',
+            'regex' => 'Ký tự chữ và số và phải dài 8-20 ký tự',
+            'same'  => 'Phải khớp với mật khẩu'
+            ,'user_name.unique' => 'Tài khoản này đã được sử dụng'
         ];
 
         $request->validate($rules, $messages);
@@ -92,7 +92,7 @@ class clientLoginController extends Controller
                 , 'rank' => 'Normal'
             ]
         );
-        Alert::success('resigtered successfully')->autoclose(2000);
+        Alert::success('Đăng ký thành công')->autoclose(2000);
         return redirect()->back();
     }
 

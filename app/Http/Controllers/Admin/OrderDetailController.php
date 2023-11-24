@@ -16,13 +16,15 @@ class OrderDetailController extends Controller
     public function index()
     {
         $orders = DB::table('orders As o')
-            ->join('users as u', 'o.Customer_ID', '=', 'u.id')
-            ->join('orders_details as od', 'o.ID', '=', 'od.Order_ID')
-            ->join('payments as p', 'o.Payment_ID', '=', 'p.ID')
+            ->leftJoin('users as u', 'o.Customer_ID', '=', 'u.id')
+            ->leftJoin('orders_details as od', 'o.ID', '=', 'od.Order_ID')
+            ->leftJoin('payments as p', 'o.Payment_ID', '=', 'p.ID')
             ->leftJoin('codes as c', 'o.Code_ID', '=', 'c.ID')
             ->select('o.ID', 'o.Code as Order_Code', 'u.Code as Customer_Code', 'u.username as Username', 'o.Status', 'o.Location', 'p.Method', 'c.Code', 'o.created_at', DB::raw('sum(od.Quantity) as TotalQuantity'), DB::raw('sum(od.Price * od.Quantity) as TotalPrice'))
             ->groupBy('Order_Code', 'Customer_Code', 'o.Status', 'o.Location', 'p.Method', 'c.Code', 'o.created_at')
             ->paginate(10);
+
+            
         return view('admin.order_detail.list', compact('orders'));
     }
 
@@ -30,7 +32,6 @@ class OrderDetailController extends Controller
     {
         $order = Order::find($id);
         $user = User::find($order->Customer_ID);
-        // dd($order->Code);
         return view('admin.order_detail.edit', compact('order', 'user'));
     }
 
@@ -43,7 +44,7 @@ class OrderDetailController extends Controller
             $order->where('ID', $id)->update([
                 'Status' => 'Cancel'
             ]);
-            return redirect()->route('admin.order-detail.edit', $id)->with('success', 'Canceled Successfully!');
+            return redirect()->route('admin.order-detail.edit', $id)->with('success', 'Đã hủy thành công!');
         }
 
         // Done
@@ -77,7 +78,7 @@ class OrderDetailController extends Controller
                     'Total_Amount_Spent' => $newTotalSpending,
                     'Rank' => 'DIAMOND',
                 ]);
-                return redirect()->route('admin.order-detail.edit', $id)->with('success', 'This Order Was Doned!');
+                return redirect()->route('admin.order-detail.edit', $id)->with('success', 'Lệnh này đã được thực hiện!');
             }
 
             if ($newTotalSpending >= 3000) {
@@ -85,13 +86,13 @@ class OrderDetailController extends Controller
                     'Total_Amount_Spent' => $newTotalSpending,
                     'Rank' => 'VIP',
                 ]);
-                return redirect()->route('admin.order-detail.edit', $id)->with('success', 'This Order Was Doned!');
+                return redirect()->route('admin.order-detail.edit', $id)->with('success', 'Lệnh này đã được thực hiện!');
             }
 
             $user->where('id', $order->Customer_ID)->update([
                 'Total_Amount_Spent' => $newTotalSpending,
             ]);
-            return redirect()->route('admin.order-detail.edit', $id)->with('success', 'This Order Was Doned!');
+            return redirect()->route('admin.order-detail.edit', $id)->with('success', 'Lệnh này đã được thực hiện!');
         }
     }
 

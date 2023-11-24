@@ -34,13 +34,13 @@
                         <div class="mainContent_service-storeLocation-map">
                             <div class="mainContent_service-storeLocation-map-item">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.1826980544647!2d105.79626507612988!3d20.985312380653188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc6c5beff59%3A0x4a6f4a2189f2e63e!2zNTIgUC4gVHJp4buBdSBLaMO6YywgVGhhbmggWHXDom4gTmFtLCBUaGFuaCBUcsOsLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1695656434834!5m2!1sen!2s"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7378937962746!2d106.39622866228599!3d20.460951313236492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135fba15b43f655%3A0x93fe931a89eb56b2!2zQ-G7rWEgSMOgbmcgSOG6o2kgSG_DoGk!5e1!3m2!1sen!2s!4v1700060165165!5m2!1sen!2s"
                                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                         <div class="mainContent_service-storeLocation-location">
-                            <p><b>Địa chỉ: </b>52 - Triều Khúc - Thanh Xuân - Hà Nội</p>
+                            <p><b>Địa chỉ: </b>Tây Sơn - Kiến Xương - Thái Bình</p>
                             <p><b>Thời gian mở cửa:</b> 8.00 Am - 10.00 Pm</p>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                     <h2>Các lựa chọn thanh toán</h2>
                     <div class="mainContent-payment-info">
                         <h4>PAYPAL:</h4>
-                        <p>Bạn có thể sử dụng paypal để thanh toán cho đơn hàng của mình trên Pursellet.com. Paypal cho phép
+                        <p>Bạn có thể sử dụng paypal để thanh toán cho đơn hàng của mình trên Sugar. Paypal cho phép
                             bạn gửi an toàn
                             thanh toán trực tuyến bằng thẻ tín dụng, thẻ ghi nợ, tài khoản ngân hàng hoặc số dư tài khoản
                             paypal của bạn. Của bạn

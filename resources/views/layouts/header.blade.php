@@ -55,13 +55,13 @@
                         <div class="headerSmall__menuDrop-collection">
                             <a href="{{ url('client/products/new-arrival') }}">Mới nhất</a>
                             <a href="{{ url('client/products/trending') }}">Xu hướng</a>
-                            <a href="{{ url('client/products/discount') }}">Đang bán</a>
+                            <a href="{{ url('client/products/discount') }}">Đang giảm giá</a>
                         </div>
                         <div class="headerSmall__menuDrop-brands">
-                            <a href="{{ url('client/products/dior') }}">Adidas</a>
-                            <a href="{{ url('client/products/gucci') }}">New Balance</a>
-                            <a href="{{ url('client/products/channel') }}">Nike</a>
-                            <a href="{{ url('client/products/louis-vuiton') }}">Puma</a>
+                            <a href="{{ url('client/products/adidas') }}">Adidas</a>
+                            <a href="{{ url('client/products/new-balance') }}">New Balance</a>
+                            <a href="{{ url('client/products/nike') }}">Nike</a>
+                            <a href="{{ url('client/products/puma') }}">Puma</a>
                         </div>
                         <div class="headerSmall__menuDrop-aboutUs">
                             <a href="{{ url('client/aboutUs') }}">Cửa hàng</a>
@@ -113,15 +113,15 @@
                     <div class="header__side-collection">
                         <div><a href="{{ url('client/products/new-arrival') }}">Mới nhất</a></div>
                         <div><a href="{{ url('client/products/trending') }}">Xu hướng</a></div>
-                        <div><a href="{{ url('client/products/discount') }}">Đang bán</a></div>
+                        <div><a href="{{ url('client/products/discount') }}">Đang giảm giá</a></div>
                     </div>
                 </div>
                 <div id="drop3" class="">
                     <div class="header__side-brand">
-                        <div><a href="{{ url('client/products/dior') }}">Adidas</a></div>
-                        <div><a href="{{ url('client/products/gucci') }}">New Balance</a></div>
-                        <div><a href="{{ url('client/products/channel') }}">Nike</a></div>
-                        <div><a href="{{ url('client/products/louis-vuiton') }}">Puma</a></div>
+                        <div><a href="{{ url('client/products/adidas') }}">Adidas</a></div>
+                        <div><a href="{{ url('client/products/new-balance') }}">New Balance</a></div>
+                        <div><a href="{{ url('client/products/nike') }}">Nike</a></div>
+                        <div><a href="{{ url('client/products/puma') }}">Puma</a></div>
                     </div>
                 </div>
             </div>
@@ -173,7 +173,7 @@
                                     </div>
                                 </div>
                                 <div class="header__cart-list-items-info-right">
-                                    <div class="header__cart-list-items-info-right-price">${{ $item->Export_Price }}
+                                    <div class="header__cart-list-items-info-right-price">{{ number_format($item->Export_Price, 0, ',', '.') }}
                                     </div>
                                     <div class="header__cart-list-items-info-right-action">
                                         <a href="{{ url('/client/Cart/removefromcart', $item->Product_Detail_ID) }}">
@@ -186,11 +186,11 @@
                     </div>
 
                     <div class="header__cart-total">
-                        <p><b>Total</b></p>
-                        <p class="total-price">${{ $total_price }}</p>
+                        <p><b>Tổng tiền</b></p>
+                        <p class="total-price">{{ number_format($total_price, 0, ',', '.') }}</p>
                     </div>
                     <div class="header__cart-checkout">
-                        <a href="{{ url('client/Cart') }}">Thanh toán</a>
+                        <a href="{{ url('client/Cart') }}">Đặt hàng</a>
                     </div>
                 </div>
                 <div class="header__update">

@@ -9,6 +9,6 @@
 <body>
     <h1>{{ $details['title'] }}</h1>
     <p>{{ $details['body'] }}</p>
-    <p>Thank You For Using Our Service!</p>
+    <p>Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!</p>
 </body>
 </html>

@@ -39,7 +39,7 @@ class DiscountCodeController extends Controller
             'Status' => 'Upcoming',
         ]);
 
-        return redirect()->route('admin.discount.index')->with('success', 'Created Successfully');
+        return redirect()->route('admin.discount.index')->with('success', 'Thêm mới thành công');
     }
 
     public function edit($id)
@@ -75,13 +75,17 @@ class DiscountCodeController extends Controller
             'Temporary' => $request->temporary,
         ]);
 
-        return redirect()->route('admin.discount.edit', $id)->with('success', 'Updated Successfully');
+        return redirect()->route('admin.discount.edit', $id)->with('success', 'Cập nhật thành công');
     }
 
     public function delete($id)
     {
         Code::where('ID', $id)->delete();
-        return redirect()->route('admin.discount.index')->with('success', 'Deleted Successfully!');
+        /* The `return redirect()->route('admin.discount.index')->with('success', 'Deleted
+        Successfully!');` statement is redirecting the user to the `admin.discount.index` route and
+        attaching a success message to the session data. This message can be accessed on the next
+        request and can be used to display a success notification to the user. */
+        return redirect()->route('admin.discount.index')->with('success', 'Đã xoá thành công!');
     }
 
     public function search(Request $request)
@@ -96,7 +100,7 @@ class DiscountCodeController extends Controller
             ->orWhere('Temporary', 'LIKE', '%' . $request->search . '%')
             ->get();
         if (!count($codes)) {
-            $error = 'No Result';
+            $error = 'Không tìm thấy kết quả';
             return view('admin.discount_code.list', compact('error'));
         }
         return view('admin.discount_code.list', compact('codes'));

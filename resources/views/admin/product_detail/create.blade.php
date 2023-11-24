@@ -15,7 +15,7 @@
             </div>
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="{{ route('admin.product-detail.store') }}" method="POST">
+                <form action="{{ route('admin.product-detail.store') }}" method="POST" enctype="multipart/form-data"    >
                     @csrf
                     {{-- Product --}}
                     <div class="form-group" >
@@ -61,7 +61,7 @@
                     {{-- Main Image --}}
                     <div class="form-group">
                         <label>Ảnh chính</label>
-                        <input class="form-control" name="main_img" placeholder="Nhập ảnh chính" />
+                        <input class="form-control" name="main_img" type="file" placeholder="Nhập ảnh chính" />
                         @error('main_img')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -72,7 +72,7 @@
                     {{-- Slide Image 1 --}}
                     <div class="form-group">
                         <label>Ảnh slide 1</label>
-                        <input class="form-control" name="slide_img_1" placeholder="Nhập ảnh slide 1" />
+                        <input class="form-control" name="slide_img_1" type="file" placeholder="Nhập ảnh slide 1" />
                         @error('slide_img_1')
                             <div class="alert alert-danger">
                                 {{ $message }}
@@ -83,7 +83,7 @@
                     {{-- Slide Image 2 --}}
                     <div class="form-group">
                         <label>Ảnh slide 2</label>
-                        <input class="form-control" name="slide_img_2" placeholder="Nhập ảnh slide 2" />
+                        <input class="form-control" name="slide_img_2" type="file" placeholder="Nhập ảnh slide 2" />
                         @error('slide_img_2')
                             <div class="alert alert-danger">
                                 {{ $message }}

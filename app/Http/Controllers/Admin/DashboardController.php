@@ -252,7 +252,7 @@ class DashboardController extends Controller
         ->groupBy('time')
         ->get();
 
-        $new_users = 0;
+        $new_users = DB::table('users')->where('updated_at', $today)->count();
 
         foreach ($users as $user) {
             $new_users += $user->total_users;
@@ -271,8 +271,6 @@ class DashboardController extends Controller
         
         $users = DB::select(DB::raw("select count(id) as total_users, DATE_FORMAT(created_at, '%H') as time from users where created_at between '$month%' and '$now%' Group By time"));
         
-        // dd($users);
-
         $users = DB::table('users')
         ->select(DB::raw('count(id) as total_users'), DB::raw('DATE_FORMAT(created_at, "%d") as time'))
         // ->whereDate('created_at', 'between', $month.'%' <= $now.'%')
