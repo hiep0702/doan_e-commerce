@@ -53,6 +53,7 @@
                                 @php
                                     $quantity = App\Models\OrderDetail::where('Order_ID', $order->ID)->sum('Quantity');
                                     $price = App\Models\OrderDetail::where('Order_ID', $order->ID)->sum('Price');
+                                    $Total_Paid = App\Models\Order::where('ID', $order->ID)->sum('Total_Paid');
                                     echo $quantity;
                                 @endphp
                             </h1>
@@ -61,7 +62,7 @@
                             <h1 class="form-control">
                                 <label>Tổng tiền</label>:
                                 @php
-                                    echo '$' . $price;
+                                    echo number_format($Total_Paid, 0, ',', '.');
                                 @endphp
                             </h1>
                         </div>

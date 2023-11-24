@@ -103,11 +103,13 @@ Chi tiết đơn hàng {{$order->ID}}
                             <b>
                                 @php
                                     // dd($order_detail->Order_ID);
-                                    $orderPrice = DB::table('orders_details')
-                                        ->select(DB::raw('sum(Price * Quantity) as totalPrice'))
-                                        ->where('Order_ID', $order_detail[0]->Order_ID)
-                                        ->get();
-                                    echo '$'.$orderPrice[0]->totalPrice;
+                                    // $orderPrice = DB::table('orders_details')
+                                    //     ->select(DB::raw('sum(Price * Quantity) as totalPrice'))
+                                    //     ->where('Order_ID', $order_detail[0]->Order_ID)
+                                    //     ->get();
+
+                                        $orderPrice = DB::table('orders')->where('ID', $order_detail[0]->Order_ID)->get();
+                                    echo '$'.$orderPrice[0]->Total_Paid;
                                 @endphp 
                             </b>
                         </td>

@@ -20,11 +20,10 @@ class OrderDetailController extends Controller
             ->leftJoin('orders_details as od', 'o.ID', '=', 'od.Order_ID')
             ->leftJoin('payments as p', 'o.Payment_ID', '=', 'p.ID')
             ->leftJoin('codes as c', 'o.Code_ID', '=', 'c.ID')
-            ->select('o.ID', 'o.Code as Order_Code', 'u.Code as Customer_Code', 'u.username as Username', 'o.Status', 'o.Location', 'p.Method', 'c.Code', 'o.created_at', DB::raw('sum(od.Quantity) as TotalQuantity'), DB::raw('sum(od.Price * od.Quantity) as TotalPrice'))
+            ->select('o.ID', 'o.Code as Order_Code', 'u.Code as Customer_Code', 'u.username as Username', 'o.Status', 'o.Location', 'p.Method', 'c.Code', 'o.Total_Paid', 'o.created_at', DB::raw('sum(od.Quantity) as TotalQuantity'), DB::raw('sum(od.Price * od.Quantity) as TotalPrice'))
             ->groupBy('Order_Code', 'Customer_Code', 'o.Status', 'o.Location', 'p.Method', 'c.Code', 'o.created_at')
             ->paginate(10);
 
-            
         return view('admin.order_detail.list', compact('orders'));
     }
 
