@@ -16,6 +16,7 @@
                             <div class="container__product-categories-price">Giá</div>
                             <div class="container__product-categories-quantity">Số lượng</div>
                             <div class="container__product-categories-total">Tổng tiền</div>
+                            <div class="container__product-categories-kho">Kho</div>
                             <div class="container__product-categories-button"></div>
                         </div>
                         <div class="container__product-list">
@@ -32,7 +33,7 @@
                                                 style="background-color: {{ $item->Color }}"></div>
                                         </div>
                                     </div>
-                                    <div class="container__product-list-cart-price">${{ $item->Export_Price }}
+                                    <div class="container__product-list-cart-price">{{ number_format($item->Export_Price, 0, ',', '.') }}
                                     </div>
 
                                     <div class="container__product-list-cart-quantity">
@@ -53,7 +54,7 @@
                                     </div>
 
                                     <div class="productSubtotal container__product-list-cart-total">
-                                        {{ number_format($item->subtotal, 0, ',', '.') }} VND</div>
+                                        {{ number_format($item->subtotal, 0, ',', '.') }}</div>
                                     <div class="container__product-list-cart-button">
                                         <a href="{{ url('/client/Cart/removefromcart', $item->Product_Detail_ID) }}">
                                             <ion-icon name="close-outline"></ion-icon>
@@ -227,9 +228,9 @@
                             success: function(data) {
                                 var hehe = JSON.parse(data);
                                 result[index].innerHTML = hehe[0];
-                                productSubtotal[index].innerHTML = "$" + hehe[
+                                productSubtotal[index].innerHTML = hehe[
                                     1];
-                                $('.subtotals').html("$" + hehe[2]);
+                                $('.subtotals').html(hehe[2]);
                                 calculatePriceTotal();
                             }
                         })
@@ -256,9 +257,9 @@
                             success: function(data) {
                                 var hehe = JSON.parse(data);
                                 result[index].innerHTML = hehe[0];
-                                productSubtotal[index].innerHTML = "$" + hehe[
+                                productSubtotal[index].innerHTML = hehe[
                                     1];
-                                $('.subtotals').html("$" + hehe[2]);
+                                $('.subtotals').html(hehe[2]);
                                 calculatePriceTotal();
                             }
                         })
