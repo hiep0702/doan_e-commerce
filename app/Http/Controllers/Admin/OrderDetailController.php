@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ExportOrders;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderDetail;
@@ -10,6 +11,7 @@ use App\Models\User;
 use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderDetailController extends Controller
 {
@@ -130,5 +132,10 @@ class OrderDetailController extends Controller
         }
 
         return view('admin.order_detail.list', compact('orders'));
+    }
+
+    public function ExportOrders()
+    {
+        return Excel::download(new ExportOrders, 'Orders.xlsx');
     }
 }
