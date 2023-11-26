@@ -178,6 +178,7 @@ return [
         App\Providers\ComposerServiceProvider::class,
         // CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
         CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -237,6 +238,7 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         // 'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
         'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
     

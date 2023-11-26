@@ -65,6 +65,7 @@
                     var options = {
                         title: "Đơn hàng tháng này",
                         is3D: true,
+                        colors: ['red', '#3366cc']
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));

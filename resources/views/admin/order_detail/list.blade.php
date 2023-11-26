@@ -64,7 +64,7 @@
                             {{-- <td>{{$order->Customer_Code}}</td> --}}
                             <td>{{$order->Username}}</td>
                             <td>{{$order->TotalQuantity}}</td>
-                            <td>{{ number_format($order->TotalPrice, 0, ',', '.') }}</td>
+                            <td>{{ number_format($order->Total_Paid, 0, ',', '.') }}</td>
                             <th
                                 @if ($order->Status == 'Pending')
                                     class="click btn-success"
@@ -91,6 +91,9 @@
             @endif
         </div>
         <!-- /.row -->
+    </div>
+    <div style="margin-top: 10px">
+        <a href="{{ route('export-orders') }}" class="btn-add-product btn btn-success">Xuất excel</a>
     </div>
     <!-- /.container-fluid -->
 </div>

@@ -155,7 +155,7 @@ Route::prefix('admin')->middleware('admin.login')->group(function () {
 
         Route::get('sendMail', [MailController::class, 'getSendMail'])
             ->name('admin.mail.mail');
-        
+
         Route::post('send', [MailController::class, 'PostSendMail'])
             ->name('admin.mail.send-mail');
 
@@ -175,6 +175,9 @@ Route::prefix('admin')->middleware('admin.login')->group(function () {
             ->name('admin.order-detail.detail');
         Route::get('search', [OrderDetailController::class, 'search'])
             ->name('admin.order-detail.search');
+
+        Route::get('export-orders', [OrderDetailController::class, 'ExportOrders'])
+            ->name('export-orders');
     });
 
     // Payment Code Routes
@@ -335,7 +338,7 @@ Route::prefix('client')->middleware('client-signIn')->group(function () {
 
 
     // Route::post('minigame',[homepageController::class,'getCode']);
-    
+
 
     Route::get('Cart', [shoppingcartController::class, 'getShoppingCart'])->name('myshoppingcart');
     Route::post('Cart', [shoppingcartController::class, 'checkOut'])->name('check.out');
@@ -379,5 +382,3 @@ Route::prefix('client')->middleware('client-signIn')->group(function () {
 
     Route::get('changepassword', [clientController::class, 'changePassword']);
 });
-
-

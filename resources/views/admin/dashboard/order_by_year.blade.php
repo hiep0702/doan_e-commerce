@@ -63,6 +63,7 @@
                     var options = {
                         title: "Đơn hàng theo năm",
                         is3D: true,
+                        colors: ['red', '#3366cc']
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
