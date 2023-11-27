@@ -4,7 +4,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\DashboardddController;
 use App\Http\Controllers\Admin\DiscountCodeController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\MailController;
@@ -52,42 +52,42 @@ Route::prefix('admin')->middleware('admin.login')->group(function () {
 
     // Home Routes
     Route::prefix('home')->group(function () {
-        Route::get('', [DashBoardController::class, 'index'])
+        Route::get('', [DashboardddController::class, 'index'])
             ->name('admin.dashboard.index');
 
         // Revenue Routes
-        Route::get('revenue-by-day', [DashBoardController::class, 'revenueByDay'])
+        Route::get('revenue-by-day', [DashboardddController::class, 'revenueByDay'])
             ->name('admin.dashboard.revenue-by-day');
-        Route::get('revenue-by-month', [DashBoardController::class, 'revenueByMonth'])
+        Route::get('revenue-by-month', [DashboardddController::class, 'revenueByMonth'])
             ->name('admin.dashboard.revenue-by-month');
-        Route::get('revenue-by-year', [DashBoardController::class, 'revenueByYear'])
+        Route::get('revenue-by-year', [DashboardddController::class, 'revenueByYear'])
             ->name('admin.dashboard.revenue-by-year');
 
         // Export Routes
-        Route::get('export-by-day', [DashBoardController::class, 'exportByDay'])
+        Route::get('export-by-day', [DashboardddController::class, 'exportByDay'])
             ->name('admin.dashboard.export-by-day');
-        Route::get('export-by-month', [DashBoardController::class, 'exportByMonth'])
+        Route::get('export-by-month', [DashboardddController::class, 'exportByMonth'])
             ->name('admin.dashboard.export-by-month');
-        Route::get('export-by-year', [DashBoardController::class, 'exportByYear'])
+        Route::get('export-by-year', [DashboardddController::class, 'exportByYear'])
             ->name('admin.dashboard.export-by-year');
 
         // Order Routes
-        Route::get('order-by-day', [DashBoardController::class, 'orderByDay'])
+        Route::get('order-by-day', [DashboardddController::class, 'orderByDay'])
             ->name('admin.dashboard.order-by-day');
-        Route::get('order-by-month', [DashBoardController::class, 'orderByMonth'])
+        Route::get('order-by-month', [DashboardddController::class, 'orderByMonth'])
             ->name('admin.dashboard.order-by-month');
-        Route::get('order-by-year', [DashBoardController::class, 'orderByYear'])
+        Route::get('order-by-year', [DashboardddController::class, 'orderByYear'])
             ->name('admin.dashboard.order-by-year');
 
         // User Routes
-        Route::get('user-by-day', [DashBoardController::class, 'userByDay'])
+        Route::get('user-by-day', [DashboardddController::class, 'userByDay'])
             ->name('admin.dashboard.user-by-day');
-        Route::get('user-by-month', [DashBoardController::class, 'userByMonth'])
+        Route::get('user-by-month', [DashboardddController::class, 'userByMonth'])
             ->name('admin.dashboard.user-by-month');
-        Route::get('user-by-year', [DashBoardController::class, 'userByYear'])
+        Route::get('user-by-year', [DashboardddController::class, 'userByYear'])
             ->name('admin.dashboard.user-by-year');
 
-        Route::get('trending-product', [DashBoardController::class, 'trendingProduct'])
+        Route::get('trending-product', [DashboardddController::class, 'trendingProduct'])
             ->name('admin.dashboard.trending-product');
     });
 
