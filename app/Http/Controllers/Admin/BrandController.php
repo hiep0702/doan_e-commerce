@@ -34,9 +34,11 @@ class BrandController extends Controller
 
         $slug = Str::slug($request->name);
 
+        $logo = cloudinary()->upload($request->file('logo')->getRealPath())->getSecurePath();
+
         Brand::create([
             'Name'          => $request->name,
-            'Logo'          => $request->logo,
+            'Logo'          => $logo,
             'Information'   => $request->information,
             'Code'          => $request->code,
             'Slug'          => $slug,
@@ -62,9 +64,11 @@ class BrandController extends Controller
 
         $slug = Str::slug($request->name);
 
+        $logo = cloudinary()->upload($request->file('logo')->getRealPath())->getSecurePath();
+
         Brand::where('ID', $id)->update([
             'Name'          => $request->name,
-            'Logo'          => $request->logo,
+            'Logo'          => $logo,
             'Information'   => $request->information,
             'Code'          => $request->code,
             'Slug'          => $slug,

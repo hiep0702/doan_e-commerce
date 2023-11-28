@@ -46,7 +46,7 @@ Danh sách người dùng
                 <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Mã người dùng</th>
+                        {{-- <th>Mã người dùng</th> --}}
                         <th>Tài khoản</th>
                         <th>Họ</th>
                         <th>Tên</th>
@@ -62,14 +62,14 @@ Danh sách người dùng
                     @foreach ($users as $index => $user)
                     <tr class="odd gradeX" align="center">
                         <td>{{$index + 1}}</td>
-                        <td>{{$user->Code}}</td>
+                        {{-- <td>{{$user->Code}}</td> --}}
                         <td>{{$user->username}}</td>
                         <td>{{$user->First_Name}}</td>
                         <td>{{$user->Last_Name}}</td>
                         <td>{{$user->Dob}}</td>
                         <td>{{$user->Email}}</td>
                         <td>{{$user->Number_Phone}}</td>
-                        <td>${{$user->Total_Amount_Spent}}</td>
+                        <td>{{ number_format($user->Total_Amount_Spent, 0, ',', '.') }}</td>
                         <td @if ($user->Rank == 'VIP' || $user->Rank == 'DIAMOND') style="font-weight: bold;" @endif>
                             {{$user->Rank}}
                         </td>

@@ -27,8 +27,8 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
+            <div class="col-md-4">
+                <div class="login-panel panel panel-default"  style="margin-left: -350px;">
                     <div class="panel-heading">
                         <h3 class="panel-title">Đăng nhập</h3>
                     </div>
@@ -64,6 +64,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-8">
+                <img style="height: 1000px" src="https://firebasestorage.googleapis.com/v0/b/doan-e-commerce.appspot.com/o/slides%2Fslide-nike-4.webp?alt=media&token=53b33e2f-12b4-4bae-bf73-4662309441df&_gl=1*rsr26w*_ga*ODEwNDEzMTYuMTY5MDI3MDQyMg..*_ga_CW55HF8NVT*MTY5ODkyOTcwMi45LjEuMTY5ODkzMTczOS42MC4wLjA." alt="">
             </div>
         </div>
     </div>

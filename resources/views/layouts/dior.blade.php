@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="container__sideBar-box">
-                        <div class="container__sideBar-box-tittle">Price</div>
+                        <div class="container__sideBar-box-tittle">Giá tiền</div>
                         <hr class="box1">
                         <div class="container__sideBar-box-cate">
                             <input type="radio" name="Price" id="filter" value="high">

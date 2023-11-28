@@ -93,7 +93,7 @@ Chi tiết đơn hàng {{$order->ID}}
                                 @endphp
                             </td>
                             <td>{{$order->Quantity}}</td>
-                            <td>${{$order->Price}}</td>
+                            <td>{{ number_format($order->Price, 0, ',', '.')}}</td>
                         </tr>
                         @endforeach
                         <tr class="odd gradeX" align="center">
@@ -109,7 +109,7 @@ Chi tiết đơn hàng {{$order->ID}}
                                     //     ->get();
 
                                         $orderPrice = DB::table('orders')->where('ID', $order_detail[0]->Order_ID)->get();
-                                    echo '$'.$orderPrice[0]->Total_Paid;
+                                    echo number_format($orderPrice[0]->Total_Paid, 0, ',', '.');
                                 @endphp 
                             </b>
                         </td>

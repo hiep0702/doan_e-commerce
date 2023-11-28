@@ -20,7 +20,7 @@
                 @endif
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="{{route('admin.brand.store')}}" method="POST">
+                <form action="{{route('admin.brand.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Tên thương hiệu</label>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label>Logo thương hiệu</label>
-                        <input class="form-control" name="logo" placeholder="Nhập link logo thương hiệu" />
+                        <input class="form-control" type="file" name="logo" placeholder="Nhập link logo thương hiệu" />
                         @error('logo')
                             <div class="alert alert-danger">
                                 {{$message}}

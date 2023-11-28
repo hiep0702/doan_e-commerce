@@ -27,11 +27,11 @@ User {{$user->username}}
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr align="center">
-                        <th>Code User</th>
+                        {{-- <th>Code User</th> --}}
                         <th>Tên đăng nhập</th>
                         <th>Họ</th>
                         <th>Tên</th>
-                        <th>DOB</th>
+                        <th>Ngày sinh</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
                         <th>Rank</th>
@@ -40,7 +40,7 @@ User {{$user->username}}
                 </thead>
                 <tbody>
                     <tr class="odd gradeX" align="center">
-                        <td>{{$user->Code}}</td>
+                        {{-- <td>{{$user->Code}}</td> --}}
                         <td>{{$user->username}}</td>
                         <td>{{$user->First_Name}}</td>
                         <td>{{$user->Last_Name}}</td>
@@ -48,7 +48,7 @@ User {{$user->username}}
                         <td>{{$user->Email}}</td>
                         <td>{{$user->Number_Phone}}</td>
                         <td>{{$user->Rank}}</td>
-                        <td>${{$user->Total_Amount_Spent}}</td>
+                        <td>{{ number_format($user->Total_Amount_Spent, 0, ',', '.') }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -61,10 +61,10 @@ User {{$user->username}}
                         <th>Tổng số lượng</th>
                         <th>Tổng giá</th>
                         <th>Trạng thái</th>
-                        <th>Vị trí</th>
-                        <th>Payment</th>
-                        <th>Date</th>
-                        <th>Detail</th>
+                        <th>Địa chỉ</th>
+                        <th>Thanh toán</th>
+                        <th>Ngày lên đơn</th>
+                        <th>Chi tiết</th>
                     </tr>
                 </thead>
                 <tbody>

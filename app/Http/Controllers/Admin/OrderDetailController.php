@@ -74,7 +74,7 @@ class OrderDetailController extends Controller
             $oldTotalSpending = $user->Total_Amount_Spent;
             $newTotalSpending = $oldTotalSpending + $orderPrice[0]->totalPrice;
 
-            if ($newTotalSpending >= 5000) {
+            if ($newTotalSpending >= 5000000) {
                 $user->where('id', $order->Customer_ID)->update([
                     'Total_Amount_Spent' => $newTotalSpending,
                     'Rank' => 'DIAMOND',
@@ -82,7 +82,7 @@ class OrderDetailController extends Controller
                 return redirect()->route('admin.order-detail.edit', $id)->with('success', 'Lệnh này đã được thực hiện!');
             }
 
-            if ($newTotalSpending >= 3000) {
+            if ($newTotalSpending >= 3000000) {
                 $user->where('id', $order->Customer_ID)->update([
                     'Total_Amount_Spent' => $newTotalSpending,
                     'Rank' => 'VIP',

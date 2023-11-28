@@ -20,7 +20,7 @@
                 @endif
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="{{route('admin.brand.update', $brand->ID)}}" method="POST">
+                <form action="{{route('admin.brand.update', $brand->ID)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group">
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label>Logo thương hiệu</label>
-                        <input class="form-control" value="{{$brand->Logo}}" name="logo" placeholder="Nhập link logo thương hiệu" />
+                        <input class="form-control" type="file" value="{{$brand->Logo}}" name="logo" placeholder="Nhập link logo thương hiệu" />
                         @error('logo')
                             <div class="alert alert-danger">
                                 {{$message}}
