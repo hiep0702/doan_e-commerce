@@ -52,7 +52,7 @@ class shoppingcartController extends Controller
         foreach ($carts as $cart) {
             $subtotals += $cart->subtotal;
         }
-        return view('clientsPage.shoppingCart', compact('carts', 'subtotals', 'ran_pro'));
+        return view('clientsPage.shoppingcart', compact('carts', 'subtotals', 'ran_pro'));
     }
 
     public function handleIncreaseQuantity(Request $request)
