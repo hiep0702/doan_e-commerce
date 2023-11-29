@@ -12,7 +12,12 @@ class DashboardddController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard.list');
+        $count_products = DB::table('products')->count();
+        $count_orders = DB::table('orders')->count();
+        $count_brands = DB::table('brands')->count();
+        $count_categories = DB::table('categories')->count();
+
+        return view('admin.dashboard.list', compact('count_products', 'count_orders', 'count_brands', 'count_categories'));
     }
 
     public function revenueByDay()
