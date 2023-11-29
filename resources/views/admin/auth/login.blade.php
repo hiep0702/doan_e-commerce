@@ -59,7 +59,7 @@
                                     @enderror
                                 </div>
                                 <button type="submit" class="btn btn-lg btn-success btn-block">Đăng nhập</button>
-                                <a href="{{route('admin.auth.register')}}" class="btn btn-lg btn-warning btn-block">Đăng ký</a>
+                                {{-- <a href="{{route('admin.auth.register')}}" class="btn btn-lg btn-warning btn-block">Đăng ký</a> --}}
                             </fieldset>
                         </form>
                     </div>
