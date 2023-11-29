@@ -38,6 +38,15 @@ class ProductController extends Controller
             'name' => 'required|unique:products',
             'img' => 'required',
             'code' => 'required|unique:products',
+        ],
+        [
+            'brand.required' => 'Thương hiệu không được bỏ trống',
+            'category.required' => 'Thể loại không được bỏ trống',
+            'name.required' => 'Tên sản phẩm không được bỏ trống',
+            'name.unique' => 'Tên sản phẩm đã tồn tại',
+            'img.required' => 'Ảnh không được bỏ trống',
+            'code.required' => 'Mã sản phẩm không được bỏ trống',
+            'code.unique' => 'Mã sản phẩm đã tồn tại',
         ]);
 
 
@@ -73,6 +82,13 @@ class ProductController extends Controller
             'name' => 'required',
             'img' => 'required',
             'code' => 'required',
+        ],
+        [
+            'brand.required' => 'Thương hiệu không được bỏ trống',
+            'category.required' => 'Thể loại không được bỏ trống',
+            'name.required' => 'Tên sản phẩm không được bỏ trống',
+            'img.required' => 'Ảnh không được bỏ trống',
+            'code.required' => 'Mã sản phẩm không được bỏ trống',
         ]);
 
         $slug = Str::slug($request->name);

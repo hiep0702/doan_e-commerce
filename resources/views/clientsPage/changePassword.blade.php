@@ -33,7 +33,7 @@
                     <button id="" type="submit">Gửi</button>
                 </div>
                 <div class="container__signIn-change">
-                    <a href="http://127.0.0.1:8000/client/login">Đăng nhập</a>
+                    <a href="{{ route('client.login') }}">Đăng nhập</a>
                 </div>`
             </form>
         </div>

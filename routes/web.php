@@ -274,13 +274,13 @@ Route::prefix('client')->group(function () {
     Route::get('home', [homepageController::class, 'getHomePage'])->name('homepage');
     Route::post('home', [homepageController::class, 'subscribe']);
 
-    Route::get('aboutUs', [aboutusController::class, 'getAboutUs']);
+    Route::get('aboutUs', [aboutusController::class, 'getAboutUs'])->name('aboutUs');
 
-    Route::get('forgetPassword', [EmailController::class, 'getRecoverPassword']);
+    Route::get('forgetPassword', [EmailController::class, 'getRecoverPassword'])->name('forgetPassword');
     Route::post('forgetPassword', [EmailController::class, 'postRecoverPassword']);
 
     Route::get('login', [clientLoginController::class, 'getLogin'])->name('client.login');
-    Route::post('login', [clientLoginController::class, 'postLogin']);
+    Route::post('login', [clientLoginController::class, 'postLogin'])->name('client.post-login');
 
 
     Route::post('register', [clientLoginController::class, 'postRegister'])
@@ -331,13 +331,9 @@ Route::prefix('client')->middleware('client-signIn')->group(function () {
 
 
 Route::prefix('client')->middleware('client-signIn')->group(function () {
-    // Route::get('myshoppingcart', [shoppingcartController::class, 'getShoppingCart']);
 
     Route::get('orders/{Code}', [orderController::class, 'getOrder']);
     Route::post('orders/{Code}', [orderController::class, 'cancelOrder']);
-
-
-    // Route::post('minigame',[homepageController::class,'getCode']);
 
 
     Route::get('Cart', [shoppingcartController::class, 'getShoppingCart'])->name('myshoppingcart');
@@ -380,5 +376,5 @@ Route::prefix('client')->middleware('client-signIn')->group(function () {
     Route::post('get-code', [homepageController::class, 'getCode'])
         ->name('client-home-page.get-code');
 
-    Route::get('changepassword', [clientController::class, 'changePassword']);
+    Route::get('changepassword', [clientController::class, 'changePassword'])->name('client-change-password');
 });

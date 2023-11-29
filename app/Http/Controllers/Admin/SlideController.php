@@ -30,6 +30,10 @@ class SlideController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'image' => 'required',
+        ],
+        [
+            'title.required' => 'Tiêu đề không được bỏ trống',
+            'image.required' => 'Ảnh không được bỏ trống',
         ]);
 
         $IMG = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
@@ -57,6 +61,10 @@ class SlideController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'image' => 'required',
+        ],
+        [
+            'title.required' => 'Tiêu đề không được bỏ trống',
+            'image.required' => 'Ảnh không được bỏ trống',
         ]);
 
         $IMG = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();

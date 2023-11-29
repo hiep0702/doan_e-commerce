@@ -14,22 +14,22 @@
             <div class="footer__main-service">
                 <ul>
                     <p>Tài khoản</p>
-                    <li><a href="http://127.0.0.1:8000/client/login">Đăng nhập</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/login">Đăng ký</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/wishList">Danh sách yêu thích</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/Cart">Giỏ hàng</a></li>
+                    <li><a href="{{ route('client.login') }}">Đăng nhập</a></li>
+                    <li><a href="{{ route('client.login') }}">Đăng ký</a></li>
+                    <li><a href="{{ route('wishList') }}">Danh sách yêu thích</a></li>
+                    <li><a href="{{ route('myshoppingcart') }}">Giỏ hàng</a></li>
                 </ul>
                 <ul>
                     <p>Dịch vụ</p>
-                    <li><a href="http://127.0.0.1:8000/client/aboutUs">Vị trí</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/aboutUs">Chính sách hoàn trả</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/aboutUs">Chăm sóc & Bảo hành</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/aboutUs">Lựa chọn thanh toán</a></li>
+                    <li><a href="{{ route('aboutUs') }}">Vị trí</a></li>
+                    <li><a href="{{ route('aboutUs') }}">Chính sách hoàn trả</a></li>
+                    <li><a href="{{ route('aboutUs') }}">Chăm sóc & Bảo hành</a></li>
+                    <li><a href="{{ route('aboutUs') }}">Lựa chọn thanh toán</a></li>
                 </ul>
                 <ul>
                     <p>Về chúng tôi</p>
-                    <li><a href="http://127.0.0.1:8000/client/aboutUs">Thông tin</a></li>
-                    <li><a href="http://127.0.0.1:8000/client/aboutUs">Liên hệ</a></li>
+                    <li><a href="{{ route('aboutUs') }}">Thông tin</a></li>
+                    <li><a href="{{ route('aboutUs') }}">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="footer__main-socialMedia">

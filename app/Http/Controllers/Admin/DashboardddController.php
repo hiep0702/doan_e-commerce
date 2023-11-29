@@ -266,14 +266,13 @@ class DashboardddController extends Controller
         $time = Carbon::now();
         $now = Carbon::now()->toDateString();
         $month = $time->format('Y-m-01');
-        // dd($month);
+
         $total_users = DB::select(DB::raw('select count(id) as total_users from users'));
         
         $users = DB::select(DB::raw("select count(id) as total_users, DATE_FORMAT(created_at, '%H') as time from users where created_at between '$month%' and '$now%' Group By time"));
         
         $users = DB::table('users')
         ->select(DB::raw('count(id) as total_users'), DB::raw('DATE_FORMAT(created_at, "%d") as time'))
-        // ->whereDate('created_at', 'between', $month.'%' <= $now.'%')
         ->groupBy('time')
         ->get();
 

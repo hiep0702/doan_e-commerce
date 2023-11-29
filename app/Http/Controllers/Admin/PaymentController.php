@@ -24,6 +24,10 @@ class PaymentController extends Controller
     {
         $this->validate($request, [
             'method' => 'required|unique:payments',
+        ],
+        [
+            'method.required' => 'Phương thức thanh toán không được bỏ trống',
+            'method.unique' => 'Phương thức thanh toán đã tồn tại',
         ]);
 
         Payment::create([
@@ -47,6 +51,10 @@ class PaymentController extends Controller
         if($request->method != $oldMethod){
             $this->validate($request, [
                 'method' => 'required|unique:payments',
+            ],
+            [
+                'method.required' => 'Phương thức thanh toán không được bỏ trống',
+                'method.unique' => 'Phương thức thanh toán đã tồn tại',
             ]);
         }
 

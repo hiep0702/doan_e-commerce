@@ -24,7 +24,7 @@ class EmailController extends Controller
             'user_name' => 'required'
         ];
         $messages = [
-            'required' => 'This field is required'
+            'required' => 'Không được bỏ trống'
         ];
 
         $req->validate($rules,$messages);

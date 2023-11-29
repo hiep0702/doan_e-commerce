@@ -28,6 +28,20 @@ class DiscountCodeController extends Controller
             'discount' => 'required|numeric|min:1|max:50',
             'date_start' => 'required|date|before_or_equal:date_end',
             'date_end' => 'required|date|after_or_equal:date_start',
+        ],
+        [
+            'code.required' => 'Mã giảm giá không được bỏ trống',
+            'code.unique' => 'Mã giảm giá đã tồn tại',
+            'discount.required' => '% giảm giá không được bỏ trống',
+            'discount.numeric' => '% giảm giá phải là số',
+            'discount.min' => '% giảm giá phải lớn hơn 1',
+            'discount.max' => '% giảm giá phải nhỏ hơn hoặc bằng 50',
+            'date_start.required' => 'Ngày bắt đầu không được bỏ trống',
+            'date_start.date' => 'Ngày bắt đầu không hợp lệ',
+            'date_start.before_or_equal' => 'Ngày bắt đầu không hợp lệ',
+            'date_end.required' => 'Ngày kết thúc không hợp lệ',
+            'date_end.date' => 'Ngày kết thúc không hợp lệ',
+            'date_end.after_or_equal' => 'Ngày kết thúc không hợp lệ',
         ]);
 
         Code::create([
@@ -57,6 +71,18 @@ class DiscountCodeController extends Controller
                 'discount' => 'required|numeric|min:1|max:50',
                 'date_start' => 'required|date|before_or_equal:date_end',
                 'date_end' => 'required|date|after_or_equal:date_start',
+            ],
+            [
+                'discount.required' => '% giảm giá không được bỏ trống',
+                'discount.numeric' => '% giảm giá phải là số',
+                'discount.min' => '% giảm giá phải lớn hơn 1',
+                'discount.max' => '% giảm giá phải nhỏ hơn hoặc bằng 50',
+                'date_start.required' => 'Ngày bắt đầu không được bỏ trống',
+                'date_start.date' => 'Ngày bắt đầu không hợp lệ',
+                'date_start.before_or_equal' => 'Ngày bắt đầu không hợp lệ',
+                'date_end.required' => 'Ngày kết thúc không hợp lệ',
+                'date_end.date' => 'Ngày kết thúc không hợp lệ',
+                'date_end.after_or_equal' => 'Ngày kết thúc không hợp lệ',
             ]);
         } else {
             $this->validate($request, [
@@ -64,6 +90,20 @@ class DiscountCodeController extends Controller
                 'discount' => 'required|numeric|min:1|max:50',
                 'date_start' => 'required|date|before_or_equal:date_end',
                 'date_end' => 'required|date|after_or_equal:date_start',
+            ],
+            [
+                'code.required' => 'Mã giảm giá không được bỏ trống',
+                'code.unique' => 'Mã giảm giá đã tồn tại',
+                'discount.required' => '% giảm giá không được bỏ trống',
+                'discount.numeric' => '% giảm giá phải là số',
+                'discount.min' => '% giảm giá phải lớn hơn 1',
+                'discount.max' => '% giảm giá phải nhỏ hơn hoặc bằng 50',
+                'date_start.required' => 'Ngày bắt đầu không được bỏ trống',
+                'date_start.date' => 'Ngày bắt đầu không hợp lệ',
+                'date_start.before_or_equal' => 'Ngày bắt đầu không hợp lệ',
+                'date_end.required' => 'Ngày kết thúc không hợp lệ',
+                'date_end.date' => 'Ngày kết thúc không hợp lệ',
+                'date_end.after_or_equal' => 'Ngày kết thúc không hợp lệ',
             ]);
         }
 
@@ -81,10 +121,7 @@ class DiscountCodeController extends Controller
     public function delete($id)
     {
         Code::where('ID', $id)->delete();
-        /* The `return redirect()->route('admin.discount.index')->with('success', 'Deleted
-        Successfully!');` statement is redirecting the user to the `admin.discount.index` route and
-        attaching a success message to the session data. This message can be accessed on the next
-        request and can be used to display a success notification to the user. */
+        
         return redirect()->route('admin.discount.index')->with('success', 'Đã xoá thành công!');
     }
 

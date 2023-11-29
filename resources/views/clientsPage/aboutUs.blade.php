@@ -8,9 +8,9 @@
         <div class="sidebar">
             <ul>
                 <h3>Tài khoản</h3>
-                <li><a href="http://127.0.0.1:8000/client/login">Đăng nhập/Đăng ký</a></li>
-                <li><a href="http://127.0.0.1:8000/client/wishList">Sản phẩm yêu thích</a></li>
-                <li><a href="http://127.0.0.1:8000/client/Cart">Giỏ hàng</a></li>
+                <li><a href="{{ route('client.login') }}">Đăng nhập/Đăng ký</a></li>
+                <li><a href="{{ route('wishList') }}">Sản phẩm yêu thích</a></li>
+                <li><a href="{{ route('myshoppingcart') }}">Giỏ hàng</a></li>
             </ul>
             <ul>
                 <h3>Dịch vụ</h3>

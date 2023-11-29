@@ -28,6 +28,12 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:categories',
             'code' => 'required|unique:categories',
+        ],
+        [
+            'name.required' => 'Tên thể loại không được bỏ trống',
+            'name.unique' => 'Tên thể loại đã tồn tại',
+            'code.required' => 'Mã thể loại không được bỏ trống',
+            'code.unique' => 'Mã thể loại đã tồn tại',
         ]);
 
         $slug = Str::slug($request->name);
@@ -52,6 +58,10 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'code' => 'required',
+        ],
+        [
+            'name.required' => 'Tên thể loại không được bỏ trống',
+            'code.required' => 'Mã thể loại không được bỏ trống',
         ]);
 
         $slug = Str::slug($request->name);

@@ -180,7 +180,7 @@
             </button>
         </div>
     </form>
-    <form id="showChange" class="container__edit" action="{{ url('http://127.0.0.1:8000/client/changepassword') }}">
+    <form id="showChange" class="container__edit" action="{{ route('client-change-password') }}">
         @csrf
         <div class="editProfile">
             <div class="editProfile__title">Đổi mật khẩu</div>

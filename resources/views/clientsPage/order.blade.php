@@ -45,11 +45,11 @@
                     <div class="container__details-total">
                         <div class="container__details-total-left">
                             <div class="quantity">
-                                <div id="div1">Total quantity</div>
+                                <div id="div1">Tổng số lượng</div>
                                 <div id="div2">{{ $total_quantity }}</div>
                             </div>
                             <div class="address">
-                                <div id="div1">Address</div>
+                                <div id="div1">Địa chỉ</div>
                                 <div id="div2">{{ $item->Location }}</div>
                             </div>
                             <div class="givecode">
@@ -62,15 +62,15 @@
                             </div>
                         </div>
                         <div class="container__details-total-right">
-                            <div><b>Total Price</b></div>
+                            <div><b>Tổng tiền</b></div>
                             <div>${{ $item->Total_Paid }}</div>
                         </div>
                     </div>
                     @if( $this_order[0]->Status == 'Pending')
-                    <button class="cancel_button" type="submit">Cancel Order</button>
+                    <button class="cancel_button" type="submit">Hủy đơn</button>
                     @else
                     <div class="container__details-button">
-                        Cancel Order
+                        Hủy đơn
                     </div>
                     @endif
                 </div>

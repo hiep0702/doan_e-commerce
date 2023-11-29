@@ -14,7 +14,7 @@
 
     <div class="frm" action="">
         <div class="container">
-            <form action="{{ url('http://127.0.0.1:8000/client/login') }}" id="signInForm" method="POST"
+            <form action="{{ route('client.post-login') }}" id="signInForm" method="POST"
                 class="container__signIn active">
                 @csrf
                 <div class="container__signIn-tittle">Đăng nhập</div>
@@ -41,12 +41,12 @@
                 <div class="container__signIn-button">
                     <button id="" type="submit">Đăng nhập</button>
                 </div>
-                <div class="container__signIn-forget"><a href="http://127.0.0.1:8000/client/forgetPassword">Quên mật khẩu</a></div>
+                <div class="container__signIn-forget"><a href="{{ route('forgetPassword') }}">Quên mật khẩu</a></div>
                 <div class="container__signIn-change">
                     <button id="toRegister">Đăng ký</button>
                 </div>
             </form>
-            <form action="{{ url('http://127.0.0.1:8000/client/register') }}" method="POST" id="registerForm"
+            <form action="{{ route('client.register') }}" method="POST" id="registerForm"
                 class="container__signOut ">
                 @csrf
                 <div class="container__signIn-tittle">Đăng ký</div>

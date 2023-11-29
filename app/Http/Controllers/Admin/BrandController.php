@@ -30,6 +30,13 @@ class BrandController extends Controller
             'logo'          => 'required',
             'information'   => 'required',
             'code'          => 'required|unique:brands',
+        ],[
+            'name.required' => 'Tên thương hiệu không được bỏ trống',
+            'name.unique' => 'Tên thương hiệu đã tồn tại',
+            'logo.required' => 'Logo không được bỏ trống',
+            'information.required' => 'Thông tin không được bỏ trống',
+            'code.required' => 'Mã thương hiệu không được bỏ trống',
+            'code.unique' => 'Mã thương hiệu đã tồn tại',
         ]);
 
         $slug = Str::slug($request->name);
@@ -60,6 +67,12 @@ class BrandController extends Controller
             'logo'          => 'required',
             'information'   => 'required',
             'code'          => 'required',
+        ],
+        [
+            'name.required' => 'Tên thương hiệu không được bỏ trống',
+            'logo.required' => 'Logo không được bỏ trống',
+            'information.required' => 'Thông tin không được bỏ trống',
+            'code.required' => 'Mã thương hiệu không được bỏ trống',
         ]);
 
         $slug = Str::slug($request->name);

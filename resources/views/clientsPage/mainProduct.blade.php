@@ -32,7 +32,7 @@
                                     </a>
                                 </div>
                                 <div class="price">
-                                    <div class="price__official"><b>{{ $item->Export_Price }}</b> VND</div>
+                                    <div class="price__official"><b>{{ number_format($item->Export_Price, 0, ',', '.') }}</b> VND</div>
                                 </div>
                                 <div class="color">
                                     @foreach ($getColor as $item)
