@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderSuccessNotification;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 use Illuminate\Support\Carbon as SupportCarbon;
+use Illuminate\Support\Facades\Mail;
 use Payment;
 
 class shoppingcartController extends Controller
@@ -36,7 +38,7 @@ class shoppingcartController extends Controller
             ->join('products as p', 'pd.Product_ID', 'p.ID')
             ->select('Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity', DB::raw('sum(c.Product_quantity * pd.Export_Price) as subtotal'))
             ->where('Customer_ID', $customer_ID)
-            ->orderBy('c.created_at','DESC')
+            ->orderBy('c.created_at', 'DESC')
             ->groupBy('Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity')
             ->get();
 
@@ -238,7 +240,7 @@ class shoppingcartController extends Controller
             ->where('Customer_ID', $customer_ID)
             ->groupBy('Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity')
             ->get();
-        
+
         if (isset($customer_cart[0])) {
             $price_array = [];
             foreach ($customer_cart as $item) {
@@ -270,7 +272,7 @@ class shoppingcartController extends Controller
                         ->where('ID', $code_Id)
                         ->update(['Date_Start' => $prev_day, 'Date_End' => $prev_day]);
                 }
-            
+
                 if (isset($kk[0])) {
 
                     $discount_percentage = $kk[0]->Discount;
@@ -281,14 +283,7 @@ class shoppingcartController extends Controller
 
                     DB::table('orders')
                         ->insert([
-                            'Code'  =>   $order_code
-                            , 'Customer_ID' => $customer_ID
-                            , 'Payment_ID' => 2
-                            , 'Code_ID'  => $discount_code
-                            , 'Location' => $customer_address
-                            , 'Status' => 'Pending'
-                            , 'created_at' => Carbon::now()
-                            , 'Total_Paid'  => $final_price
+                            'Code'  =>   $order_code, 'Customer_ID' => $customer_ID, 'Payment_ID' => 2, 'Code_ID'  => $discount_code, 'Location' => $customer_address, 'Status' => 'Pending', 'created_at' => Carbon::now(), 'Total_Paid'  => $final_price
                         ]);
 
                     $hihi = DB::table('orders')
@@ -299,10 +294,7 @@ class shoppingcartController extends Controller
                     foreach ($customer_cart as $item) {
                         DB::table('orders_details')
                             ->insert([
-                                'Product_Detail_ID' => $item->Product_Detail_ID
-                                , 'Quantity' => $item->Product_quantity
-                                , 'Price'    => $item->Export_Price
-                                , 'Order_ID' => $Order_ID
+                                'Product_Detail_ID' => $item->Product_Detail_ID, 'Quantity' => $item->Product_quantity, 'Price'    => $item->Export_Price, 'Order_ID' => $Order_ID
                             ]);
                     }
 
@@ -316,14 +308,7 @@ class shoppingcartController extends Controller
             } else {
                 DB::table('orders')
                     ->insert([
-                        'Code'  =>   $order_code
-                        , 'Customer_ID' => $customer_ID
-                        , 'Payment_ID' => 2
-                        , 'Code_ID'  => null
-                        , 'Location' => $customer_address
-                        , 'Status' => 'Pending'
-                        , 'created_at' => Carbon::now()
-                        , 'Total_Paid'  => $final_price
+                        'Code'  =>   $order_code, 'Customer_ID' => $customer_ID, 'Payment_ID' => 2, 'Code_ID'  => null, 'Location' => $customer_address, 'Status' => 'Pending', 'created_at' => Carbon::now(), 'Total_Paid'  => $final_price
                     ]);
 
                 $hihi = DB::table('orders')
@@ -334,18 +319,25 @@ class shoppingcartController extends Controller
                 foreach ($customer_cart as $item) {
                     DB::table('orders_details')
                         ->insert([
-                            'Product_Detail_ID' => $item->Product_Detail_ID
-                            , 'Quantity' => $item->Product_quantity
-                            , 'Price'    => $item->Export_Price
-                            , 'Order_ID' => $Order_ID
+                            'Product_Detail_ID' => $item->Product_Detail_ID, 'Quantity' => $item->Product_quantity, 'Price'    => $item->Export_Price, 'Order_ID' => $Order_ID
                         ]);
                 }
+
+                $email = DB::table('users')->where('id', $customer_ID)->pluck('Email')->first();
+
+                $order = DB::table('orders')
+                        ->leftJoin('users', 'orders.Customer_ID', '=', 'users.id')
+                        ->where('orders.Customer_ID', $customer_ID)
+                        ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at')
+                        ->first();
+
+                Mail::to($email)->send(new OrderSuccessNotification($order));
 
                 DB::table('carts')
                     ->where('Customer_ID', $customer_ID)
                     ->delete();
             }
-            Alert::success('Đặt hàng thành công!')->autoclose(1500);   
+            Alert::success('Đặt hàng thành công!')->autoclose(1500);
             return redirect()->back();
         } else {
             Alert::error('Không có mặt hàng nào trong giỏ hàng')->autoclose(1500);
