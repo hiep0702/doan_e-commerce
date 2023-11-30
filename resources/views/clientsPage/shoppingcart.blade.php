@@ -82,7 +82,6 @@
                                     <div class="ship-money container__cartTotal-big2-info-right">15.000</div>
                                 </div>
                                 <div class="container__cartTotal-big2-info-deli">
-                                    {{-- <input type="text" list="ship" id="ship" placeholder="Delivery Option" /> --}}
                                     <select name="ship" id="ship">
                                         <option value="15000">Bình thường - 15.000</option>
                                         <option value="30000">Nhanh - 30.000</option>
