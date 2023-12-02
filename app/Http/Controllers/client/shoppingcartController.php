@@ -36,12 +36,11 @@ class shoppingcartController extends Controller
         $carts = DB::table('carts As c')
             ->join('product_details as pd', 'c.Product_Detail_ID', 'pd.ID')
             ->join('products as p', 'pd.Product_ID', 'p.ID')
-            ->select('Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity', DB::raw('sum(c.Product_quantity * pd.Export_Price) as subtotal'))
+            ->select('pd.Quantity','Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity', DB::raw('sum(c.Product_quantity * pd.Export_Price) as subtotal'))
             ->where('Customer_ID', $customer_ID)
             ->orderBy('c.created_at', 'DESC')
             ->groupBy('Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity')
             ->get();
-
 
 
         $products = DB::table('products')
@@ -242,6 +241,30 @@ class shoppingcartController extends Controller
             ->get();
 
         if (isset($customer_cart[0])) {
+
+            foreach ($customer_cart as $item) {
+                $Product_Detail_ID = $item->Product_Detail_ID;
+
+                $Product_quantity = $item->Product_quantity;
+
+                $Quantity = DB::table('product_details')->where('ID', $Product_Detail_ID)->pluck('Quantity')->first();
+
+                if ($Quantity < $Product_quantity) {
+                    Alert::error('Số lượng hàng trong kho không đủ')->autoclose(1500);
+                    return redirect()->back();
+                }
+            }
+
+            foreach ($customer_cart as $item) {
+                $Product_Detail_ID = $item->Product_Detail_ID;
+
+                $Product_quantity = $item->Product_quantity;
+
+                $Quantity = DB::table('product_details')->where('ID', $Product_Detail_ID)->pluck('Quantity')->first();
+
+                DB::table('product_details')->where('ID', $Product_Detail_ID)->update(['Quantity' => $Quantity - $Product_quantity]);
+            }
+
             $price_array = [];
             foreach ($customer_cart as $item) {
                 array_push($price_array, ($item->Export_Price * $item->Product_quantity));
@@ -326,10 +349,10 @@ class shoppingcartController extends Controller
                 $email = DB::table('users')->where('id', $customer_ID)->pluck('Email')->first();
 
                 $order = DB::table('orders')
-                        ->leftJoin('users', 'orders.Customer_ID', '=', 'users.id')
-                        ->where('orders.Customer_ID', $customer_ID)
-                        ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at')
-                        ->first();
+                    ->leftJoin('users', 'orders.Customer_ID', '=', 'users.id')
+                    ->where('orders.Customer_ID', $customer_ID)
+                    ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at')
+                    ->first();
 
                 Mail::to($email)->send(new OrderSuccessNotification($order));
 

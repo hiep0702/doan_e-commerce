@@ -55,7 +55,6 @@
                         <div class="headerSmall__menuDrop-collection">
                             <a href="{{ url('client/products/new-arrival') }}">Mới nhất</a>
                             <a href="{{ url('client/products/trending') }}">Xu hướng</a>
-                            <a href="{{ url('client/products/discount') }}">Đang giảm giá</a>
                         </div>
                         <div class="headerSmall__menuDrop-brands">
                             <a href="{{ url('client/products/adidas') }}">Adidas</a>
@@ -110,10 +109,9 @@
                     </div>
                 </div>
                 <div id="drop2" class="">
-                    <div class="header__side-collection">
+                    <div class="header__side-collection" style="height: 100px">
                         <div><a href="{{ url('client/products/new-arrival') }}">Mới nhất</a></div>
                         <div><a href="{{ url('client/products/trending') }}">Xu hướng</a></div>
-                        <div><a href="{{ url('client/products/discount') }}">Đang giảm giá</a></div>
                     </div>
                 </div>
                 <div id="drop3" class="">

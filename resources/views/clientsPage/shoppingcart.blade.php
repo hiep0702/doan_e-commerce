@@ -14,9 +14,9 @@
                         <div class="container__product-categories">
                             <div class="container__product-categories-product">Sản phẩm</div>
                             <div class="container__product-categories-price">Giá</div>
+                            <div class="container__product-categories-quantity">Kho</div>
                             <div class="container__product-categories-quantity">Số lượng</div>
                             <div class="container__product-categories-total">Tổng tiền</div>
-                            <div class="container__product-categories-kho">Kho</div>
                             <div class="container__product-categories-button"></div>
                         </div>
                         <div class="container__product-list">
@@ -34,6 +34,8 @@
                                         </div>
                                     </div>
                                     <div class="container__product-list-cart-price">{{ number_format($item->Export_Price, 0, ',', '.') }}
+                                    </div>
+                                    <div class="container__product-list-cart-price">{{ $item->Quantity }}
                                     </div>
 
                                     <div class="container__product-list-cart-quantity">
