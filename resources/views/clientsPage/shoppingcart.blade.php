@@ -14,7 +14,7 @@
                         <div class="container__product-categories">
                             <div class="container__product-categories-product">Sản phẩm</div>
                             <div class="container__product-categories-price">Giá</div>
-                            <div class="container__product-categories-quantity">Kho</div>
+                            <div class="container__product-categories-quantity">Giày có sẵn</div>
                             <div class="container__product-categories-quantity">Số lượng</div>
                             <div class="container__product-categories-total">Tổng tiền</div>
                             <div class="container__product-categories-button"></div>
