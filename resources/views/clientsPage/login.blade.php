@@ -89,7 +89,7 @@
                     </div>
                     <div class="input-group">
                         <input placeholder="" type="password" name="password" autocomplete="off" class="input">
-                        <label class="user-label">Mật hhẩu</label>
+                        <label class="user-label">Mật khẩu</label>
                         <small>
                             @error('password')
                                 {{ $message }}
