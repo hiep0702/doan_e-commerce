@@ -75,7 +75,7 @@
                             <hr class="hr1">
                             <div class="container__cartTotal-big2-info">
                                 <div class="container__cartTotal-big2-info-sub">
-                                    <div class="container__cartTotal-big2-info-sub-left">Phụ phí</div>
+                                    <div class="container__cartTotal-big2-info-sub-left">Giá thành sản phẩm</div>
                                     <div class="subtotals container__cartTotal-big2-info-sub-right">{{ $subtotals }}
                                     </div>
                                 </div>
