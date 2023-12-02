@@ -33,15 +33,27 @@ class OrderDetailController extends Controller
     {
         $order = Order::find($id);
         $user = User::find($order->Customer_ID);
+        
         return view('admin.order_detail.edit', compact('order', 'user'));
     }
 
     public function update(Request $request, $id)
     {
         $order = Order::find($id);
-
+        $order_details = DB::table('orders_details')->where('Order_ID', $id)->get();
         // Cancel
         if ($request->status == 'Cancel') {
+            foreach ($order_details as $item)
+            {
+                $Product_Detail_ID = $item->Product_Detail_ID;
+
+                $Product_quantity = $item->Quantity;
+
+                $Quantity = DB::table('product_details')->where('ID', $Product_Detail_ID)->pluck('Quantity')->first();
+
+                DB::table('product_details')->where('ID', $Product_Detail_ID)->update(['Quantity' => $Quantity + $Product_quantity]);
+            }
+
             $order->where('ID', $id)->update([
                 'Status' => 'Cancel'
             ]);
