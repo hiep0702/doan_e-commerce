@@ -10,7 +10,7 @@
                 <div class="container__list-tittle">Danh sách sản phẩm yêu thích</div>
                 <div class="container__list-products">
                     <div class="container__list-products-top">
-                        <div class="container__list-products-top-checkbox">
+                        {{-- <div class="container__list-products-top-checkbox">
                             <input type="checkbox" name="" value="">
                         </div>
                         <div class="container__list-products-top-right">
@@ -23,14 +23,14 @@
                                 <a href="{{ url('client/wishlist/removeMultipleProducts') }}"><ion-icon name="close-outline"></ion-icon></a>
 
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="container__list-products-list">
                         @foreach ($this_customer as $item)
                             <div class="container__list-products-list-cart">
-                                <div class="container__list-products-list-cart-checkbox">
+                                {{-- <div class="container__list-products-list-cart-checkbox">
                                     <input type="checkbox" name="checkBoxes" value="{{ $item->ID }}">
-                                </div>
+                                </div> --}}
                                 <div class="container__list-products-list-cart-child">
                                     <div class="container__product-list-cart-image">
                                         <a  class="container__product-list-cart-image-img" href="{{ url('/client/products/specificProduct', $item->Slug) }}">

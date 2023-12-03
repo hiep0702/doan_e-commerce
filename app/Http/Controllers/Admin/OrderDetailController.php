@@ -123,10 +123,11 @@ class OrderDetailController extends Controller
         $searchTerm = '%' . $request->input('search') . '%';
 
         $orders = DB::table('orders As o')
-            ->join('users as u', 'o.Customer_ID', '=', 'u.id')
-            ->join('orders_details as od', 'o.ID', '=', 'od.Order_ID')
-            ->join('payments as p', 'o.Payment_ID', '=', 'p.ID')
-            ->select('o.ID', 'o.Code as Order_Code', 'u.Code as Customer_Code', 'u.username as Username', 'o.Status', 'o.Location', 'p.Method', 'o.created_at', DB::raw('sum(od.Quantity) as TotalQuantity'), DB::raw('sum(od.Price * od.Quantity) as TotalPrice'))
+        ->leftJoin('users as u', 'o.Customer_ID', '=', 'u.id')
+        ->leftJoin('orders_details as od', 'o.ID', '=', 'od.Order_ID')
+        ->leftJoin('payments as p', 'o.Payment_ID', '=', 'p.ID')
+        ->leftJoin('codes as c', 'o.Code_ID', '=', 'c.ID')
+        ->select('o.ID', 'o.Code as Order_Code', 'u.Code as Customer_Code', 'u.username as Username', 'o.Status', 'o.Location', 'p.Method', 'c.Code', 'o.Total_Paid', 'o.created_at', DB::raw('sum(od.Quantity) as TotalQuantity'), DB::raw('sum(od.Price * od.Quantity) as TotalPrice'))
             ->where(function ($query) use ($searchTerm) {
                 $query->where('o.Code', 'like', $searchTerm)
                     ->orWhere('p.Method', 'like', $searchTerm)

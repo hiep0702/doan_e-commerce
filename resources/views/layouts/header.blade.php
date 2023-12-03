@@ -196,7 +196,7 @@
                         <div class="header__update-1"><a style="color: white" href=""> Cập nhật: Đăng nhập và
                             chơi trò chơi để nhận mã giảm giá lên tới 20%</a>
                         </div>
-                        <div class="header__update-1"><a style="color: white" href=""> Sử dụng mã "hiepdepzai" để
+                        <div class="header__update-1"><a style="color: white" href=""> Sử dụng mã "tuanhiep" để
                             giảm giá 20% trên hóa đơn của bạn</a>
                         </div>
                         <div class="header__update-1"><a style="color: white" href=""> Bộ sưu tập mới sắp ra mắt</a>
@@ -295,7 +295,7 @@
                         <div class="header__update-1"><a style="color: white" href=""> Cập nhật: Đăng nhập và
                             chơi trò chơi để nhận mã giảm giá lên tới 20%</a>
                         </div>
-                        <div class="header__update-1"><a style="color: white" href=""> Sử dụng mã "hiepdepzai" để
+                        <div class="header__update-1"><a style="color: white" href=""> Sử dụng mã "tuanhiep" để
                             giảm giá 20% trên hóa đơn của bạn</a>
                         </div>
                         <div class="header__update-1"><a style="color: white" href=""> Bộ sưu tập mới sắp ra mắt</a>
