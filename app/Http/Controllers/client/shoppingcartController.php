@@ -382,7 +382,7 @@ class shoppingcartController extends Controller
         $location_cus = $data['address'];
 
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = route('myshoppingcart');
+        $vnp_Returnurl = route('success-checkout');
         $vnp_TmnCode = "CIOGV04F"; //Mã website tại VNPAY 
         $vnp_HashSecret = "RDEOAQTPTJVLITZGMKHYXRDUMGCETBOQ"; //Chuỗi bí mật
 
@@ -583,5 +583,35 @@ class shoppingcartController extends Controller
         } else {
             echo json_encode($returnData);
         }
+    }
+
+    public function successCheckout()
+    {
+        $customer_ID = Auth::guard('users')->id();
+        $this_customer = User::where('id', $customer_ID)->get();
+        $subtotals = 0;
+
+        $carts = DB::table('carts As c')
+            ->join('product_details as pd', 'c.Product_Detail_ID', 'pd.ID')
+            ->join('products as p', 'pd.Product_ID', 'p.ID')
+            ->select('pd.Quantity', 'Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity', DB::raw('sum(c.Product_quantity * pd.Export_Price) as subtotal'))
+            ->where('Customer_ID', $customer_ID)
+            ->orderBy('c.created_at', 'DESC')
+            ->groupBy('Export_Price', 'Sale_Price', 'Main_IMG', 'Name', 'Color', 'Product_Detail_ID', 'Product_quantity')
+            ->get();
+
+
+        $products = DB::table('products')
+            ->join('product_details', 'products.ID', '=', 'product_details.Product_ID')
+            ->get()
+            ->shuffle();
+
+        $ran_pro = $products->take(4);
+
+        foreach ($carts as $cart) {
+            $subtotals += $cart->subtotal;
+        }
+
+        return view('clientsPage.success_checkout', compact('carts', 'subtotals', 'ran_pro'));
     }
 }

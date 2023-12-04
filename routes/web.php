@@ -338,6 +338,7 @@ Route::prefix('client')->middleware('client-signIn')->group(function () {
     Route::post('Cart', [shoppingcartController::class, 'checkOut'])->name('check.out');
 
     Route::post('vnpay_payment', [shoppingcartController::class, 'vnpay_payment'])->name('vnpay_payment');
+    Route::get('success-checkout', [shoppingcartController::class, 'successCheckout'])->name('success-checkout');
 
 
     Route::post('Cart/increase', [shoppingcartController::class, 'handleIncreaseQuantity'])
