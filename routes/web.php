@@ -222,8 +222,6 @@ Route::prefix('admin')->middleware('admin.login')->group(function () {
     Route::prefix('product-detail')->group(function () {
         Route::get('', [ProductDetailController::class, 'index'])
             ->name('admin.product-detail.index');
-        // Route::post('search', [ProductController::class, 'search'])
-        //     ->name('admin.product-detail.search');
         Route::get('create/{id}', [ProductDetailController::class, 'create'])
             ->name('admin.product-detail.create');
         Route::get('detail/{id}', [ProductDetailController::class, 'detail'])
@@ -338,6 +336,8 @@ Route::prefix('client')->middleware('client-signIn')->group(function () {
 
     Route::get('Cart', [shoppingcartController::class, 'getShoppingCart'])->name('myshoppingcart');
     Route::post('Cart', [shoppingcartController::class, 'checkOut'])->name('check.out');
+
+    Route::post('vnpay_payment', [shoppingcartController::class, 'vnpay_payment'])->name('vnpay_payment');
 
 
     Route::post('Cart/increase', [shoppingcartController::class, 'handleIncreaseQuantity'])
