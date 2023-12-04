@@ -10,6 +10,11 @@
             @csrf
             <div class="container">
                 <div class="container__product">
+                    @if (Session::has('success_message'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success_message') }}
+                        </div>
+                    @endif
                     <div class="container__product-big">
                         <div class="container__product-categories">
                             <div class="container__product-categories-product">Sản phẩm</div>
@@ -33,7 +38,8 @@
                                                 style="background-color: {{ $item->Color }}"></div>
                                         </div>
                                     </div>
-                                    <div class="container__product-list-cart-price">{{ number_format($item->Export_Price, 0, ',', '.') }}
+                                    <div class="container__product-list-cart-price">
+                                        {{ number_format($item->Export_Price, 0, ',', '.') }}
                                     </div>
                                     <div class="container__product-list-cart-price">{{ $item->Quantity }}
                                     </div>
@@ -85,7 +91,7 @@
                                 </div>
                                 <div class="container__cartTotal-big2-info-deli">
                                     <select name="ship" id="ship">
-                                        <option value="15000">Bình thường - 15.000</option>
+                                        <option value="15000">Tiêu chuẩn - 15.000</option>
                                         <option value="30000">Nhanh - 30.000</option>
                                         <option value="45000">Hỏa tốc - 45.000</option>
                                     </select>
@@ -94,7 +100,7 @@
                                     <div class="container__cartTotal-big2-info-give-left">Địa chỉ</div>
                                 </div>
                                 <div id="aF" class="container__cartTotal-big2-info-addr">
-                                    <input type="text" placeholder="   Nhập địa chỉ ..." name="Adress">
+                                    <input type="text" placeholder="   Nhập địa chỉ ..." name="Adress" id="address1">
                                     @error('Adress')
                                         <small>{{ $message }}</small>
                                     @enderror
@@ -119,14 +125,25 @@
                                 </div>
                             </div>
                             <div class="container__cartTotal-big2-button">
-                                <button type="submit">Đặt hàng</button>
+                                <button type="submit">Thanh toán tiền mặt</button>
                             </div>
+                        </form>
+                            <form action="{{ route('vnpay_payment') }}" method="post" id="vnpayForm">
+                                @csrf
+                                <div class="container__cartTotal-big2-button">
+                                    <div hidden>
+                                        <input type="text" id="address2" name="address">
+                                        <input type="text" name="total" class="total-price-input">
+                                    </div>
+                                    <button  style="background-color: sandybrown;" type="submit" name="redirect" id="totalValue">Thanh toán bằng vnpay</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </form>
+        
 
     </div>
     </div>
@@ -161,7 +178,8 @@
         <div class="subscribeUs__text">
             <div class="subscribeUs__text-firstText">Theo dõi chúng tôi</div>
             <div class="subscribeUs__text-secondText">Luôn theo dõi nhịp đập của thời trang hàng tuần.
-                Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu hướng.
+                Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu
+                hướng.
             </div>
             <input type="text" placeholder="Enter your email address"><button>SUBSCRIBE</button>
         </div>
@@ -171,6 +189,13 @@
     <script>
         var result = document.querySelectorAll("div .result");
         var productSubtotal = document.querySelectorAll("div .productSubtotal");
+
+        var addressInputForm1 = document.getElementById('address1');
+        var addressInputForm2 = document.getElementById('address2');
+        addressInputForm1.addEventListener('input', function() {
+            // Sao chép giá trị từ input của form 1 vào input của form 2
+            addressInputForm2.value = addressInputForm1.value;
+        });
 
 
         $(document).ready(function() {
@@ -208,7 +233,19 @@
                 // $('.total-price').html(totalPrice + " VND");
                 $('.total-price').html(totalPrice.toLocaleString('vi-VN'));
 
+                $('.total-price-input').val(totalPrice);
+
             }
+
+            $('button[name="redirect"]').on('click', function(event) {
+                // event.preventDefault();
+
+                // Tính toán tổng tiền lại trước khi chuyển đến trang thanh toán
+                calculatePriceTotal();
+
+                // Thực hiện các hành động khác, ví dụ chuyển hướng đến trang thanh toán
+                $('#vnpayForm').submit(); // Gửi form đến trang thanh toán VNPAY
+            });
 
             // Increase Button
             $('.incrementQuantity').each(function(index) {
