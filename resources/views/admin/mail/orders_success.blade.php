@@ -78,26 +78,24 @@
         .img-icon {
             width: 120px;
         }
-        .ul li {
-            color: #ffffff;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <h1>S U G A R</h1>
+            <h1 style=" color: #ffffff;">S U G A R</h1>
         </div>
         <h2>Xin chào!</h2>
         <p>Chúng tôi xác nhận rằng đơn hàng của bạn đã được tạo thành công.</p>
 
         <p>Thông tin đơn hàng:</p>
-        <ul>
+        <ul style=" color: #ffffff;">
             <li>Mã đơn hàng: {{ $order->Code }}</li>
             <li>Tên khách hàng: {{ $order->First_Name }} {{ $order->Last_Name }}</li>
             <li>Tài khoản: {{ $order->username }}</li>
             <li>Số điện thoại: {{ $order->Number_Phone }}</li>
+            <li>Số tiền: {{ number_format($order->Total_Paid, 0, ',', '.') }} &#8363;</li>
             <li>Địa chỉ: {{ $order->Location }}</li>
             <li>Thời gian: {{ $order->created_at }}</li>
         </ul>
@@ -117,7 +115,7 @@
         </p>
         <div class="footer">
             <div class="johnny-div">
-                <a href="https://doan-e-commerce-0efd69fb92e0.herokuapp.com/client/home">Bấm vào đây để trở về website !!!</a>
+                <a href="https://doan-e-commerce-0efd69fb92e0.herokuapp.com/client/home"><u>Bấm vào đây để trở về website !!!</u></a>
             </div>
         </div>
     </div>

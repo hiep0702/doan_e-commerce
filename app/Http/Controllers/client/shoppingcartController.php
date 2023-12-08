@@ -353,10 +353,11 @@ class shoppingcartController extends Controller
                 $order = DB::table('orders')
                     ->leftJoin('users', 'orders.Customer_ID', '=', 'users.id')
                     ->where('orders.Customer_ID', $customer_ID)
-                    ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at')
+                    ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at', 'orders.Total_Paid')
+                    ->orderBy('orders.created_at', 'desc')
                     ->first();
 
-                Mail::to($email)->send(new OrderSuccessNotification($order));
+                    Mail::to($email)->send(new OrderSuccessNotification($order));
 
                 DB::table('carts')
                     ->where('Customer_ID', $customer_ID)
@@ -514,7 +515,8 @@ class shoppingcartController extends Controller
                 $order = DB::table('orders')
                     ->leftJoin('users', 'orders.Customer_ID', '=', 'users.id')
                     ->where('orders.Customer_ID', $customer_ID)
-                    ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at')
+                    ->select('users.First_Name', 'users.Last_Name', 'users.Number_Phone', 'users.username', 'orders.Code', 'orders.Location', 'orders.created_at', 'orders.Total_Paid')
+                    ->orderBy('orders.created_at', 'desc')
                     ->first();
 
                 Mail::to($email)->send(new OrderSuccessNotification($order));

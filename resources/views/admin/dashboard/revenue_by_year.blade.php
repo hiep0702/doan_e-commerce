@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-Doanh thu theo năm
+Doanh thu trong năm
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@ Doanh thu theo năm
                 <div class="heading">
                     <div>
                         <h1 class="page-header">Doanh thu
-                            <small>theo năm</small>
+                            <small>trong năm</small>
                         </h1>
                     </div>
                 </div>
@@ -19,10 +19,10 @@ Doanh thu theo năm
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr align="center">
-                                <th>Doanh thu theo năm</th>
-                                <th>Lợi nhuận theo tháng</th>
-                                <th>Doanh thu theo ngày</th>
-                                <th>Doanh thu theo tháng</th>
+                                <th>Doanh thu trong năm</th>
+                                <th>Lợi nhuận trong tháng</th>
+                                <th>Doanh thu trong ngày</th>
+                                <th>Doanh thu trong tháng</th>
                             </tr>
                         </thead>
                         <tbody>
