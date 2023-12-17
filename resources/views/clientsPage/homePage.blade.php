@@ -12,7 +12,7 @@
                         <div class="container__slideCol-item-content">
                             <p style="color: #FF0000" class="container__left-frame-text-p1">Sản phẩm tốt nhất cho bạn..</p>
                             <p style="color: #FF0000" class="container__left-frame-text-p2">Xu hướng mới năm 2023</p>
-                            <a href="">Mua ngay</a>
+                            <a href="{{ url('/client/products/new-arrival') }}">Mua ngay</a>
                         </div>
                     </div>
                 @endforeach
