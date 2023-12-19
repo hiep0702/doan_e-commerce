@@ -50,10 +50,11 @@ class DashboardddController extends Controller
         $orders = DB::table('orders As o')
             ->join('orders_details as od', 'o.ID', 'od.Order_ID')
             ->leftJoin('product_details as pd', 'od.Product_Detail_ID', 'pd.ID')
-            ->select(DB::raw('DATE_FORMAT(o.updated_at, "%d") as time'), DB::raw('sum(od.Quantity * Export_Price) as Total_Revenue'), DB::raw('sum(od.Quantity * Import_Price) as Total_Capital'), DB::raw('sum((od.Quantity * Export_Price) - (od.Quantity * Import_Price)) as Total_Profit'))
+            ->select(DB::raw('DATE_FORMAT(o.updated_at, "%Y-%m-%d") as time'), DB::raw('sum(od.Quantity * Export_Price) as Total_Revenue'), DB::raw('sum(od.Quantity * Import_Price) as Total_Capital'), DB::raw('sum((od.Quantity * Export_Price) - (od.Quantity * Import_Price)) as Total_Profit'))
             ->whereDate('updated_at', 'between', $month. '%' <= $now. '%' )
             ->where('Status', 'Done')
             ->groupBy('time')
+            ->orderBy('time')
             ->get();
 
         $total_revenue = 0;
@@ -121,10 +122,11 @@ class DashboardddController extends Controller
         $orders = DB::table('orders As o')
             ->join('orders_details as od', 'o.ID', 'od.Order_ID')
             ->leftJoin('product_details as pd', 'od.Product_Detail_ID', 'pd.ID')
-            ->select(DB::raw('DATE_FORMAT(o.updated_at, "%d") as time'), DB::raw('sum(od.Quantity) as Total_Quantity'))
+            ->select(DB::raw('DATE_FORMAT(o.updated_at, "%Y-%m-%d") as time'), DB::raw('sum(od.Quantity) as Total_Quantity'))
             ->whereDate('updated_at', 'between', $month. '%' <= $now. '%' )
             ->where('Status', 'Done')
             ->groupBy('time')
+            ->orderBy('time')
             ->get();
 
         $total_quantity = 0;
