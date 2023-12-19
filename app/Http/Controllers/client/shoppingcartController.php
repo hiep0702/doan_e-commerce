@@ -69,7 +69,7 @@ class shoppingcartController extends Controller
                 ->select('Product_quantity')
                 ->get();
 
-            if ($old_quantity[0]->Product_quantity == 5) {
+            if ($old_quantity[0]->Product_quantity == 25) {
                 return;
             }
 
