@@ -50,7 +50,7 @@
                                             <ion-icon class="icon" name="remove-outline"></ion-icon>
                                         </button>
 
-                                        <div class="result" max="5">{{ $item->Product_quantity }}</div>
+                                        <div class="result" max="25">{{ $item->Product_quantity }}</div>
 
                                         <button type="button" class="incrementQuantity"
                                             value="{{ $item->Product_Detail_ID }}">
@@ -251,7 +251,7 @@
             $('.incrementQuantity').each(function(index) {
                 $(this).on('click', function() {
                     var quantity = +result[index].innerHTML;
-                    if (quantity === 5) {
+                    if (quantity === 25) {
                         return;
                     } else {
                         var product = $(this).val();
