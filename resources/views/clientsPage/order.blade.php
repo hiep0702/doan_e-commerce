@@ -30,7 +30,7 @@
             <div class="container__orders">
                 @foreach ($this_order_details as $item)
                     <div class="container__orders-items">
-                        <div class="container__orders-items-price">${{ $item->Price }}</div>
+                        <div class="container__orders-items-price">{{ number_format($item->Price, 0, ',', '.') }}</div>
                         <div class="container__orders-items-quantity">{{ $item->Quantity }}</div>
                         <div class="container__orders-items-img" style="background-image: url({{ $item->Main_IMG }});">
                         </div>
@@ -53,11 +53,11 @@
                                 <div id="div2">{{ $item->Location }}</div>
                             </div>
                             <div class="givecode">
-                                <div id="div1">Offer</div>
+                                <div id="div1">Khuyến mại</div>
                                 @if (isset($discount[0]))
                                     <div id="div2">{{ $discount[0]->Discount }}%</div>
                                 @else
-                                    <div id="div2">None</div>
+                                    <div id="div2">Không</div>
                                 @endif
                             </div>
                         </div>

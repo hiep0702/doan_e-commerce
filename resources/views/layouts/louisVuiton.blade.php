@@ -111,7 +111,7 @@
     </div>
     <div class="subscribeUs">
         <div class="subscribeUs__text">
-            <div class="subscribeUs__text-firstText">Theo dõi chúng tôi</div>
+            <div class="subscribeUs__text-firstText">Đăng ký hội viên</div>
             <div class="subscribeUs__text-secondText">Luôn theo dõi nhịp đập của thời trang hàng tuần.
                 Sản phẩm mới nhất, sản phẩm sắp ra mắt, chương trình khuyến mãi đặc biệt và các sản phẩm tập trung vào xu hướng.
             </div>
