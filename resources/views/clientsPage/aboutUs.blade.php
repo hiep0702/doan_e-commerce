@@ -148,15 +148,15 @@
                 <div class="mainContent-payment">
                     <h2>Các lựa chọn thanh toán</h2>
                     <div class="mainContent-payment-info">
-                        <h4>PAYPAL:</h4>
-                        <p>Bạn có thể sử dụng paypal để thanh toán cho đơn hàng của mình trên Sugar. Paypal cho phép
+                        <h4>VNPAY:</h4>
+                        <p>Bạn có thể sử dụng vnpay để thanh toán cho đơn hàng của mình trên Sugar. Vnpay cho phép
                             bạn gửi an toàn
                             thanh toán trực tuyến bằng thẻ tín dụng, thẻ ghi nợ, tài khoản ngân hàng hoặc số dư tài khoản
-                            paypal của bạn. Của bạn
+                            Vnpay của bạn. Của bạn
                             Chúng tôi không bao giờ nhìn thấy số thẻ tín dụng và số ngân hàng, ngoài ra bạn được bảo vệ 100%
                             khỏi
                             không được phép
-                            thanh toán được gửi từ tài khoản của bạn. Đại diện dịch vụ khách hàng của Paypal luôn sẵn sàng
+                            thanh toán được gửi từ tài khoản của bạn. Đại diện dịch vụ khách hàng của Vnpay luôn sẵn sàng
                             hỗ trợ
                             Bạn
                             tại 0363251199</p>
