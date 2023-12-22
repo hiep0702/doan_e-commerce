@@ -63,7 +63,7 @@
                         </div>
                         <div class="container__details-total-right">
                             <div><b>Tổng tiền</b></div>
-                            <div>${{ $item->Total_Paid }}</div>
+                            <div>{{ number_format($item->Total_Paid, 0, ',', '.') }}</div>
                         </div>
                     </div>
                     @if( $this_order[0]->Status == 'Pending')
